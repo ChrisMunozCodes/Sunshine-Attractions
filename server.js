@@ -12,6 +12,7 @@ const mainRoutes = require("./routes/main");
 const userRoutes = require("./routes/user");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const path = require("path");
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -27,6 +28,9 @@ app.set("view engine", "ejs");
 
 //Static Folder
 app.use(express.static("public"));
+
+//Exposes view folder for tailwind.
+app.use(express.static(path.join(__dirname, 'views')))
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));

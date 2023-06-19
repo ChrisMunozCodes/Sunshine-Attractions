@@ -4,7 +4,6 @@ const userController = require("../controllers/user");
 const postsController = require("../controllers/posts");
 
 // User Routes.
-router.get("/profile", postsController.getProfile);
 router.post('/update-profile-pic', userController.updateUserProfilePic);
 
 // Add more user routes as needed.

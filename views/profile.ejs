@@ -31,17 +31,8 @@
     <div class="col-6">
       <!-- added the image and div below to start figuring out how to add profile images -->
       <div>
-        <% if (profilePic) { %>
-          <img class="img-fluid" src="<%= profilePic %>">
-        <% } else { %>
           <img class="img-fluid" src="https://i.ibb.co/JdPCqqJ/default-avatar-icon-of-social-media-user-vector.jpg">
-        <% } %>
         <div class="mb-3">
-          <form method="POST" enctype="multipart/form-data" action="/user/update-profile-pic">
-            <label for="profilePicUpload" class="form-label">Image</label>
-            <input type="file" class="form-control" id="profilePicUpload" name="file">
-            <button type="submit" class="btn btn-primary">Update Profile Picture</button>
-          </form>
         </div>
         <p><strong>User Name</strong>: <%= user.userName %></p>
         <p><strong>Email</strong>: <%= user.email %></p>

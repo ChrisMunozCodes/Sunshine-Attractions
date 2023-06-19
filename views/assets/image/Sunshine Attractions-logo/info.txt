@@ -1,0 +1,18 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: OFLGoudyStMTT
+font link: https://fonts.google.com/specimen/Sorts+Mill+Goudy
+font author: Barry Schwartz
+font author site: http://crudfactory.com/
+
+
+icon designer: Hea Poh Lin
+icon designer link: /charlenehea
+        
+
+fontColor: {"hex":"#fca92c"}
+bgColor: {"hex":"#ffffff"}
+iconColor: {"hex":"#fca92c"}
+
+      

@@ -18,54 +18,65 @@
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="http://localhost:2153/assets/css/output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="http://localhost:2155/assets/css/output.css" />
     <script src="/js/main.js"></script>
   </head>
 <% if (isDesktop) { %>
-    <div class="desktop-container">
+    <div class="desktop-container w-screen h-screen">
       <header>
-        <nav class="desktop-navbar">
-            <div class="logo-container">
-              <!-- Logo content here -->
+        <nav class="desktop-navbar w-full h-1/5 flex justify-between">
+            <div class="logo-container w-2/5 h-full flex justify-center content-center">
+              <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
             </div>
             <div class="login-container">
-              <!-- Login component here -->
+              <form action="/login">
+                <button type="submit" class="bg-primary-button">LOGIN</button>
+              </form>
               <div class="signup-dropdown">
-                <!-- Signup dropdown content here -->
+    
               </div>
             </div>
           </nav>
       </header>
 
-      <main class="h-2 w-10 bg-red-900">
-         <!-- Section for the heading and short description of the app -->
-        <h1 class="bg-red-400">Sunshine Attractions</h1>
-        <p>The go-to review app for florida theme parks!</p>
-      </main>
+  <main class="w-full h-4/5 pl-40 pr-40 flex content-center justify-center flex-col">
+  <!-- Container for the following three sections -->
 
-      <section>
+      <section class="w-full h-35 flex content-center justify-center">
+         <!-- Section for top ratings -->
+          <div class="w-full h-full border border-gray-300">
+            <h2>Top Rated</h2>
+          </div>
+      </section>
+
+      <section class="w-full h-1/10">
+        <!-- Section for search bar -->
+        <form action="text" class="flex">
+          <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary focus:border-primary">
+        </form>
+      </section>
+
+      <section class="w-full h-4/5">
          <!-- Section for the theme park selection -->
-         <h2>/// Start your search //</h2>
-         <ul>
-            <li>
-                <a href=""><img src="" alt=""></a>
+         <ul class="flex">
+            <li class="flex-1 border border-black">
                 <a href="">Disney</a>
             </li>
-            <li>
-                <a href=""><img src="" alt=""></a>
+            <li class="flex-1 border border-black">
                 <a href="">Universal</a>
             </li>
-            <li>
-                <a href=""><img src="" alt=""></a>
+            <li class="flex-1 border border-black">
                 <a href="">Seaworld</a>
             </li>
-            <li>
-                <a href=""><img src="" alt=""></a>
+            <li class="flex-1 border border-black">
                 <a href="">Busch Gardens</a>
             </li>
          </ul>
       </section>
-    </div>
+
+    </main>
+
   <% } %>
   
   <!-- Mobile Version -->
@@ -84,19 +95,15 @@
       <main>
         <ul>
             <li>
-                <a href=""><img src="" alt=""></a>
                 <a href="">Disney</a>
             </li>
             <li>
-                <a href=""><img src="" alt=""></a>
                 <a href="">Universal</a>
             </li>
             <li>
-                <a href=""><img src="" alt=""></a>
                 <a href="">Seaworld</a>
             </li>
             <li>
-                <a href=""><img src="" alt=""></a>
                 <a href="">Busch Gardens</a>
             </li>
          </ul>

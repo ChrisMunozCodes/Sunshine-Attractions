@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tailwindcss -i ./views/assets/css/input.css -o ./views/assets/css/output.css --watch & nodemon server.js"
+    "style": "npx tailwindcss -i ./views/assets/css/input.css -o ./views/assets/css/output.css --watch & nodemon server.js"
   },
   "author": "",
   "license": "MIT",

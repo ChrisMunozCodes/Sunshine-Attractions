@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const authController = require("../controllers/auth");
 const userController = require("../controllers/user");
+const homeController = require("../controllers/home");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Main Routes - simplified for now
@@ -22,5 +23,8 @@ router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
 router.get("/profile", ensureAuth, userController.getProfile);
+router.get("/disney-selection", homeController.getDisneySelection);
+router.get("/space-mountain", homeController.getSpaceMountain);
+router.get("/review-space-mountain", homeController.reviewSpaceMountain);
 
 module.exports = router;

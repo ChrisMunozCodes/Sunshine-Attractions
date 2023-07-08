@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-<a href="https://ibb.co/0Fn6w11"><img src="https://i.ibb.co/z7mBkCC/512fa52f1f7581a8c64b2fba72c43c2e.jpg" alt="512fa52f1f7581a8c64b2fba72c43c2e" border="0"></a>
+Image coming soon, app is still being built.
 </p>
 
 ## 👨🏻‍💻 About the project

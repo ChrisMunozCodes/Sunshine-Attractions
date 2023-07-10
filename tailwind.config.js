@@ -5,11 +5,15 @@ module.exports = {
       colors: {
         text: '#0a0600',
         background: '#ffffff',
-        'primary-button': '#fca92c',
-        'secondary-button': '#fee4be',
+        primaryButton: '#fca92c',
+        secondaryButton: '#fee4be',
         accent: '#fcb345',
+        grayBackdrop: 'rgba(129, 129, 129, 0.5)',
       },
     },
   },
-  plugins: [],
+  purge: {
+    enabled: true,
+  },
+  plugins: [require("daisyui")],
 }

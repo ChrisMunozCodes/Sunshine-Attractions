@@ -1,12 +1,10 @@
 {
-  "name": "binary-upload-boom",
+  "name": "Sunshine-Attractions",
   "version": "1.0.0",
-  "description": "100Devs Social Network",
+  "description": "Floridas go-to review app for all of the sunshine states theme parks.",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "style": "npx tailwindcss -i ./views/assets/css/input.css -o ./views/assets/css/output.css --watch & nodemon server.js"
+    "style": "npx tailwindcss -i ./views/assets/css/input.css -o ./views/assets/css/output.css -p daisyui --watch & nodemon server.js"
   },
   "author": "",
   "license": "MIT",
@@ -32,6 +30,8 @@
     "validator": "^13.6.0"
   },
   "devDependencies": {
+    "daisyui": "^3.2.1",
+    "postcss": "^8.4.25",
     "tailwindcss": "^3.3.2"
   }
 }

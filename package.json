@@ -4,7 +4,9 @@
   "description": "Floridas go-to review app for all of the sunshine states theme parks.",
   "main": "server.js",
   "scripts": {
-    "style": "npx tailwindcss -i ./views/assets/css/input.css -o ./views/assets/css/output.css -p daisyui --watch & nodemon server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "style": "concurrently \"nodemon server.js\" \"npx tailwindcss -i ./public/css/style.css -o ./dist/output.css --watch\""
   },
   "author": "",
   "license": "MIT",
@@ -12,6 +14,7 @@
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.2",
     "cloudinary": "^1.25.1",
+    "concurrently": "^8.2.0",
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.6",
     "dotenv": "^8.2.0",

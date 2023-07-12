@@ -27,9 +27,12 @@ app.set("view engine", "ejs");
 
 //Static Folder
 app.use(express.static("public"));
+app.use(express.static("imgs"));
+app.use("/css", express.static("dist"));
 
 //Exposes view folder for tailwind.
 app.use(express.static(path.join(__dirname, 'views')))
+
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));

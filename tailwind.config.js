@@ -10,10 +10,12 @@ module.exports = {
         accent: '#fcb345',
         grayBackdrop: 'rgba(129, 129, 129, 0.5)',
       },
+      fontFamily: {
+        karla: ['Karla', 'sans-serif'],
+        merriweather: ['Merriweather', 'serif'],
+      },
     },
   },
-  purge: {
-    enabled: true,
-  },
   plugins: [require("daisyui")],
-}
+  variants: {},
+};

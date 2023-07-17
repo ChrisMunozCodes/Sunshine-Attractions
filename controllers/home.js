@@ -6,9 +6,13 @@ module.exports = {
     res.render('disney-selection', { isDesktop });
   },
   getSpaceMountain: (req, res, isDesktop) => {
-    res.render('space-mountain', { isDesktop });
-  },
+    const loggedIn = req.isAuthenticated();
+    res.render('space-mountain', { user: req.user, isDesktop, loggedIn });
+  },  
   reviewSpaceMountain: (req, res, isDesktop) => {
-    res.render('review-space-mountain', { isDesktop });
+    const loggedIn = req.isAuthenticated();
+    res.render('review-space-mountain', { isDesktop }, {
+      loggedIn: loggedIn,
+    });
   },
 };

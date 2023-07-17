@@ -8,10 +8,11 @@ const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
-const mainRoutes = require("./routes/main");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require("path");
+const mainRoutes = require("./routes/main");
+const reviewRoutes = require("./routes/review");
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -69,6 +70,7 @@ app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
+app.use("/review", reviewRoutes);
 
 //Server Running
 app.listen(process.env.PORT, () => {

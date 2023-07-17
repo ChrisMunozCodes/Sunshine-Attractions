@@ -29,6 +29,7 @@
   </head>
 <% if (isDesktop) { %>
     <div class="desktop-container w-screen h-screen">
+      <% if (loggedIn) { %>
       <header>
         <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5">
           <div class="logo-container flex justify-center items-center">
@@ -37,15 +38,38 @@
             </a>
           </div>
           <div class="login-container flex justify-center items-center p-5">
-            <form action="/login">
-              <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather">LOGIN</button>
+            <form action="/profile">
+              <div class="avatar">
+                <div class="w-10 rounded-full">
+                  <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" />
+                </div>
+              </div>
             </form>
-            <form action="/signup">
-              <button type="submit" class=" bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather">SIGNUP</button>
+            <form action="/profile">
+              <%= user.userName %>
             </form>
           </div>
         </nav>
       </header>
+      <% } else { %>
+        <header>
+          <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5">
+            <div class="logo-container flex justify-center items-center">
+              <a href="/">
+                <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+              </a>
+            </div>
+            <div class="login-container flex justify-center items-center p-5">
+              <form action="/login">
+                <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather">LOGIN</button>
+              </form>
+              <form action="/signup">
+                <button type="submit" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather">SIGNUP</button>
+              </form>
+            </div>
+          </nav>
+        </header>
+      <% } %>
 
     <main class="w-full h-4/5 pl-40 pr-40 flex content-center justify-center flex-row">
     <!-- Container for the following three sections -->
@@ -80,60 +104,116 @@
 
     <!-- Modal -->
     <dialog id="my_modal_3" class="modal">
-      <form method="dialog" class="modal-box m-5">
+    <form action="/review/createReview" enctype="multipart/form-data" method="POST" class="modal-box m-8">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-        <h3 class="font-bold text-lg font-merriweather">Tell the world your thoughts about Space Mountain!</h3>
-        <section class="flex">
-          <div class="flex justify-center content-center p-5 w-1/3 h-1/2">
+
+      <section class="h-full w-full p-5">
+
+        <section class="h-1/5 w-full">
+          <h3 class="font-bold text-lg font-merriweather">Tell the world your thoughts about Space Mountain!</h3>
+        </section>
+        <form action="/review/createReview" enctype="multipart/form-data" method="POST" class="modal-box m-8">
+        <section class="flex h-2/5 w-full items-center justify-center">
+          <div class="flex justify-center items-center p-5 w-1/3 h-1/2">
             <div class="avatar">
               <div class="w-20 rounded-full">
                 <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" />
               </div>
             </div>
-            <h2 class="m-2 text-2xl">Jim</h2>
+            <h2 class="m-2 text-2xl"><%= user.userName %></h2>
           </div>
           <div class="w-2/3">
             <div class="rating m-2">
-              <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1" />
-              <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1" checked />
-              <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1" />
-              <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1" />
-              <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1" />
+              <input type="radio" name="rating" id="rating1" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+              <input type="radio" name="rating" id="rating2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+              <input type="radio" name="rating" id="rating3" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+              <input type="radio" name="rating" id="rating4" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" checked/>
+              <input type="radio" name="rating" id="rating5" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
             </div>
           </div>
+        </section>
+
+        <section class="h-2/5 w-full flex justify-center items-center flex-col">
+          <label for="desc" class="form-label">Descripton</label>
+          <textarea class="border border-black font-merriweather" id="desc" name="desc" cols="50" rows="10" maxlength="500"></textarea>
+        </section>
+
+        <section class="h-1/5 w-full flex justify-end items-center">
+          <button type="submit" value="Upload" class=" bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather">SUBMIT</button>
+        </section>
+
       </section>
-      <button type="submit" class=" bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather">SUBMIT</button>
-      </form>
+    </form>
+      
     </dialog>
 
-    <section class="w-1/2 h-full p-8">
-
-      
-    <!-- Right section -->
-    <div class="border border-black m-5 overflow-hidden">
-            <section class="flex">
-                <div class="flex justify-center content-center p-5 w-1/3 h-1/2">
-                    <img class="w-8 h-8 m-2" src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" alt="">
-                    <h2 class="m-2 font-merriweather">Jim</h2>
-                </div>
-                <div class="w-2/3">
-                  <div class="rating m-2">
-                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1" />
-                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1" checked />
-                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1" />
-                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1" />
-                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1" />
+    <section class="w-1/2 h-full p-8 flex items-center flex-col">
+        <h2 class="font-karla text-3xl">Reviews</h2>
+        <!-- Right section -->
+        <!-- Review componet -->  
+        <div class="card w-96 bg-base-100 shadow-xl border border-black m-5 overflow-hidden">
+          <div class="card-body">
+            <div>
+              <section class="flex">
+                  <div class="flex justify-center items-center p-5 w-1/3 h-1/2">
+                    <div class="avatar">
+                      <div class="w-10 rounded-full">
+                        <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" />
+                      </div>
+                    </div>
+                      <h2 class="m-2 font-merriweather text-xl">Jim</h2>
                   </div>
-                </div>
-            </section>
+                  <div class="w-2/3 flex justify-center items-center">
+                    <div class="rating m-2">
+                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" checked />
+                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                    </div>
+                  </div>
+              </section>
+  
+              <section class="h-1/2 flex justify-center items-center">
+                  <p class="font-merriweather">Cool ride, long wait times.</p>
+              </section>
+            </div>
+          </div>
+        </div>      
+       <!-- Review componet -->        
+        <div class="card w-96 bg-base-100 shadow-xl border border-black m-5 overflow-hidden">
+          <div class="card-body">
+            <div>
+              <section class="flex">
+                  <div class="flex justify-center items-center p-5 w-1/3 h-1/2">
+                    <div class="avatar">
+                      <div class="w-10 rounded-full">
+                        <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" />
+                      </div>
+                    </div>
+                      <h2 class="m-2 font-merriweather text-xl">Jim</h2>
+                  </div>
+                  <div class="w-2/3 flex justify-center items-center">
+                    <div class="rating m-2">
+                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" checked />
+                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                    </div>
+                  </div>
+              </section>
+  
+              <section class="h-1/2 flex justify-center items-center">
+                  <p class="font-merriweather">Cool ride, long wait times.</p>
+              </section>
+            </div>
+          </div>
+        </div>    
 
-            <section class="h-1/2 flex justify-center content-center">
-                <p class="font-merriweather">Cool ride, long wait times.</p>
-            </section>
-        </div>       
     </section>
 
-    </main>
+  </main>
 
   <% } %>
   

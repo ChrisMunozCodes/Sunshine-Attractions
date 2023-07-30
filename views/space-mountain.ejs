@@ -41,7 +41,7 @@
             <form action="/profile">
               <div class="avatar">
                 <div class="w-10 rounded-full">
-                  <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" />
+                  <img src="<%= user.profilePic %>" alt="User Profile Picture" />
                 </div>
               </div>
             </form>
@@ -137,7 +137,7 @@
           <div class="flex justify-center items-center p-5 w-1/3 h-1/2">
             <div class="avatar">
               <div class="w-20 rounded-full">
-                <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" />
+                <img src="<%= user.profilePic %>" alt="User Profile Picture" />
               </div>
             </div>
             <h2 class="m-2 text-2xl"><%= user.userName %></h2>

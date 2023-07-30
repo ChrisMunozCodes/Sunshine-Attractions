@@ -3,6 +3,7 @@ const router = express.Router();
 const authController = require("../controllers/auth");
 const userController = require("../controllers/user");
 const homeController = require("../controllers/home");
+const upload = require("../middleware/multer");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Main Routes - simplified for now
@@ -16,6 +17,8 @@ router.get('/', (req, res) => {
     const loggedIn = req.isAuthenticated();
     res.render('index', { isDesktop, loggedIn, user: req.user });
   });
+
+router.post("/updateProfilePicture", upload.single("file"), userController.updateProfilePicture);
 
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);

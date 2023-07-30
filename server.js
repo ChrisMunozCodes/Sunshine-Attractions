@@ -70,7 +70,6 @@ app.use(passport.session());
 const upload = multer();
 
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(upload.none()); // for parsing multipart/form-data
 
 //Use flash messages for errors, info, ect...
 app.use(flash());

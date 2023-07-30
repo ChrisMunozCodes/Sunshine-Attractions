@@ -39,16 +39,22 @@
               </a>
             </div>
             <div class="login-container flex justify-center items-center p-5">
-              <form action="/profile">
-                <div class="avatar">
-                  <div class="w-10 rounded-full">
-                    <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" />
+              <div class="dropdown dropdown-hover">
+                <form action="/profile">
+                  <div class="avatar">
+                    <div class="w-10 rounded-full">
+                      <img src="<%= user.profilePic %>" alt="User Profile Picture" />
+                    </div>
                   </div>
-                </div>
-              </form>
-              <form action="/profile">
-                <%= user.userName %>
-              </form>
+                </form>
+                <form action="/profile">
+                  <%= user.userName %>
+                </form>
+                <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 right-0 menu bg-base-200">
+                    <li><a href="/profile" class="active">Profile</a></li>
+                    <li><a>Your reviews</a></li>
+                </ul>
+              </div>
             </div>
           </nav>
         </header>

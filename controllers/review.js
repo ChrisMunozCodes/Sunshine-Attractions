@@ -5,7 +5,7 @@ module.exports = {
   createReview: async (req, res) => {
     try {
       await Review.create({
-        rating: req.body.rating,
+        rating: parseInt(req.body.rating),
         desc: req.body.desc,
         user: req.user.id,
       });

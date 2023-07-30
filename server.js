@@ -13,6 +13,7 @@ const cookieParser = require('cookie-parser');
 const path = require("path");
 const mainRoutes = require("./routes/main");
 const reviewRoutes = require("./routes/review");
+const multer = require("multer"); // for parsing multipart/form-data
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -64,6 +65,12 @@ app.use(
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Configure multer for parsing multipart/form-data
+const upload = multer();
+
+app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(upload.none()); // for parsing multipart/form-data
 
 //Use flash messages for errors, info, ect...
 app.use(flash());

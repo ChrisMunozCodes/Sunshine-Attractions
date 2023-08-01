@@ -24,7 +24,7 @@
 
 ## 🚀 Technologies
 
-Technologies that I used to develop this api
+Technologies that I used to develop this app
 
 - [Node.js](https://nodejs.org/en/)
 - [MongoDB](https://www.w3schools.com/mongodb/)

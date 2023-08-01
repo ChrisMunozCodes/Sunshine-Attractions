@@ -32,7 +32,7 @@ Technologies that I used to develop this api
 - [JavaScript](https://www.javascript.com/)
 - [EJS](https://ejs.co/)
 - [Tailwind](tailwindcss.com)
-- [Cloudinary](([https://cloudinary.com/])
+- [Cloudinary]([https://cloudinary.com/])
 
 ## 💻 Getting started
 

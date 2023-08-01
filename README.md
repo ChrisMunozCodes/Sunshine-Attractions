@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-Image coming soon, app is still being built.
+<a href="https://ibb.co/HXTwLpF"><img src="https://i.ibb.co/PtGXszm/sunshine-attractions-preview.jpg" alt="sunshine-attractions-preview" border="0"></a>
 </p>
 
 ## 👨🏻‍💻 About the project

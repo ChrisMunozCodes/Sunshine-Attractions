@@ -18,67 +18,91 @@
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="http://localhost:2155/assets/css/output.css" />
+    <!-- Google Fonts (Kara 500 & Merriweather 400) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@500&family=Merriweather&display=swap" rel="stylesheet">
+
     <script src="/js/main.js"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
 
 <% if (isDesktop) { %>
     <div class="desktop-container w-screen h-screen">
-      <header>
-        <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5">
-          <div class="logo-container flex justify-center items-center">
-            <a href="/">
-            <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
-            </a>
-          </div>
-          <div class="login-container flex justify-center items-center p-5">
-            <form action="/profile">
-              <div class="avatar">
-                <div class="w-10 rounded-full">
-                  <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" />
+      <% if (loggedIn) { %>
+        <header>
+          <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-3 bg-gray-100">
+            <div class="logo-container flex justify-center items-center">
+              <a href="/">
+              <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+              </a>
+            </div>
+            <div class="login-container flex justify-center items-center p-5">
+              <form action="/profile">
+                <div class="avatar">
+                  <div class="w-10 rounded-full">
+                    <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" />
+                  </div>
                 </div>
+              </form>
+              <form action="/profile">
+                <%= user.userName %>
+              </form>
+            </div>
+          </nav>
+        </header>
+        <% } else { %>
+          <header>
+            <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5">
+              <div class="logo-container flex justify-center items-center">
+                <a href="/">
+                  <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+                </a>
               </div>
-            </form>
-            <form action="/profile">
-              <%= user.userName %>
-            </form>
-          </div>
-        </nav>
-      </header>
+              <div class="login-container flex justify-center items-center p-5">
+                <form action="/login">
+                  <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather">LOGIN</button>
+                </form>
+                <form action="/signup">
+                  <button type="submit" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather">SIGNUP</button>
+                </form>
+              </div>
+            </nav>
+          </header>
+        <% } %>
 
   <main class="w-full h-4/5 flex justify-center">
     <!-- Section for left-side nav bar -->
     <section class="h-full w-1/4 bg-gray-50">
-      <div>
-        <ul>
-          <li>Settings</li>
-        </ul>
-      </div>
+      <ul class="menu bg-base-200 w-full h-full">
+        <li><a class="active">Settings</a></li>
+        <li><a>Your reviews</a></li>
+        <li><a>Plan a Trip *coming soon*</a></li>
+      </ul>
     </section>
 <!-- Section for profile pic and welcome message -->
       <section class="h-full w-4/5 flex justify-center items-center flex-col">
-        <section class="flex justify-center items-center h-2/5 w-full">
+        <section class="flex justify-center items-center h-3/5 w-full flex-col">
           <div>
-            <div class="avatar">
-              <div class="w-10 rounded-full">
-                <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" />
-              </div>
-            </div>
+            <h1 class="text-5xl font-bold">Welcome, <%= user.userName %>!</h1>
           </div>
-          <div>
-            <h1>Welcome, <%= user.userName %>!</h1>
+
+          <div class="avatar m-5">
+            <div class="w-20 rounded-full border border-white">
+              <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" />
+            </div>
           </div>
         </section>
 
-        <section class="h-3/5 w-full flex">
-            <div class="border border-black w-full h-full flex items-center flex-col">
-              <h2>Profile Picture</h2>
-              <p>Change your profile picture.</p>
+        <!-- Section for profile pic -->
+        <section class="h-2/5 w-full flex">
+            <div class=" w-full h-full flex items-center flex-col">
+              <h2>Change your Profile Picture</h2>
+              <input type="file" class="file-input file-input-bordered file-input-warning w-full max-w-xs" />
             </div>
         </section>
       </section>
-<!-- Section for main settings content -->
   </main>
 </div>
 

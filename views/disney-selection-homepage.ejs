@@ -1,0 +1,139 @@
+<!-- Desktop Version -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunshine Attractions</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/imgs/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <!-- Google Fonts (Kara 500 & Merriweather 400) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@500&family=Merriweather&display=swap" rel="stylesheet">
+
+    <script src="/js/main.js"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+<% if (isDesktop) { %>
+    <div class="desktop-container w-screen h-screen">
+        <% if (loggedIn) { %>
+            <header>
+              <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-3 bg-gray-100">
+                <div class="logo-container flex justify-center items-center">
+                  <a href="/">
+                  <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+                  </a>
+                </div>
+                <div class="login-container flex justify-center items-center p-5">
+                  <form action="/profile">
+                    <div class="avatar">
+                      <div class="w-10 rounded-full">
+                        <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" />
+                      </div>
+                    </div>
+                  </form>
+                  <form action="/profile">
+                    <%= user.userName %>
+                  </form>
+                </div>
+              </nav>
+            </header>
+            <% } else { %>
+              <header>
+                <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5">
+                  <div class="logo-container flex justify-center items-center">
+                    <a href="/">
+                      <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+                    </a>
+                  </div>
+                  <div class="login-container flex justify-center items-center p-5">
+                    <form action="/login">
+                      <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather">LOGIN</button>
+                    </form>
+                    <form action="/signup">
+                      <button type="submit" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather">SIGNUP</button>
+                    </form>
+                  </div>
+                </nav>
+              </header>
+            <% } %>
+
+  <main class="w-full h-4/5">
+  <!-- Container for the following three sections -->
+  <div class="hero min-h-screen min-w-screen bg-cover bg-center relative" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg');">
+    <div class="hero-overlay bg-black bg-opacity-75 absolute top-0 left-0 w-full h-full"></div>
+    <div class="hero-content flex items-center justify-center text-center text-white py-10">
+      <!-- The content inside the .hero-content div -->
+      <div class="max-w-md">
+        <h1 class="mb-5 text-7xl font-bold">Discover Disney World</h1>
+        <p class="mb-5">Choose your park, and get ready for your next adventure. See what real people think about rides, dining, and entertainment at Disney World parks.</p>
+        <!-- Use the "flex" class and one of the "space-x-*" classes to add spacing between the buttons -->
+        <div class="flex space-x-4 justify-center">
+          <div class="flex space-x-4 justify-center">
+            <a href="/disney-selection-magickingdom" class="flex-1 btn btn-primary bg-primaryButton text-black border-white">Magic Kingdom</a>
+            <a href="/disney-selection" class="flex-1 btn btn-primary bg-primaryButton text-black border-white">Hollywood Studios</a>
+            <a href="/disney-selection" class="flex-1 btn btn-primary bg-primaryButton text-black border-white">Animal Kingdom</a>
+            <a href="/disney-selection" class="flex-1 btn btn-primary bg-primaryButton text-black border-white">Epcot</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+  <% } %>
+  
+  <!-- Mobile Version -->
+  <% if (!isDesktop) { %>
+    <div class="mobile-container">
+      <!-- Mobile-specific HTML structure -->
+      <header>
+        <!-- Large box for the app title on mobile -->
+        <h1>Sunshine <br> Attractions </br> </h1>
+      </header>
+
+      <div class="search-container">
+        <!-- Search bar content here -->
+      </div>
+
+      <main>
+        <ul>
+            <li>
+                <a href="">Disney</a>
+            </li>
+            <li>
+                <a href="">Universal</a>
+            </li>
+            <li>
+                <a href="">Seaworld</a>
+            </li>
+            <li>
+                <a href="">Busch Gardens</a>
+            </li>
+         </ul>
+      </main>
+
+      <section>
+        <article>
+            <h2>Halloween Horror Nights 2023</h2>
+        </article>
+      </section>
+
+    </div>
+  <% } %>
+</body>
+</html>

@@ -20,7 +20,7 @@ Image coming soon, app is still being built.
 
 ## 👨🏻‍💻 About the project
 
-<p align="left" style="color: red;">Sunshine Attractions is a full-stack Florida theme park review application that makes it easier for theme park goers to get news and information on attractions, shows, and food at various theme parks in the sunshine state, florida! </p>
+<p align="left" style="color: red;">Full-stack review application for theme parks in Florida. Allowing tourists and locals to find up-to-date information on various rides, shows, and food for Florida theme parks. Includes tools to help individuals plan their trips, find important information to save time and help their next trip to be as enjoyable as possible. </p>
 
 ## 🚀 Technologies
 

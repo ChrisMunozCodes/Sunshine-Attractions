@@ -15,16 +15,16 @@
 </p>
 
 <p align="center">
-Image coming soon, app is still being built.
+<a href="https://ibb.co/HXTwLpF"><img src="https://i.ibb.co/PtGXszm/sunshine-attractions-preview.jpg" alt="sunshine-attractions-preview" border="0"></a>
 </p>
 
 ## 👨🏻‍💻 About the project
 
-<p align="left" style="color: red;">Sunshine Attractions is a full-stack Florida theme park review application that makes it easier for theme park goers to get news and information on attractions, shows, and food at various theme parks in the sunshine state, florida! </p>
+<p align="left" style="color: red;">Full-stack review application for theme parks in Florida. Allowing tourists and locals to find up-to-date information on various rides, shows, and food for Florida theme parks. Includes tools to help individuals plan their trips, find important information to save time and help their next trip to be as enjoyable as possible. </p>
 
 ## 🚀 Technologies
 
-Technologies that I used to develop this api
+Technologies that I used to develop this app
 
 - [Node.js](https://nodejs.org/en/)
 - [MongoDB](https://www.w3schools.com/mongodb/)
@@ -32,6 +32,7 @@ Technologies that I used to develop this api
 - [JavaScript](https://www.javascript.com/)
 - [EJS](https://ejs.co/)
 - [Tailwind](tailwindcss.com)
+- [Cloudinary]([https://cloudinary.com/])
 
 ## 💻 Getting started
 
@@ -73,7 +74,11 @@ If you would like to contribute to this project please reach out to me via disco
 ```
 
 # Things to add
-
+- Comments.
+- Likes.
+- Dark Mode?
+- Wait times.
+- Interact Quiz to pair attractions.
 - Trip Planner.
 - User Bookmarks.
 - Adding images to reviews.

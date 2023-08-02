@@ -14,6 +14,10 @@ const path = require("path");
 const mainRoutes = require("./routes/main");
 const reviewRoutes = require("./routes/review");
 const multer = require("multer"); // for parsing multipart/form-data
+const cors = require('cors');
+
+// Enable CORS for all routes
+app.use(cors());
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });

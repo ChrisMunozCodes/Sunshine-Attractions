@@ -77,7 +77,6 @@ If you would like to contribute to this project please reach out to me via disco
 - Comments.
 - Likes.
 - Dark Mode?
-- Wait times.
 - Interact Quiz to pair attractions.
 - Trip Planner.
 - User Bookmarks.

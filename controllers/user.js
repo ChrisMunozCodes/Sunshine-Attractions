@@ -1,5 +1,8 @@
 const cloudinary = require("../middleware/cloudinary");
 const User = require("../models/User"); // Import the User model
+const Review = require("../models/Review"); // Import the Review model
+const csrf = require("csurf");
+const csrfToken = csrf();
 
 module.exports = {
   getProfile: (req, res, isDesktop) => {

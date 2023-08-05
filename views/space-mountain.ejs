@@ -25,6 +25,13 @@
 
     <link rel="stylesheet" href="/css/output.css" />
     <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- Don't remove this script tag, it will cause a bug when clicking "x" inside of the modal -->
+    <script src="/js/main.js"></script>
+        <!-- Don't remove this script tag, it needs to be on top for the inline script that handles converting the rating value into which star
+    is selected in user reviews. -->
+    <script src="assets/js/transfer-review-star-data.js"></script>
+    <script src="assets/js/average-review.js"></script>
   </head>
 <% if (isDesktop) { %>
     <div class="desktop-container w-screen h-screen">
@@ -45,13 +52,13 @@
                     </div>
                   </div>
                 </form>
-                <form action="/profile">
+                <form action="/profile" class="font-karla">
                   <%= user.userName %>
                 </form>
                 <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 right-0 menu bg-base-200">
-                    <li><a href="/profile" class="active">Profile</a></li>
-                    <li><a>Your reviews</a></li>
-                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="/profile" class="active font-merriweather">Profile</a></li>
+                    <li><a class="font-merriweather">Your reviews</a></li>
+                    <li><a href="/logout" class="font-merriweather">Logout</a></li>
                 </ul>
               </div>
             </div>
@@ -86,7 +93,7 @@
      <div class="w-full flex flex-col justify-center items-center">
       <div class="card bg-base-100 shadow-xl w-full">
         <div class="relative">
-          <figure class=" border-black border-2">  
+          <figure class=" border-gray-300 border-2">  
             <img src="assets/image/Sunshine Attractions-logo/space-mountain.jpeg" alt="Photo of Space Mountain">
           </figure>
           <div id="space-wait" class="absolute bottom-4 right-4 bg-black text-white text-5xl border border-primaryButton border-4 rounded-full w-24 h-24 flex justify-center items-center font-bold text-center">
@@ -96,13 +103,16 @@
         <div class="card-body flex">
           <h1 class="text-5xl items-center justify-center w-full flex mt-2 font-karla">Space Mountain</h1>
           <div class="rating m-1 items-center justify-center w-full flex">
-            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" checked />
-            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="3" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="4" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
           </div>
-          
+
+          <div class="flex justify-center items-center font-karla xl">
+            Rating: <%= averageRating.toFixed(1) %>
+          </div>
   
           <div class="w-full flex flex-col justify-center items-center">
               <button class="btn btn-outline m-2 font-merriweather" onclick="my_modal_3.showModal()">Leave a Review</button>
@@ -115,19 +125,31 @@
           </div>
 
           <div>
-            <h2 class="text-2xl w-full flex mt-2 font-karla">Description</h2>
+            <h2 class="text-2xl w-full flex mt-2 font-karla">About:</h2>
             <p class="font-merriweather items-center justify-center">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
           </div>
 
           <div>
-            <h2 class="text-2xl w-full flex mt-2 font-karla">Height Requirement</h2>
+            <h2 class="text-2xl w-full flex mt-2 font-karla">Height Requirement:</h2>
             <p class="font-merriweather items-center justify-center">3′ 8″</p>
           </div>
 
           <div>
-            <h2 class="text-2xl w-full flex mt-2 font-karla">Duration</h2>
+            <h2 class="text-2xl w-full flex mt-2 font-karla">Duration:</h2>
             <p class="font-merriweather items-center justify-center">3 Minutes</p>
           </div>
+
+          <div>
+            <h2 class="text-2xl w-full flex mt-2 font-karla">Drop height:</h2>
+            <p class="font-merriweather items-center justify-center">26′</p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl w-full flex mt-2 font-karla">Inversions?</h2>
+            <p class="font-merriweather items-center justify-center">No</p>
+          </div>
+
+        
   
         </div>
       </div>
@@ -139,30 +161,36 @@
     <form action="/review/createReview" enctype="multipart/form-data" method="POST" class="modal-box m-8">
       <button type="button" id="closeModalBtn" class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
 
-      <section class="h-full w-full p-5">
-
-        <section class="h-1/5 w-full">
-          <h3 class="font-bold text-lg font-merriweather">Tell the world your thoughts about Space Mountain!</h3>
-        </section>
-        <section class="flex h-2/5 w-full items-center justify-center">
-          <div class="flex justify-center items-center p-5 w-1/3 h-1/2">
-            <div class="avatar">
-              <div class="w-20 rounded-full">
-                <img src="<%= user.profilePic || 'assets/image/Sunshine Attractions-logo/default-profile-pic.png' %>" alt="User Profile Picture" />
-              </div>
-            </div>
-            <h2 class="m-2 text-2xl"><%= user.userName %></h2>
-          </div>
-          <div class="w-2/3">
-            <div class="rating m-2">
-              <input type="radio" name="rating" id="rating1" value="1" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-              <input type="radio" name="rating" id="rating2" value="2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-              <input type="radio" name="rating" id="rating3" value="3" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-              <input type="radio" name="rating" id="rating4" value="4" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" checked/>
-              <input type="radio" name="rating" id="rating5" value="5" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+      <section class="flex h-2/5 w-full items-center justify-center">
+        <div class="flex justify-center items-center p-5 w-1/3 h-1/2">
+          <div class="avatar">
+            <div class="w-20 rounded-full">
+              <% if (user && user.profilePic) { %>
+                <img src="<%= user.profilePic %>" alt="User Profile Picture" />
+              <% } else { %>
+                <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" alt="Default Profile Picture" />
+              <% } %>
             </div>
           </div>
-        </section>
+          <h2 class="m-2 text-2xl">
+            <% if (user && user.userName) { %>
+              <%= user.userName %>
+            <% } else { %>
+              Guest User
+            <% } %>
+          </h2>
+        </div>
+        <div class="w-2/3">
+          <div class="rating m-2">
+            <input type="radio" name="rating" id="rating1" value="1" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input type="radio" name="rating" id="rating2" value="2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input type="radio" name="rating" id="rating3" value="3" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input type="radio" name="rating" id="rating4" value="4" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" checked/>
+            <input type="radio" name="rating" id="rating5" value="5" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+          </div>
+        </div>
+      </section>
+      
 
         <section class="h-2/5 w-full flex justify-center items-center flex-col">
           <label for="desc" class="form-label">Descripton</label>
@@ -179,40 +207,71 @@
     </dialog>
 
     <section class="w-1/2 h-full p-8 flex items-center flex-col">
-        <h2 class="font-karla text-3xl">Reviews</h2>
+      <div class="dropdown dropdown-right dropdown-end">
+        <div class="flex justify-around items-center">
+          <h2 class="font-karla text-3xl m-5">All Reviews</h2>
+        <label tabindex="0" class="btn m-1">Filter</label>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+          <li><a class="font-merriweather">All reviews</a></li>
+          <li><a class="font-merriweather">Your reviews</a></li>
+          <li><a class="font-merriweather">Highest rated</a></li>
+          <li><a class="font-merriweather">Most critcal</a></li>
+          <li><a class="font-merriweather">Recent reviews</a></li>
+        </ul>
+      </div>
+      </div>
         <!-- Right section -->
         <!-- Review componet -->
-        <% for(var i=0; i<review.length; i++) {%>  
-        <div class="card w-96 bg-base-100 shadow-xl border border-black m-5 overflow-hidden">
-          <div class="card-body">
-            <div>
-              <section class="flex">
+        <% for (var i = 0; i < review.length; i++) { %>
+          <div class="card w-96 bg-base-100 shadow-xl border border-black m-5 overflow-hidden">
+            <div class="card-body overflow-auto">
+              <div>
+                <section class="flex">
                   <div class="flex justify-center items-center w-1/3 h-1/2">
                     <div class="avatar">
                       <div class="w-10 rounded-full">
-                        <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" />
+                        <% if (review[i].user && review[i].user.profilePic) { %>
+                          <img src="<%= review[i].user.profilePic %>" alt="User Profile Picture" />
+                        <% } else { %>
+                          <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" alt="Default Profile Picture" />
+                        <% } %>
                       </div>
                     </div>
-                      <h2 class="m-2 font-merriweather text-xl"><%= user.userName%></h2>
+                    <h2 class="m-2 font-merriweather text-xl"><%= review[i].user.userName %></h2>
                   </div>
                   <div class="w-2/3 flex justify-center items-center">
-                    <div class="rating m-2">
-                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
-                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" checked />
-                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
-                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
-                      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                    <div class="rating ml-1 mr-1">
+                      <input type="radio" id="star-<%= i %>-1" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                      <input type="radio" id="star-<%= i %>-2" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                      <input type="radio" id="star-<%= i %>-3" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                      <input type="radio" id="star-<%= i %>-4" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                      <input type="radio" id="star-<%= i %>-5" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
                     </div>
                   </div>
-              </section>
-  
-              <section class="h-1/2 flex justify-center items-center">
-                  <p class="font-merriweather"><%= review[i].desc%></p>
-              </section>
+                </section>
+        
+                <section class="h-1/2 flex justify-center items-center pt-5 pb-5">
+                  <p class="font-merriweather"><%= review[i].desc %></p>
+                </section>
+              </div>
             </div>
           </div>
-        </div>
+        
+          <script>
+            (function(i) {
+              // Call the function to set the star rating for this review
+              setStarRating(<%= review[i].rating %>, i);
+              
+              // Disable the radio buttons for star rating
+              const stars = document.querySelectorAll(`input[name="rating-${i}"]`);
+              for (const star of stars) {
+                star.disabled = true;
+              }
+            })(<%= i %>);
+          </script>
+          
         <% } %>
+        
 
   <% } %>
   
@@ -255,7 +314,25 @@
     </div>
   <% } %>
 </body>
-<script src="/js/main.js"></script>
+<script>
+  // Function to calculate the rounded average rating
+  function calculateRoundedAverage(averageRating) {
+    return Math.round(averageRating);
+  }
+
+  // Get the average rating from the server
+  const averageRating = <%= averageRating.toFixed(1) %>;
+
+  // Calculate the rounded average rating
+  const roundedAverageRating = calculateRoundedAverage(averageRating);
+
+  // Set the checked attribute based on the rounded average rating
+  const stars = document.querySelectorAll('input[name="rating-2"]');
+  stars.forEach((star, index) => {
+    star.checked = (index + 1) === roundedAverageRating;
+  });
+</script>
+
 <script src="assets/js/wait-time-api.js"></script>
 <script src="assets/js/close-modal.js"></script>
 </html>

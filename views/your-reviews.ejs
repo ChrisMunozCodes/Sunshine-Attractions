@@ -1,0 +1,214 @@
+<!-- Desktop Version -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sunshine Attractions</title>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/imgs/favicon-32x32.png"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous"
+        />
+        <!-- Google Fonts (Kara 500 & Merriweather 400) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@500&family=Merriweather&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="/css/output.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+    
+        <!-- Don't remove this script tag, it will cause a bug when clicking "x" inside of the modal -->
+        <script src="/js/main.js"></script>
+            <!-- Don't remove this script tag, it needs to be on top for the inline script that handles converting the rating value into which star
+        is selected in user reviews. -->
+        <script src="assets/js/transfer-review-star-data.js"></script>
+        <script src="assets/js/average-review.js"></script>
+      </head>
+
+<% if (isDesktop) { %>
+    <div class="desktop-container w-screen h-screen">
+      <% if (loggedIn) { %>
+        <header>
+          <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-3 bg-gray-100">
+            <div class="logo-container flex justify-center items-center">
+              <a href="/">
+              <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+              </a>
+            </div>
+            <div class="login-container flex justify-center items-center p-5">
+              <div class="dropdown dropdown-hover">
+                <form action="/profile">
+                  <div class="avatar">
+                    <div class="w-10 rounded-full">
+                      <img src="<%= user.profilePic || 'assets/image/Sunshine Attractions-logo/default-profile-pic.png' %>" alt="User Profile Picture" />
+                    </div>
+                  </div>
+                </form>
+                <form action="/profile">
+                  <%= user.userName %>
+                </form>
+                <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 right-0 menu bg-base-200">
+                    <li><a href="/profile" class="active">Profile</a></li>
+                    <li><a>Your reviews</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <% } else { %>
+          <header>
+            <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5">
+              <div class="logo-container flex justify-center items-center">
+                <a href="/">
+                  <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+                </a>
+              </div>
+              <div class="login-container flex justify-center items-center p-5">
+                <form action="/login">
+                  <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather">LOGIN</button>
+                </form>
+                <form action="/signup">
+                  <button type="submit" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather">SIGNUP</button>
+                </form>
+              </div>
+            </nav>
+          </header>
+        <% } %>
+
+  <main class="w-full flex justify-center">
+    <!-- Section for left-side nav bar -->
+    <section class="h-full w-1/4 bg-gray-50">
+        <ul class="menu bg-base-200 w-full h-full">
+            <li><a href="/profile">Settings</a></li>
+            <li><a class="active" href="/your-reviews">Your reviews</a></li>
+            <li><a>Plan a Trip *coming soon*</a></li>
+          </ul>
+    </section>
+<!-- Section for profile pic and welcome message -->
+      <section class="h-full w-4/5 flex justify-center items-center flex-col">
+        <section class="flex justify-center items-center h-3/5 w-full flex-col">
+          <div>
+            <h1 class="text-5xl font-bold">Reviews you posted</h1>
+          </div>
+        </section>
+
+        <!-- Section for profile pic -->
+        <section class="p-8 flex items-center flex-col">
+            <% for (var i = 0; i < review.length; i++) { %>
+                <% if (user && review[i].user && user._id.toString() === review[i].user._id.toString()) { %>
+                <div class="card w-96 bg-base-100 shadow-xl border border-black m-5 overflow-hidden">
+                  <div class="card-body overflow-auto">
+                    <div>
+                      <section class="flex">
+                        <div class="flex justify-center items-center w-1/3 h-1/2">
+                          <div class="avatar">
+                            <div class="w-10 rounded-full">
+                              <% if (review[i].user && review[i].user.profilePic) { %>
+                                <img src="<%= review[i].user.profilePic %>" alt="User Profile Picture" />
+                              <% } else { %>
+                                <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" alt="Default Profile Picture" />
+                              <% } %>
+                            </div>
+                          </div>
+                          <h2 class="m-2 font-merriweather text-xl"><%= review[i].user.userName %></h2>
+                        </div>
+                        <div class="w-2/3 flex justify-center items-center">
+                          <div class="rating ml-1 mr-1">
+                            <input type="radio" id="star-<%= i %>-1" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                            <input type="radio" id="star-<%= i %>-2" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                            <input type="radio" id="star-<%= i %>-3" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                            <input type="radio" id="star-<%= i %>-4" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                            <input type="radio" id="star-<%= i %>-5" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
+                          </div>
+                        </div>
+                      </section>
+              
+                      <section class="h-1/2 flex justify-center items-center pt-5 pb-5">
+                        <p class="font-merriweather"><%= review[i].desc %></p>
+                      </section>
+                      <div class="flex justify-end items-end">
+                          <form
+                            action="/review/deleteReview/<%= review[i]._id %>?_method=DELETE"
+                            method="POST"
+                            class="col-3"
+                          >
+                            <button class="btn btn-primary fa fa-trash" type="submit"></button>
+                          </form>       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <script>
+                  (function(i) {
+                    // Call the function to set the star rating for this review
+                    setStarRating(<%= review[i].rating %>, i);
+                    
+                    // Disable the radio buttons for star rating
+                    const stars = document.querySelectorAll(`input[name="rating-${i}"]`);
+                    for (const star of stars) {
+                      star.disabled = true;
+                    }
+                  })(<%= i %>);
+                </script>
+      <p><%= JSON.stringify(review[i]) %></p>
+      <p><%= JSON.stringify(user[i]) %></p>
+              <% } %>                
+              <% } %>
+        </section>
+      </section>
+  </main>
+</div>
+
+  <% } %>
+  
+  <!-- Mobile Version -->
+  <% if (!isDesktop) { %>
+    <div class="mobile-container">
+      <!-- Mobile-specific HTML structure -->
+      <header>
+        <!-- Large box for the app title on mobile -->
+        <h1>Sunshine <br> Attractions </br> </h1>
+      </header>
+
+      <div class="search-container">
+        <!-- Search bar content here -->
+      </div>
+
+      <main>
+        <ul>
+            <li>
+                <a href="">Disney</a>
+            </li>
+            <li>
+                <a href="">Universal</a>
+            </li>
+            <li>
+                <a href="">Seaworld</a>
+            </li>
+            <li>
+                <a href="">Busch Gardens</a>
+            </li>
+         </ul>
+      </main>
+
+      <section>
+        <article>
+            <h2>Halloween Horror Nights 2023</h2>
+        </article>
+      </section>
+
+    </div>
+  <% } %>
+</body>
+</html>

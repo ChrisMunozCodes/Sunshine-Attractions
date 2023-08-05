@@ -52,7 +52,7 @@
                 </form>
                 <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 right-0 menu bg-base-200">
                     <li><a href="/profile" class="active">Profile</a></li>
-                    <li><a>Your reviews</a></li>
+                    <li><a href="/your-reviews">Your reviews</a></li>
                     <li><a href="/logout">Logout</a></li>
                 </ul>
               </div>
@@ -84,7 +84,7 @@
     <section class="h-full w-1/4 bg-gray-50">
       <ul class="menu bg-base-200 w-full h-full">
         <li><a class="active">Settings</a></li>
-        <li><a>Your reviews</a></li>
+        <li><a href="/your-reviews">Your reviews</a></li>
         <li><a>Plan a Trip *coming soon*</a></li>
       </ul>
     </section>
@@ -100,6 +100,24 @@
               <img src="<%= user.profilePic || 'assets/image/Sunshine Attractions-logo/default-profile-pic.png' %>" alt="User Profile Picture" />
             </div>
           </div>
+
+
+          <div class="flex">
+            <div class="m-2">
+              <ul class="flex">
+                <li><a href="#">Following:</a></li>
+                <li><a href="#">0</a></li>
+              </ul>
+            </div>
+  
+            <div class="m-2">
+              <ul class="flex">
+                <li><a href="#">Followers:</a></li>
+                <li><a href="#">0</a></li>
+              </ul>
+            </div>
+          </div>
+  
         </section>
 
         <!-- Section for profile pic -->

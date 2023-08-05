@@ -6,5 +6,6 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //Post Routes - simplified for now
 
 router.post("/createReview", upload.none(), reviewController.createReview);
+router.delete("/deleteReview/:id", reviewController.deleteReview);
 
 module.exports = router;

@@ -15,9 +15,27 @@ const mainRoutes = require("./routes/main");
 const reviewRoutes = require("./routes/review");
 const multer = require("multer"); // for parsing multipart/form-data
 const cors = require('cors');
+const axios = require('axios');
+const csrf = require("csurf");
+const csrfProtection = csrf();
 
 // Enable CORS for all routes
 app.use(cors());
+
+app.get('/wait-times', async (req, res) => {
+  try {
+    const apiUrl = 'https://queue-times.com/en-US/parks/6/queue_times.json';
+    
+    // Make the API request using Axios
+    const response = await axios.get(apiUrl);
+
+    // Return the API response to the frontend
+    res.json(response.data);
+  } catch (error) {
+    console.error('Error fetching wait times:', error);
+    res.status(500).json({ error: 'Error fetching wait times' });
+  }
+});
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });

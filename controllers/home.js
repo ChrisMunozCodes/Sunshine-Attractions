@@ -1,5 +1,6 @@
 const Review = require("../models/Review"); // Import the Review model
 
+
 module.exports = {
   getIndex: (req, res, isDesktop) => {
     const loggedIn = req.isAuthenticated();
@@ -15,8 +16,17 @@ module.exports = {
   },
   getSpaceMountain: async (req, res, isDesktop) => {
     const loggedIn = req.isAuthenticated();
-    const review = await Review.find({ user: req.user.id });
-    res.render('space-mountain', { user: req.user, isDesktop, loggedIn, review: review });
+    const review = await Review.find({}).populate('user');
+
+    const totalReviews = review.length;
+      
+      // Calculate the total rating sum
+      const totalRatingSum = review.reduce((sum, review) => sum + review.rating, 0);
+      
+      // Calculate the average rating
+      const averageRating = totalRatingSum / totalReviews;
+      
+    res.render('space-mountain', { user: req.user, isDesktop, loggedIn, review: review, averageRating });
   },  
   reviewSpaceMountain: (req, res, isDesktop) => {
     const loggedIn = req.isAuthenticated();
@@ -25,3 +35,4 @@ module.exports = {
     });
   },
 };
+

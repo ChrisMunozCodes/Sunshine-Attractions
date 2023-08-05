@@ -3,6 +3,7 @@ const router = express.Router();
 const authController = require("../controllers/auth");
 const userController = require("../controllers/user");
 const homeController = require("../controllers/home");
+const reviewController = require("../controllers/review");
 const upload = require("../middleware/multer");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
@@ -30,5 +31,6 @@ router.get("/disney-selection-homepage", homeController.getDisneySelectionHomepa
 router.get("/disney-selection-magickingdom", homeController.getDisneySelectionMagicKingdom);
 router.get("/space-mountain", homeController.getSpaceMountain);
 router.get("/review-space-mountain", homeController.reviewSpaceMountain);
+router.get("/your-reviews", ensureAuth, reviewController.getYourReviews);
 
 module.exports = router;

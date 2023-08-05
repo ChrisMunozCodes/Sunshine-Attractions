@@ -17,13 +17,3 @@ document.cookie = `isDesktop=${isDesktop}`;
 
 // Alternatively, store the value in local storage
 localStorage.setItem('isDesktop', isDesktop);
-
-
-// Get a reference to the close button and the modal dialog
-const closeModalBtn = document.getElementById('closeModalBtn');
-const modal = document.getElementById('my_modal_3');
-
-// Add the event listener to close the modal when the button is clicked
-closeModalBtn.addEventListener('click', () => {
-  modal.removeAttribute('open'); // This will close the dialog
-});

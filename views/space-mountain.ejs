@@ -32,6 +32,7 @@
     is selected in user reviews. -->
     <script src="assets/js/transfer-review-star-data.js"></script>
     <script src="assets/js/average-review.js"></script>
+    <script src="assets/js/form-submit-control.js"></script>
   </head>
 <% if (isDesktop) { %>
     <div class="desktop-container w-screen h-screen">
@@ -158,7 +159,7 @@
 
     <!-- Modal -->
     <dialog id="my_modal_3" class="modal">
-    <form action="/review/createReview" enctype="multipart/form-data" method="POST" class="modal-box m-8">
+    <form action="/review/createReview" enctype="multipart/form-data" method="POST" class="modal-box m-8" id="reviewForm">
       <button type="button" id="closeModalBtn" class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
 
       <section class="flex h-2/5 w-full items-center justify-center">
@@ -194,17 +195,29 @@
 
         <section class="h-2/5 w-full flex justify-center items-center flex-col">
           <label for="desc" class="form-label">Descripton</label>
-          <textarea class="border border-black font-merriweather" id="desc" name="desc" cols="50" rows="10" maxlength="500"></textarea>
+          <textarea class="border border-black font-merriweather" id="desc" name="desc" cols="50" rows="10" maxlength="200"></textarea>
+        </section>
+
+        <section>
+          <div class="mb-3 flex justify-center items-center flex-col">
+            <label for="imgUpload" class="form-label">Add photos (Select up to 4)</label>
+            <input type="file" name="files" class="form-control file-input file-input-bordered file-input-warning w-full max-w-xs" multiple />
+          </div>
         </section>
 
         <section class="h-1/5 w-full flex justify-end items-center">
-          <button type="submit" value="Upload" class=" bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather">SUBMIT</button>
+          <input type="hidden" name="pageId" value="123">
+          <button type="submit" value="Upload" class=" bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather" id="submitButton">SUBMIT</button>
         </section>
 
       </section>
     </form>
       
     </dialog>
+
+    <div id="reviewPopup" class="fixed top-0 left-0 w-full h-16 bg-red-500 text-white p-4 text-center hidden">
+      You can only submit one review per page.
+    </div>
 
     <section class="w-1/2 h-full p-8 flex items-center flex-col">
       <div class="dropdown dropdown-right dropdown-end">
@@ -223,7 +236,7 @@
         <!-- Right section -->
         <!-- Review componet -->
         <% for (var i = 0; i < review.length; i++) { %>
-          <div class="card w-96 bg-base-100 shadow-xl border border-black m-5 overflow-hidden">
+          <div class="card w-100 bg-base-100 shadow-xl border border-black m-5 overflow-hidden  min-w-[500px]">
             <div class="card-body overflow-auto">
               <div>
                 <section class="flex">
@@ -250,8 +263,46 @@
                   </div>
                 </section>
         
-                <section class="h-1/2 flex justify-center items-center pt-5 pb-5">
+                <section class="h-1/2 flex justify-center items-center pt-5 pb-5 pl-4 pr-4">
                   <p class="font-merriweather"><%= review[i].desc %></p>
+                </section>
+
+
+                <section>
+                  <ul class="flex w-full p-2 <% if (!review[i].images[0] && !review[i].images[1] && !review[i].images[2] && !review[i].images[3]) { %>hidden<% } %>">
+                    <% if (review[i].images[0]) { %>
+                      <li class="border border-black flex-1 m-2 w-20 h-20">
+                        <img src="<%= review[i].images[0] %>" alt="" class="w-full h-full object-cover">
+                      </li>
+                    <% } %>
+                    <% if (review[i].images[1]) { %>
+                      <li class="border border-black flex-1 m-2 w-20 h-20">
+                        <img src="<%= review[i].images[1] %>" alt="" class="w-full h-full object-cover">
+                      </li>
+                    <% } %>
+                    <% if (review[i].images[2]) { %>
+                      <li class="border border-black flex-1 m-2 w-20 h-20">
+                        <img src="<%= review[i].images[2] %>" alt="" class="w-full h-full object-cover">
+                      </li>
+                    <% } %>
+                    <% if (review[i].images[3]) { %>
+                      <li class="border border-black flex-1 m-2 w-20 h-20">
+                        <img src="<%= review[i].images[3] %>" alt="" class="w-full h-full object-cover">
+                      </li>
+                    <% } %>
+                  </ul>
+                </section> 
+
+                <section class="flex justify-end items-end">
+                  <form
+                  class="col-1"
+                  action="/review/likePost/<%= review[i]._id %>?_method=PUT"
+                  method="POST"
+                >
+                  <button class="btn fa" type="submit"><i class="fa fa-thumbs-up"></i>
+                    <%= review[i].likedBy.includes(user._id) ? review[i].likes : review[i].likes %>
+                  </button>
+                </form>
                 </section>
               </div>
             </div>

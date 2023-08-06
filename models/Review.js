@@ -5,6 +5,10 @@ const ReviewSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },    
+  reviewedBy: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  }],
   rating: {
     type: Number,
   },
@@ -12,6 +16,22 @@ const ReviewSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  images: [
+    {
+      type: String,
+    },
+  ],
+  cloudinaryId: {
+    type: String,
+    require: true,
+  },
+  likes: {
+    type: Number,
+  },
+  likedBy: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  }],
   createdAt: {
     type: Date,
     default: Date.now,

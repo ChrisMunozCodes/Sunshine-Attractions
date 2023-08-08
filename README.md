@@ -14,10 +14,8 @@
   <a href="#-license">License</a>
 </p>
 
-<p> align="center">
-  <a href="https://ibb.co/HXTwLpF">
-    <img src="https://i.ibb.co/PtGXszm/sunshine-attractions-preview-with-border.jpg" alt="sunshine-attractions-preview" border="0">
-  </a>
+<p align="center">
+<a href="https://ibb.co/HXTwLpF"><img src="https://i.ibb.co/PtGXszm/sunshine-attractions-preview.jpg" alt="sunshine-attractions-preview" border="0"></a>
 </p>
 
 <p align="center">

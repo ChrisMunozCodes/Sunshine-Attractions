@@ -20,7 +20,7 @@
 
 ## 👨🏻‍💻 About the project
 
-<p align="left" style="color: red;">Full-stack review application for theme parks in Florida. Allowing tourists and locals to find up-to-date information on various rides, shows, and food for Florida theme parks. Includes tools to help individuals plan their trips, find important information to save time and help their next trip to be as enjoyable as possible. </p>
+<p align="left" style="color: red;"> Sunshine Attractions is a full-stack review application for theme parks in Florida (The sunshine state). Allowing tourists and locals to find up-to-date information on various rides, shows, and food for Florida theme parks. Users are able to track wait times, engage in other reviewers posts, and manage their profile. More features are planned, one of these features include a tool to better user expierence such as finding lowest wait times for the park they're at. Another feature planned in order to make the app more engaging is allowing reviewers to follow each-other and keep up to date on their feed. Sunshine attractions mission is to better the expierence of theme park goers in Florida.</p>
 
 ## 🚀 Technologies
 
@@ -75,11 +75,14 @@ If you would like to contribute to this project please reach out to me via disco
 
 # Things to add
 - Comments.
-- Likes.
+- Lowest wait time feature.
+- Filter reviews
+- Following and followers feature 
+- ~~Likes.~~
 - Dark Mode?
 - Interact Quiz to pair attractions.
 - Trip Planner.
 - User Bookmarks.
-- Adding images to reviews.
+- ~~Adding images to reviews.~~
 
 ---

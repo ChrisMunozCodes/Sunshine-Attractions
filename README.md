@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-<a href="https://ibb.co/v4y99BX"><img src="https://i.ibb.co/r2899td/sunshine-review-page.jpg" alt="sunshine-review-page" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>image hosting</a><br />
+<a href="https://ibb.co/v4y99BX"><img src="https://i.ibb.co/r2899td/sunshine-review-page.jpg" alt="sunshine-review-page" border="0"></a><br>
 </p>
 
 ## 👨🏻‍💻 About the project

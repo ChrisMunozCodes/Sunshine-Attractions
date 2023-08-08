@@ -15,7 +15,9 @@
 </p>
 
 <p align="center">
-<a href="https://ibb.co/HXTwLpF"><img src="https://i.ibb.co/PtGXszm/sunshine-attractions-preview.jpg" alt="sunshine-attractions-preview" border="0"></a>
+  <a href="https://ibb.co/HXTwLpF">
+    <img src="https://i.ibb.co/PtGXszm/sunshine-attractions-preview.jpg" alt="sunshine-attractions-preview" border="0" style="border: 2px solid black;">
+  </a>
 </p>
 
 <p align="center">

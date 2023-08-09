@@ -13,3 +13,7 @@ function calculateRoundedAverage(averageRating) {
   stars.forEach((star, index) => {
     star.checked = (index + 1) === roundedAverageRating;
   });
+
+  stars.forEach((star) => {
+    star.disabled = true;
+  });

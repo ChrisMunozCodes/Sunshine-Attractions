@@ -33,6 +33,7 @@
     <script src="assets/js/transfer-review-star-data.js"></script>
     <script src="assets/js/average-review.js"></script>
     <script src="assets/js/form-submit-control.js"></script>
+    <script src="assets/js/keep-scroll-position.js"></script>
   </head>
 <% if (isDesktop) { %>
     <div class="desktop-container w-screen h-screen">
@@ -111,6 +112,10 @@
             <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
           </div>
 
+          <script>
+            initializeStarRating();
+          </script>      
+
           <div class="flex justify-center items-center font-karla xl">
             Rating: <%= averageRating.toFixed(1) %>
           </div>
@@ -183,10 +188,10 @@
         </div>
         <div class="w-2/3">
           <div class="rating m-2">
-            <input type="radio" name="rating" id="rating1" value="1" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input type="radio" name="rating" id="rating1" value="1" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10"  />
             <input type="radio" name="rating" id="rating2" value="2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
             <input type="radio" name="rating" id="rating3" value="3" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input type="radio" name="rating" id="rating4" value="4" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" checked/>
+            <input type="radio" name="rating" id="rating4" value="4" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" checked disabled />
             <input type="radio" name="rating" id="rating5" value="5" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
           </div>
         </div>
@@ -292,21 +297,43 @@
                     <% } %>
                   </ul>
                 </section> 
+<div class="flex items-end justify-end">
 
-                <section class="flex justify-end items-end">
+              <section class="flex justify-end items-end m-2">
                   <form
                   class="col-1"
                   action="/review/likePost/<%= review[i]._id %>?_method=PUT"
                   method="POST"
                 >
-                  <button class="btn fa" type="submit"><i class="fa fa-thumbs-up"></i>
-                    <%= review[i].likedBy.includes(user._id) ? review[i].likes : review[i].likes %>
-                  </button>
+                <button class="btn <%= review[i].likedBy.includes(user._id) ? 'border-gray text-black' : 'border-gray text-gray-400' %>" type="submit" onclick="toggleLike(<%= i %>)">
+                  <i class="fa fa-thumbs-up" ></i>
+                  <span class="<%= review[i].likedBy.includes(user._id) ? 'text-black' : 'text-black' %>" id="like[i]">
+                    <%= review[i].likes %>
+                  </span>
+                </button>
                 </form>
-                </section>
-              </div>
+              </section>
+
+                <section class="flex justify-end items-end m-2">
+                  <form
+                  class="col-1"
+                  action="/review/likePost/<%= review[i]._id %>?_method=PUT"
+                  method="POST"
+                >
+                <button class="btn fa bg-primaryButton" onclick="my_modal_3.showModal()>
+                <dialog id="my_modal_3" class="modal">
+                  <i class="fa fa-comment" aria-hidden="true"></i>
+                  <span>
+                    0
+                  </span>
+                  </button>
+                </button>
+                </form>
+              </section>
             </div>
           </div>
+        </div>
+      </div>
         
           <script>
             (function(i) {
@@ -381,6 +408,7 @@
   const stars = document.querySelectorAll('input[name="rating-2"]');
   stars.forEach((star, index) => {
     star.checked = (index + 1) === roundedAverageRating;
+    star.disabled = true;
   });
 </script>
 

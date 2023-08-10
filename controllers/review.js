@@ -8,17 +8,6 @@ module.exports = {
     try {
       const pageId = req.body.pageId; // Assuming you have a field in the form with the page ID
   
-      // Check if the user has already submitted a review for this page
-      const existingReview = await Review.findOne({
-        user: req.user.id,
-        reviewedBy: { $in: [req.user.id] },
-      });
-  
-      if (existingReview) {
-        // User has already submitted a review for this page
-        return res.status(400).json({ error: "You can only submit one review per page." });
-      }
-  
     // Upload images to cloudinary
     const uploadPromises = req.files.map(async (file) => {
       const result = await cloudinary.uploader.upload(file.path);

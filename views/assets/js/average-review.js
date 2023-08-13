@@ -3,7 +3,7 @@ function calculateRoundedAverage(averageRating) {
   }
   
   // Get the average rating from the server
-  const averageRating = <%= averageRating.toFixed(1) %>;
+  const averageRating = <%= averageRating.toFixed(1) %>
   
   // Calculate the rounded average rating
   const roundedAverageRating = calculateRoundedAverage(averageRating);

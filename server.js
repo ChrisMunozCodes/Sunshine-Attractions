@@ -13,6 +13,7 @@ const cookieParser = require('cookie-parser');
 const path = require("path");
 const mainRoutes = require("./routes/main");
 const reviewRoutes = require("./routes/review");
+const commentRoutes = require("./routes/comments");
 const multer = require("multer"); // for parsing multipart/form-data
 const cors = require('cors');
 const axios = require('axios');
@@ -99,6 +100,7 @@ app.use(flash());
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
 app.use("/review", reviewRoutes);
+app.use("/comment", commentRoutes);
 
 //Server Running
 app.listen(process.env.PORT, () => {

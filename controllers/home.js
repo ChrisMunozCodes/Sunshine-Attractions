@@ -1,4 +1,5 @@
 const Review = require("../models/Review"); // Import the Review model
+const Comment = require("../models/Comment"); // Import the Comment model
 
 
 module.exports = {
@@ -16,7 +17,18 @@ module.exports = {
   },
   getSpaceMountain: async (req, res, isDesktop) => {
     const loggedIn = req.isAuthenticated();
-    const review = await Review.find({}).populate('user');
+    const comments = await Comment.find({})
+    .populate('user')
+    .populate({
+      path: 'comments', // Populate the 'comments' field for each review
+      populate: { path: 'user' } // Populate the 'user' field for comments
+    });
+    const review = await Review.find({})
+      .populate('user')
+      .populate({
+        path: 'comments', // Populate the 'comments' field for each review
+        populate: { path: 'user' } // Populate the 'user' field for comments
+      });
   
     const totalReviews = review.length;
     
@@ -40,7 +52,7 @@ module.exports = {
       disableReviewButton = true;
     }
   
-    res.render('space-mountain', { user: req.user, isDesktop, loggedIn, review: review, averageRating, disableReviewButton });
+    res.render('space-mountain', { user: req.user, isDesktop, loggedIn, review: review, averageRating, disableReviewButton, comments: comments });
   },
   
   reviewSpaceMountain: (req, res, isDesktop) => {

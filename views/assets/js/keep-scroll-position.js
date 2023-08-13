@@ -1,8 +1,13 @@
-document.addEventListener("DOMContentLoaded", function(event) { 
-    var scrollpos = localStorage.getItem('scrollpos');
-    if (scrollpos) window.scrollTo(0, scrollpos);
+// Get the element with the scroll container
+const scrollContainer = document.querySelector('.desktop-container');
+
+// Store the current scroll position in localStorage when scrolling
+scrollContainer.addEventListener('scroll', function() {
+  localStorage.setItem('scrollpos', scrollContainer.scrollTop);
 });
 
-window.onbeforeunload = function(e) {
-    localStorage.setItem('scrollpos', window.scrollY);
-};
+// Get the stored scroll position from localStorage
+const storedScrollPos = localStorage.getItem('scrollpos');
+
+// Scroll to the stored position
+scrollContainer.scrollTop = storedScrollPos || 0;

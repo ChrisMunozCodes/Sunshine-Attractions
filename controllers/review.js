@@ -33,6 +33,7 @@ module.exports = {
         user: req.user.id,
         reviewedBy: [req.user.id], // Add the user ID to the reviewedBy array
         likes: 0,
+        comments: req.params.id
       });
   
       console.log("Review has been added!");

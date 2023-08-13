@@ -1,33 +1,17 @@
 const mongoose = require("mongoose");
 
-const ReviewSchema = new mongoose.Schema({
+const CommentSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },    
-  reviewedBy: [{
+  commentedBy: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   }],
-  comments: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Comment",
-  },    
-  rating: {
-    type: Number,
-  },
-  desc: {
+  commentDesc: {
     type: String,
     required: true,
-  },
-  images: [
-    {
-      type: String,
-    },
-  ],
-  cloudinaryId: {
-    type: String,
-    require: true,
   },
   likes: {
     type: Number,
@@ -36,14 +20,14 @@ const ReviewSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   }],
-  comments: [{
+  review: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Comment",
-  }],
+    ref: "Review",
+  },
   createdAt: {
     type: Date,
     default: Date.now,
   },
 });
 
-module.exports = mongoose.model("Review", ReviewSchema);
+module.exports = mongoose.model("Comment", CommentSchema);

@@ -44,9 +44,11 @@ module.exports = {
             comment.likes++;
             comment.likedBy.push(userId);
           }
-      
+          res.json({
+            liked: hasLiked,  // true or false depending on whether the user liked or unliked
+            likes: comment.likes,  // updated like count
+          });
           await comment.save();
-          res.redirect("back");
         } catch (err) {
           console.log(err);
           res.redirect("back");

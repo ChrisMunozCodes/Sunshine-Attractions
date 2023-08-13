@@ -88,9 +88,11 @@ module.exports = {
         review.likes++;
         review.likedBy.push(userId);
       }
-  
+        res.json({
+          liked: hasLiked,  // true or false depending on whether the user liked or unliked
+          likes: review.likes,  // updated like count
+      });
       await review.save();
-      res.redirect("back");
     } catch (err) {
       console.log(err);
       res.redirect("back");

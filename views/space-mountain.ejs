@@ -35,6 +35,8 @@
     <script src="assets/js/form-submit-control.js"></script>
     <script src="assets/js/control-modal-4.js"></script>
     <script src="assets/js/toggleHiddenComments.js"></script>
+    <script src="assets/js/ajax-comment-like.js"></script>
+    <script src="assets/js/ajax-review-like.js"></script>
   </head>
 <% if (isDesktop) { %>
     <div class="desktop-container w-screen h-screen overflow-auto">
@@ -99,8 +101,14 @@
           <figure class=" border-gray-300 border-2">  
             <img src="assets/image/Sunshine Attractions-logo/space-mountain.jpeg" alt="Photo of Space Mountain">
           </figure>
-          <div id="space-wait" class="absolute bottom-4 right-4 bg-black text-white text-5xl border border-primaryButton border-4 rounded-full w-24 h-24 flex justify-center items-center font-bold text-center">
-            60
+          <div class="absolute bottom-4 right-4 bg-black text-white text-5xl border border-primaryButton border-4 w-24 h-24 flex flex-col justify-center items-center font-bold text-center">
+            <section id="space-wait">
+              <span class="loading loading-spinner text-warning"></span>  
+            </section>
+            <section>
+              <h2 class="text-sm">Wait Time</h2>
+            </section>
+
           </div>
         </div>
         <div class="card-body flex">
@@ -316,21 +324,24 @@
                 
               <div class="flex items-end justify-end">
 
-              <section class="flex justify-end items-end m-2">
+                <section class="flex justify-end items-end m-2">
                   <form
-                  class="col-1"
-                  action="/review/likePost/<%= review[i]._id %>?_method=PUT"
-                  method="POST"
-                >
-                <button class="btn bg-secondaryButton <%= review[i].likedBy.includes(user._id) ? 'border-gray text-black' : 'border-gray text-gray-400' %>" type="submit" onclick="toggleLike(<%= i %>)">
-                  <i class="fa fa-thumbs-up" ></i>
-                  <span class="<%= review[i].likedBy.includes(user._id) ? 'text-black' : 'text-black' %>" id="like[i]">
-                    <%= review[i].likes %>
-                  </span>
-                </button>
-                </form>
-              </section>
-              
+                    class="col-1"
+                    data-action="/review/likePost/<%= review[i]._id %>?_method=PUT"
+                    method="POST"
+                  >
+                    <button class="btn bg-secondaryButton <%= review[i].likedBy.includes(user._id) ? 'border-gray text-black' : 'border-gray text-gray-400' %>"
+                            type="button"
+                            onclick="toggleLike(<%= i %>)">
+                      <i class="fa fa-thumbs-up"></i>
+                      <span class="<%= review[i].likedBy.includes(user._id) ? 'text-black' : 'text-black' %>"
+                            id="like_<%= i %>">
+                        <%= review[i].likes %>
+                      </span>
+                    </button>
+                  </form>
+                </section>
+                
               <!-- Comment Button Start -->
               <section class="flex justify-end items-end m-2">
                 <form class="col-1" action="" method="POST" onsubmit="return false;">
@@ -355,7 +366,7 @@
       <ul class="flex h-10 items-center justify-center">
         <input class="input input-bordered w-full max-w-xs border border-black items-center" id="commentDesc<%= i %>" name="commentDesc" cols="50" rows="10" maxlength="200" placeholder="Write a comment to <%= review[i].user.userName %>"></input>
         <span class="loading loading-spinner text-warning hidden m-5" id="loadingSpinner<%= i %>"></span>
-        <button type="submit" value="Submit" class="btn btn-outline m-2" id="submitButton<%= i %>">Submit</button>
+        <button type="button" class="btn btn-outline m-2" id="submitButton<%= i %>" onclick="submitComment(<%= i %>)">Submit</button>
       </ul>
     </form>
   </section>
@@ -395,18 +406,14 @@
           </div>
           <p><%= comments[k].commentDesc %></p>
           <section class="flex justify-end items-end m-2">
-            <form
-            class="col-1"
-            action="/comment/likeComment/<%= comments[k]._id %>?_method=PUT"
-            method="POST"
-          >
-          <button class="btn <%= comments[k].likedBy.includes(user._id) ? 'border-gray text-black' : 'border-gray text-gray-400' %>" type="submit" onclick="toggleLike(<%= k %>)">
-            <i class="fa fa-thumbs-up" ></i>
-            <span class="<%= comments[k].likedBy.includes(user._id) ? 'text-black' : 'text-black' %>" id="like<%= k %>">
-              <%= comments[k].likes %>
-            </span>
-          </button>
-          </form>
+            <form class="col-1" id="likeCommentForm_<%= k %>" data-comment-id="<%= comments[k]._id %>">
+              <button class="btn " type="button" onclick="likeComment(<%= k %>)">
+                <i class="fa fa-thumbs-up" ></i>
+                <span id="like<%= k %>">
+                  <%= comments[k].likes %>
+                </span>
+              </button>
+            </form>
         </section>
         </div>
       </div>

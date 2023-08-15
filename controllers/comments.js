@@ -8,6 +8,7 @@ module.exports = {
           const newComment = await Comment.create({
             commentDesc: req.body.commentDesc,
             likes: 0,
+            dislikes: 0,
             review: req.params.id, // Associating comment with review
             user: req.user.id,    // Assigning the user who created the comment
           });
@@ -47,6 +48,34 @@ module.exports = {
           res.json({
             liked: hasLiked,  // true or false depending on whether the user liked or unliked
             likes: comment.likes,  // updated like count
+          });
+          await comment.save();
+        } catch (err) {
+          console.log(err);
+          res.redirect("back");
+        }
+      },
+      dislikeComment: async (req, res) => {
+        try {
+          const commentId = req.params.id;
+          const userId = req.user._id;
+      
+          // Check if the user has already liked the review
+          const comment = await Comment.findById(commentId);
+          const hasDisliked = comment.dislikedBy.includes(userId);
+      
+          if (hasDisliked) {
+            // User has already liked the review, remove their like
+            comment.dislikes--;
+            comment.dislikedBy = comment.dislikedBy.filter(dislikedUserId => dislikedUserId.toString() !== userId.toString());
+          } else {
+            // User hasn't liked the review, add their like
+            comment.dislikes++;
+            comment.dislikedBy.push(userId);
+          }
+          res.json({
+            disliked: hasDisliked,  // true or false depending on whether the user liked or unliked
+            dislikes: comment.dislikes,  // updated like count
           });
           await comment.save();
         } catch (err) {

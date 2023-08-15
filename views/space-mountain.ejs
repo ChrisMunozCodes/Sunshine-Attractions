@@ -36,6 +36,7 @@
     <script src="assets/js/control-modal-4.js"></script>
     <script src="assets/js/toggleHiddenComments.js"></script>
     <script src="assets/js/ajax-comment-like.js"></script>
+    <script src="assets/js/ajax-comment-dislike.js"></script>
     <script src="assets/js/ajax-review-like.js"></script>
   </head>
 <% if (isDesktop) { %>
@@ -330,14 +331,14 @@
                     data-action="/review/likePost/<%= review[i]._id %>?_method=PUT"
                     method="POST"
                   >
-                    <button class="btn bg-secondaryButton <%= review[i].likedBy.includes(user._id) ? 'border-gray text-black' : 'border-gray text-gray-400' %>"
-                            type="button"
-                            onclick="toggleLike(<%= i %>)">
-                      <i class="fa fa-thumbs-up"></i>
-                      <span class="<%= review[i].likedBy.includes(user._id) ? 'text-black' : 'text-black' %>"
-                            id="like_<%= i %>">
-                        <%= review[i].likes %>
-                      </span>
+                  <button class="btn bg-secondaryButton <%= user && review[i].likedBy.includes(user._id) ? 'border-gray text-black' : 'border-gray text-gray-400' %>"
+                    type="button"
+                    onclick="toggleLike(<%= i %>)">
+                    <i class="fa fa-thumbs-up"></i>
+                    <span class="<%= user && review[i].likedBy.includes(user._id) ? 'text-black' : 'text-black' %>"
+                      id="like_<%= i %>">
+                      <%= review[i].likes %>
+                     </span>
                     </button>
                   </form>
                 </section>
@@ -405,16 +406,35 @@
             <h2 class="m-2 font-merriweather text-xl"><%= comments[k].user.userName %></h2>
           </div>
           <p><%= comments[k].commentDesc %></p>
+        <section class="flex items-end justify-end">
           <section class="flex justify-end items-end m-2">
             <form class="col-1" id="likeCommentForm_<%= k %>" data-comment-id="<%= comments[k]._id %>">
-              <button class="btn " type="button" onclick="likeComment(<%= k %>)">
-                <i class="fa fa-thumbs-up" ></i>
-                <span id="like<%= k %>">
-                  <%= comments[k].likes %>
-                </span>
-              </button>
+              <button class="btn <%= comments[k].likedBy.includes(user._id) ? 'border-gray text-black' : 'border-gray text-gray-400' %>"
+                type="button"
+                onclick="likeComment(<%= k %>)"
+                data-comment-id="<%= comments[k]._id %>">
+          <i class="fa fa-thumbs-up"></i>
+          <span class="<%= comments[k].likedBy.includes(user._id) ? 'text-black' : 'text-black' %>" id="like<%= k %>">
+            <%= comments[k].likes %>
+          </span>
+        </button>
             </form>
         </section>
+
+        <section class="flex justify-end items-end m-2">
+          <form class="col-1" id="dislikeCommentForm_<%= k %>" data-comment-id2="<%= comments[k]._id %>">
+            <button class="btn <%= comments[k].dislikedBy.includes(user._id) ? 'border-gray text-black' : 'border-gray text-gray-400' %>"
+              type="button"
+              onclick="dislikeComment(<%= k %>)"
+              data-comment-id2="<%= comments[k]._id %>">
+        <i class="fa fa-thumbs-down"></i>
+        <span class="<%= comments[k].dislikedBy.includes(user._id) ? 'text-black' : 'text-black' %>" id="dislike<%= k %>">
+          <%= comments[k].dislikes %>
+        </span>
+      </button>
+          </form>
+      </section>
+    </section>
         </div>
       </div>
     <% } %>

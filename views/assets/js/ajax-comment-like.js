@@ -20,11 +20,9 @@ function likeComment(commentIndex) {
       if (data.liked) {
         likeButton.classList.remove("border-gray", "text-black");
         likeButton.classList.add("border-gray", "text-gray-400");
-        likeCount.classList.remove("text-black");
       } else {
         likeButton.classList.add("border-gray", "text-black");
         likeButton.classList.remove("border-gray", "text-gray-400");
-        likeCount.classList.add("text-black");
       }
   
       likeCount.textContent = data.likes;

@@ -1,7 +1,7 @@
 // change-filter-heading.js
 
 document.addEventListener("DOMContentLoaded", function() {
-    const filterLinks = document.querySelectorAll(".dropdown-content a");
+    const filterLinks = document.querySelectorAll("#filter-link");
     const reviewsHeading = document.getElementById("reviewsHeading");
   
     // Retrieve the selected filter from localStorage on page load

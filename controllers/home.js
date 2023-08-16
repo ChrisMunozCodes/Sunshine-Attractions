@@ -2,21 +2,26 @@ const Review = require("../models/Review"); // Import the Review model
 const Comment = require("../models/Comment"); // Import the Comment model
 
 
+
 module.exports = {
-  getIndex: (req, res, isDesktop) => {
+  getIndex: (req, res) => {
     const loggedIn = req.isAuthenticated();
+    const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
     res.render('index', { isDesktop, loggedIn });
   },
-  getDisneySelectionHomepage: (req, res, isDesktop) => {
+  getDisneySelectionHomepage: (req, res) => {
     const loggedIn = req.isAuthenticated();
+    const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
     res.render('disney-selection-homepage', { user: req.user, isDesktop, loggedIn });
   },
-  getDisneySelectionMagicKingdom: (req, res, isDesktop) => {
+  getDisneySelectionMagicKingdom: (req, res) => {
     const loggedIn = req.isAuthenticated();
+    const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
     res.render('disney-selection-magickingdom', { user: req.user, isDesktop, loggedIn });
   },
-  getSpaceMountain: async (req, res, isDesktop) => {
+  getSpaceMountain: async (req, res) => {
     const loggedIn = req.isAuthenticated();
+    const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
   // Initialize variables for filtering
   let filter = req.query.filter || 'all'; // Default to 'all' filter
   let filteredReview = [];
@@ -112,8 +117,9 @@ module.exports = {
 
   },
   
-  reviewSpaceMountain: (req, res, isDesktop) => {
+  reviewSpaceMountain: (req, res) => {
     const loggedIn = req.isAuthenticated();
+    const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
     res.render('review-space-mountain', { isDesktop }, {
       loggedIn: loggedIn,
     });

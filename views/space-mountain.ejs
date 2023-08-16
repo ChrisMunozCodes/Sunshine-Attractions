@@ -366,9 +366,14 @@
   <section>
     <form action="/comment/createComment/<%= review[i]._id %>" method="POST" id="commentForm<%= i %>">
       <ul class="flex h-10 items-center justify-center">
-        <input class="input input-bordered w-full max-w-xs border border-black items-center" id="commentDesc<%= i %>" name="commentDesc" cols="50" rows="10" maxlength="200" placeholder="Write a comment to <%= review[i].user.userName %>"></input>
-        <span class="loading loading-spinner text-warning hidden m-5" id="loadingSpinner<%= i %>"></span>
-        <button type="button" class="btn btn-outline m-2" id="submitButton<%= i %>" onclick="submitComment(<%= i %>)">Submit</button>
+        <% if (loggedIn) { %>
+          <input class="input input-bordered w-full max-w-xs border border-black items-center" id="commentDesc<%= i %>" name="commentDesc" cols="50" rows="10" maxlength="200" placeholder="Write a comment to <%= review[i].user.userName %>"></input>
+          <span class="loading loading-spinner text-warning hidden m-5" id="loadingSpinner<%= i %>"></span>
+          <button type="button" class="btn btn-outline m-2" id="submitButton<%= i %>" onclick="submitComment(<%= i %>)">Submit</button>
+        <% } else { %>
+          <input class="input input-bordered w-full max-w-xs border border-black items-center" id="commentDesc<%= i %>" name="commentDesc" cols="50" rows="10" maxlength="200" placeholder="You must be logged in to comment." disabled></input>
+          <button type="button" class="btn btn-outline m-2" id="submitButton<%= i %>" onclick="submitComment(<%= i %>)" disabled>Submit</button>
+        <% } %>
       </ul>
     </form>
   </section>
@@ -435,7 +440,7 @@
             </button>
           </form>
         </section>
-        
+
     </section>
         </div>
       </div>

@@ -32,5 +32,7 @@ router.get("/disney-selection-magickingdom", homeController.getDisneySelectionMa
 router.get("/space-mountain", homeController.getSpaceMountain);
 router.get("/review-space-mountain", homeController.reviewSpaceMountain);
 router.get("/your-reviews", ensureAuth, reviewController.getYourReviews);
+router.get("/your-comments", ensureAuth, reviewController.getYourComments);
+
 
 module.exports = router;

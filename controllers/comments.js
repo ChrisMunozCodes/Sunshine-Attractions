@@ -27,6 +27,26 @@ module.exports = {
           res.status(500).send("Internal Server Error");
         }
       },
+      deleteComment: async (req, res) => {
+        try {
+          const comment = await Comment.findById(req.params.id);
+          if (!comment) {
+            return res.redirect("/your-comments");
+          }
+      
+          // Check if the current user is the owner of the review
+          if (comment.user.toString() === req.user._id.toString()) {
+            await Comment.deleteOne({ _id: req.params.id });
+            console.log("Deleted Comment");
+          } else {
+            console.log("Unauthorized deletion attempt");
+          }
+          res.redirect("/your-comments");
+        } catch (err) {
+          console.error("Error deleting comment:", err);
+          res.redirect("/your-comments");
+        }
+      },
       likeComment: async (req, res) => {
         try {
           const commentId = req.params.id;

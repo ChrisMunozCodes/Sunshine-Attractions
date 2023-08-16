@@ -1,5 +1,6 @@
 const cloudinary = require("../middleware/cloudinary");;
 const Review = require("../models/Review"); // Import the Review model
+const Comment = require("../models/Comment"); // Import the Review model
 const User = require("../models/User"); // Import the User model
 
 
@@ -44,11 +45,16 @@ module.exports = {
     }
   },
   
-  getYourReviews: async (req, res, isDesktop) => {
+getYourReviews: async (req, res, isDesktop) => {
     const loggedIn = req.isAuthenticated();
     const review = await Review.find({}).populate('user');
     res.render("your-reviews.ejs", {user: req.user, isDesktop, loggedIn, review: review});
-    
+},
+getYourComments: async (req, res, isDesktop) => {
+  const loggedIn = req.isAuthenticated();
+  const review = await Review.find({}).populate('user');
+  const comment = await Comment.find({}).populate('user');
+  res.render("your-comments.ejs", {user: req.user, isDesktop, loggedIn, review: review, comments: comment});
 },
   deleteReview: async (req, res) => {
     try {

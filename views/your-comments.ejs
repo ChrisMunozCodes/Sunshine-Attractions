@@ -90,8 +90,8 @@
     <section class="h-full w-1/4 bg-gray-50">
         <ul class="menu bg-base-200 w-full h-full">
             <li><a href="/profile">Settings</a></li>
-            <li><a class="active" href="/your-reviews">Your reviews</a></li>
-            <li><a href="/your-comments">Your comments</a></li>
+            <li><a href="/your-reviews">Your reviews</a></li>
+            <li><a class="active" href="/your-comments">Your comments</a></li>
             <li><a>Plan a Trip *coming soon*</a></li>
           </ul>
     </section>
@@ -99,72 +99,44 @@
       <section class="h-full w-4/5 flex justify-center items-center flex-col">
         <section class="flex justify-center items-center h-3/5 w-full flex-col">
           <div>
-            <h1 class="text-5xl font-bold">Reviews you posted</h1>
+            <h1 class="text-5xl font-bold">Comments you posted</h1>
           </div>
         </section>
 
         <!-- Section for profile pic -->
-        <section class="p-8 flex items-center flex-col">
-            <% for (var i = 0; i < review.length; i++) { %>
-                <% if (user && review[i].user && user._id.toString() === review[i].user._id.toString()) { %>
-                <div class="card w-96 bg-base-100 shadow-xl border border-black m-5 overflow-hidden">
-                  <div class="card-body overflow-auto">
-                    <div>
-                      <section class="flex">
-                        <div class="flex justify-center items-center w-1/3 h-1/2">
-                          <div class="avatar">
-                            <div class="w-10 rounded-full">
-                              <% if (review[i].user && review[i].user.profilePic) { %>
-                                <img src="<%= review[i].user.profilePic %>" alt="User Profile Picture" />
-                              <% } else { %>
-                                <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" alt="Default Profile Picture" />
-                              <% } %>
-                            </div>
-                          </div>
-                          <h2 class="m-2 font-merriweather text-xl"><%= review[i].user.userName %></h2>
+        <section class="p-8 flex items-center flex-col w-full h-full">
+        <% for (var i = 0; i < review.length; i++) { %>
+            <% for (let k = 0; k < comments.length; k++) { %>
+                <% if (comments[k].review._id.toString() === review[i]._id.toString()) { %>
+                    <div class="card w-96 bg-base-100 shadow-xl border border-black m-5 overflow-hidden">
+                  <div class="card-body">
+                    <div class="flex justify-center items-center w-1/3 h-1/2">
+                      <div class="avatar">
+                        <div class="w-10 rounded-full">
+                          <% if (comments[k].user && comments[k].user.profilePic) { %>
+                            <img src="<%= comments[k].user.profilePic %>" alt="User Profile Picture" />
+                          <% } else { %>
+                            <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" alt="Default Profile Picture" />
+                          <% } %>
                         </div>
-                        <div class="w-2/3 flex justify-center items-center">
-                          <div class="rating ml-1 mr-1">
-                            <input type="radio" id="star-<%= i %>-1" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
-                            <input type="radio" id="star-<%= i %>-2" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
-                            <input type="radio" id="star-<%= i %>-3" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
-                            <input type="radio" id="star-<%= i %>-4" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
-                            <input type="radio" id="star-<%= i %>-5" name="rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-8 h-8" />
-                          </div>
-                        </div>
-                      </section>
-              
-                      <section class="h-1/2 flex justify-center items-center pt-5 pb-5">
-                        <p class="font-merriweather"><%= review[i].desc %></p>
-                      </section>
-                      <div class="flex justify-end items-end">
-                          <form
-                            action="/review/deleteReview/<%= review[i]._id %>?_method=DELETE"
-                            method="POST"
-                            class="col-3"
-                          >
-                            <button class="btn btn-primary fa fa-trash" type="submit"></button>
-                          </form>       
                       </div>
+                      <h2 class="m-2 font-merriweather text-xl"><%= comments[k].user.userName %></h2>
+                    </div>
+                    <p><%= comments[k].commentDesc %></p>
+                    <div class="flex justify-end items-end">
+                        <form
+                          action="/comment/deleteComment/<%= comments[k]._id %>?_method=DELETE"
+                          method="POST"
+                          class="col-3"
+                        >
+                          <button class="btn btn-primary fa fa-trash" type="submit"></button>
+                        </form>       
                     </div>
                   </div>
                 </div>
-              
-                <script>
-                  (function(i) {
-                    // Call the function to set the star rating for this review
-                    setStarRating(<%= review[i].rating %>, i);
-                    
-                    // Disable the radio buttons for star rating
-                    const stars = document.querySelectorAll(`input[name="rating-${i}"]`);
-                    for (const star of stars) {
-                      star.disabled = true;
-                    }
-                  })(<%= i %>);
-                </script>
-              <% } %>                
               <% } %>
-        </section>
+              <% } %>
+              <% } %>
       </section>
   </main>
 </div>

@@ -94,9 +94,9 @@ If you would like to contribute to this project please reach out to me via disco
 ```
 
 # Things to add
-- Comments.
+- ~~Comments.~~
 - Lowest wait time feature.
-- Filter reviews
+- ~~Filter reviews~~
 - Following and followers feature 
 - ~~Likes.~~
 - Dark Mode?

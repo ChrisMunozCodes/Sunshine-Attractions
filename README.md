@@ -2,10 +2,6 @@
  Sunshine Attractions
 </h1>
 
-<h2 align="center">
- The best review app for Theme Parks in Florida.
-</h2>
-
 <p align="center">
   <a href="#-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -15,16 +11,46 @@
 </p>
 
 <p align="center">
-<a href="https://ibb.co/HXTwLpF"><img src="https://i.ibb.co/PtGXszm/sunshine-attractions-preview.jpg" alt="sunshine-attractions-preview" border="0"></a>
+ <kbd>
+  <a href="https://ibb.co/fSrJqjt">
+    <img src="https://i.ibb.co/KGVnbT7/13d79afae339dc3b6081ba6f00990edb.jpg" alt="13d79afae339dc3b6081ba6f00990edb" class="border border-black">
+  </a>
+ </kbd>
+</p>
+
+## 👨🏻‍💻 Welcome to Sunshine Attractions
+
+<p align="left" style="color: red;"> Sunshine Attractions is a full-stack review application for theme parks in Florida (The sunshine state). Allowing tourists and locals to find up-to-date information on various rides, shows, and food for Florida theme parks. Users are able to track wait times, engage in other reviewers posts, and manage their profile. More features are planned, one of these features include a tool to better user expierence such as finding lowest wait times for the park they're at. Another feature planned in order to make the app more engaging is allowing reviewers to follow each-other and keep up to date on their feed. Sunshine attractions mission is to better the expierence of theme park goers in Florida.</p>
+
+## 🔆 Home Page
+
+<p align="left">
+ Welcome to Sunshine Attractions, below you will find the home page that consists of various theme parks in Florida. Users have plenty of options to start exploring new attractions, food, and entertainment.
+</p>
+
+<p align="center">
+<a href="https://ibb.co/K25V0tr"><img src="https://i.ibb.co/QPJYbWK/66033a4f3c7b93cc76890798f053294a.jpg" alt="66033a4f3c7b93cc76890798f053294a" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/math-keyboard'></a><br />
+</p>
+
+## 🔆 Review Component
+
+<p align="left">
+This is what a user review looks like. Reviews show the user profile picture, along with their username, and star rating. You can see their thoughts about the specific attractions, food, or show in the description box. The review componets support likes, comments from other users, and comment likes / dislikes.
+</p>
+
+<p align="center">
+<a href="https://ibb.co/YQy0cvN"><img src="https://i.ibb.co/r0cdxnQ/e06c384147f9f1070627700f43f1ddae.png" alt="e06c384147f9f1070627700f43f1ddae" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/math-keyboard'></a><br />
+</p>
+
+## 🔆 Review Componet
+
+<p align="left">
+This is what a user review looks like. Reviews show the user profile picture, along with their username, and star rating. You can see their thoughts about the specific attractions, food, or show in the description box. The review componets support likes, comments from other users, and comment likes / dislikes.
 </p>
 
 <p align="center">
 <a href="https://ibb.co/v4y99BX"><img src="https://i.ibb.co/r2899td/sunshine-review-page.jpg" alt="sunshine-review-page" border="0"></a><br>
 </p>
-
-## 👨🏻‍💻 About the project
-
-<p align="left" style="color: red;"> Sunshine Attractions is a full-stack review application for theme parks in Florida (The sunshine state). Allowing tourists and locals to find up-to-date information on various rides, shows, and food for Florida theme parks. Users are able to track wait times, engage in other reviewers posts, and manage their profile. More features are planned, one of these features include a tool to better user expierence such as finding lowest wait times for the park they're at. Another feature planned in order to make the app more engaging is allowing reviewers to follow each-other and keep up to date on their feed. Sunshine attractions mission is to better the expierence of theme park goers in Florida.</p>
 
 ## 🚀 Technologies
 
@@ -78,9 +104,9 @@ If you would like to contribute to this project please reach out to me via disco
 ```
 
 # Things to add
-- Comments.
+- ~~Comments.~~
 - Lowest wait time feature.
-- Filter reviews
+- ~~Filter reviews~~
 - Following and followers feature 
 - ~~Likes.~~
 - Dark Mode?

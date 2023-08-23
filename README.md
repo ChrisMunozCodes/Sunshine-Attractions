@@ -15,6 +15,10 @@
 </p>
 
 <p align="center">
+ Welcome to Sunshine Attractions, below you will find the home page that consists of various theme parks in Florida. Users have plenty of options to start exploring new attractions, food, and entertainment.
+</p>
+
+<p align="center">
 <a href="https://ibb.co/K25V0tr"><img src="https://i.ibb.co/QPJYbWK/66033a4f3c7b93cc76890798f053294a.jpg" alt="66033a4f3c7b93cc76890798f053294a" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/math-keyboard'></a><br />
 </p>
 

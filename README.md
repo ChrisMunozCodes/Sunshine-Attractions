@@ -15,7 +15,7 @@
   <a href="https://ibb.co/fSrJqjt">
     <img src="https://i.ibb.co/KGVnbT7/13d79afae339dc3b6081ba6f00990edb.jpg" alt="13d79afae339dc3b6081ba6f00990edb" class="border border-black">
   </a>
- </kbd>kbd>
+ </kbd>
 </p>
 
 ## 👨🏻‍💻 About the project

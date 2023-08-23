@@ -3,8 +3,12 @@ const validator = require("validator");
 const User = require("../models/User");
 
 exports.getLogin = (req, res) => {
+  const loggedIn = req.isAuthenticated();
+  const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
   res.render("login", {
     title: "Login",
+    loggedIn,
+    isDesktop
   });
 };
 
@@ -54,8 +58,12 @@ exports.logout = (req, res) => {
 };
 
 exports.getSignup = (req, res) => {
+  const loggedIn = req.isAuthenticated();
+  const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
   res.render("signup", {
-    title: "Create Account",
+    title: "Signup",
+    loggedIn,
+    isDesktop
   });
 };
 

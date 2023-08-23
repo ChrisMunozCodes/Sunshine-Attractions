@@ -801,6 +801,10 @@ html {
 }
 
 @media (hover:hover) {
+  .link-hover:hover {
+    text-decoration-line: underline;
+  }
+
   .label a:hover {
     --tw-text-opacity: 1;
     color: hsl(var(--bc) / var(--tw-text-opacity));
@@ -1346,6 +1350,10 @@ html {
 .link {
   cursor: pointer;
   text-decoration-line: underline;
+}
+
+.link-hover {
+  text-decoration-line: none;
 }
 
 .mask {
@@ -2038,6 +2046,20 @@ html {
   --tw-bg-opacity: 0.2;
   color: hsl(var(--bc) / var(--tw-text-opacity));
   --tw-text-opacity: 0.2;
+}
+
+.label-text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: hsl(var(--bc) / var(--tw-text-opacity));
+}
+
+.label-text-alt {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: hsl(var(--bc) / var(--tw-text-opacity));
 }
 
 .input[list]::-webkit-calendar-picker-indicator {
@@ -2848,6 +2870,10 @@ html {
   margin: auto;
 }
 
+.m-10 {
+  margin: 2.5rem;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -2891,6 +2917,10 @@ html {
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .box-border {
@@ -2941,6 +2971,10 @@ html {
   height: 6rem;
 }
 
+.h-3\/4 {
+  height: 75%;
+}
+
 .h-3\/5 {
   height: 60%;
 }
@@ -2951,6 +2985,10 @@ html {
 
 .h-40 {
   height: 10rem;
+}
+
+.h-5\/6 {
+  height: 83.333333%;
 }
 
 .h-8 {

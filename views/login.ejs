@@ -13,77 +13,159 @@
       href="/imgs/favicon-32x32.png"
     />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
-      crossorigin="anonymous"
-    />
-    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
     />
+    <!-- Google Fonts (Kara 500 & Merriweather 400) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@500&family=Merriweather&display=swap" rel="stylesheet">
+
+    <script src="/js/main.js"></script>
+    <link rel="stylesheet" href="/css/output.css" />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
-  <header>
-    <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5">
-      <div class="logo-container flex justify-center items-center">
-        <a href="/">
-        <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
-        </a>
-      </div>
-      <div class="login-container flex justify-center items-center p-5">
-        <form action="/login">
-          <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2">LOGIN</button>
-        </form>
-        <form action="/signup">
-          <button type="submit" class=" bg-primaryButton border rounded-md shadow-sm p-3 m-2">SIGNUP</button>
-        </form>
-      </div>
-    </nav>
-  </header>
-
-<main class="container">
-  <div class="row justify-content-center">
-    <section class="col-6 mt-5">
-      <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
-      <div class="alert alert-danger"><%= el.msg %></div>
-      <% }) %> <% } %> <% if (locals.messages.info) { %> <%
-      messages.info.forEach( el => { %>
-      <div class="alert alert-info"><%= el.msg %></div>
-      <% }) %> <% } %>
-      <form action="/login" method="POST">
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            name="email"
-          />
+<% if (isDesktop) { %>
+  <div class="desktop-container w-screen h-screen">
+  <% if (loggedIn) { %>
+    <header>
+      <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-3 bg-gray-100">
+        <div class="logo-container flex justify-center items-center">
+          <a href="/">
+          <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+          </a>
         </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            name="password"
-          />
+        <div class="login-container flex justify-center items-center p-5">
+          <div class="dropdown dropdown-hover">
+            <form action="/profile">
+              <div class="avatar">
+                <div class="w-10 rounded-full">
+                  <img src="<%= user.profilePic || 'assets/image/Sunshine Attractions-logo/default-profile-pic.png' %>" alt="User Profile Picture" />
+                </div>
+              </div>
+            </form>
+            <form action="/profile" class="font-karla">
+              <%= user.userName %>
+            </form>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 right-0 menu bg-base-200">
+                <li><a href="/profile" class="active font-merriweather">Profile</a></li>
+                <li><a href="/your-reviews" class="font-merriweather">Your reviews</a></li>
+                <li><a href="/logout" class="font-merriweather">Logout</a></li>
+            </ul>
+          </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+      </nav>
+    </header>
+  <% } else { %>
+    <header>
+      <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5  bg-gray-100 mb-10">
+        <div class="logo-container flex justify-center items-center">
+          <a href="/">
+            <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+          </a>
+        </div>
+        <div class="login-container flex justify-center items-center p-5">
+          <form action="/login">
+            <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather">LOGIN</button>
+          </form>
+          <form action="/signup">
+            <button type="submit" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather">SIGNUP</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+  <% } %>
 
-      <p>Not a member?</p> <span><form action="/signup"><button>Signup instead</button></form></span>
-    </section>
+<main class="flex justify-center items-top w-full h-5/6">
+  
+      <section class="w-1/3 h-3/4 border border-gray-400 p-5 flex justify-center items-center">
+        <div class="card-body">
+          <div class="form-control">
+            <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+              <div class="alert alert-danger"><%= el.msg %></div>
+              <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+              messages.info.forEach( el => { %>
+              <div class="alert alert-info"><%= el.msg %></div>
+              <% }) %> <% } %>
+            <form action="/login" method="POST">
+              <label class="label form-label" for="exampleInputEmail1">
+                <span class="label-text">Email</span>
+              </label>
+              <input 
+              type="email" 
+              placeholder="email" 
+              class="input input-bordered w-full"
+              id="exampleInputPassword1"
+              name="email"
+              aria-describedby="emailHelp"
+               />
+          </div>
+
+            <div class="form-control">
+              <label class="label" for="exampleInputPassword1">
+                <span class="label-text">Password</span>
+              </label>
+              <input 
+               placeholder="password"
+               class="input input-bordered" 
+               id="exampleInputPassword1"
+               name="password"
+               type="password"
+               />
+              <label class="label">
+                <a href="/signup" class="label-text-alt link link-hover">Create an account</a>
+              </label>
+            </div>
+            <div class="form-control mt-6">
+              <button class="btn btn-primary bg-primaryButton text-black border-white" type="submit">Login</button>
+            </div>
+          </div>
+        </form>
+        </div>
   </div>
-</main>
+<% } %>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>   
-</body>
+  <!-- Mobile Version -->
+  <% if (!isDesktop) { %>
+    <div class="mobile-container">
+      <!-- Mobile-specific HTML structure -->
+      <header>
+        <!-- Large box for the app title on mobile -->
+        <h1>Sunshine <br> Attractions </br> </h1>
+      </header>
+
+      <div class="search-container">
+        <!-- Search bar content here -->
+      </div>
+
+      <main>
+        <ul>
+            <li>
+                <a href="">Disney</a>
+            </li>
+            <li>
+                <a href="">Universal</a>
+            </li>
+            <li>
+                <a href="">Seaworld</a>
+            </li>
+            <li>
+                <a href="">Busch Gardens</a>
+            </li>
+         </ul>
+      </main>
+
+      <section>
+        <article>
+            <h2>Halloween Horror Nights 2023</h2>
+        </article>
+      </section>
+
+    </div>
+  <% } %>
+
+</main>
 </html>

@@ -35,10 +35,6 @@
 </p>
 
 <p align="center">
-<a href="https://ibb.co/HXTwLpF"><img src="https://i.ibb.co/PtGXszm/sunshine-attractions-preview.jpg" alt="sunshine-attractions-preview" border="0"></a>
-</p>
-
-<p align="center">
 <a href="https://ibb.co/v4y99BX"><img src="https://i.ibb.co/r2899td/sunshine-review-page.jpg" alt="sunshine-review-page" border="0"></a><br>
 </p>
 

@@ -15,11 +15,11 @@
 </p>
 
 <p align="center">
-<a href="https://ibb.co/K25V0tr"><img src="https://i.ibb.co/QPJYbWK/66033a4f3c7b93cc76890798f053294a.jpg" alt="66033a4f3c7b93cc76890798f053294a" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/math-keyboard'>subscript copy and paste</a><br />
+<a href="https://ibb.co/K25V0tr"><img src="https://i.ibb.co/QPJYbWK/66033a4f3c7b93cc76890798f053294a.jpg" alt="66033a4f3c7b93cc76890798f053294a" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/math-keyboard'></a><br />
 </p>
 
 <p align="center">
-<a href="https://ibb.co/YQy0cvN"><img src="https://i.ibb.co/r0cdxnQ/e06c384147f9f1070627700f43f1ddae.png" alt="e06c384147f9f1070627700f43f1ddae" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/math-keyboard'>superscript text generator</a><br />
+<a href="https://ibb.co/YQy0cvN"><img src="https://i.ibb.co/r0cdxnQ/e06c384147f9f1070627700f43f1ddae.png" alt="e06c384147f9f1070627700f43f1ddae" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/math-keyboard'></a><br />
 </p>
 
 <p align="center">

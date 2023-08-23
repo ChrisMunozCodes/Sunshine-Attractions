@@ -2,9 +2,13 @@
  Sunshine Attractions
 </h1>
 
-<h2 align="center">
- Track wait times, and review attractions from your favorite Florida theme park.
-</h2>
+<p align="center">
+  <a href="#-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-license">License</a>
+</p>
 
 <p align="center">
 <a href="https://ibb.co/fSrJqjt"><img src="https://i.ibb.co/KGVnbT7/13d79afae339dc3b6081ba6f00990edb.jpg" alt="13d79afae339dc3b6081ba6f00990edb" border="0"></a>
@@ -13,14 +17,6 @@
 ## 👨🏻‍💻 About the project
 
 <p align="left" style="color: red;"> Sunshine Attractions is a full-stack review application for theme parks in Florida (The sunshine state). Allowing tourists and locals to find up-to-date information on various rides, shows, and food for Florida theme parks. Users are able to track wait times, engage in other reviewers posts, and manage their profile. More features are planned, one of these features include a tool to better user expierence such as finding lowest wait times for the park they're at. Another feature planned in order to make the app more engaging is allowing reviewers to follow each-other and keep up to date on their feed. Sunshine attractions mission is to better the expierence of theme park goers in Florida.</p>
-
-<p align="center">
-  <a href="#-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-license">License</a>
-</p>
 
 <p align="center">
  Welcome to Sunshine Attractions, below you will find the home page that consists of various theme parks in Florida. Users have plenty of options to start exploring new attractions, food, and entertainment.

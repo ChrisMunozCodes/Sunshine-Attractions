@@ -1,14 +1,14 @@
 <h1 align="center">
  Sunshine Attractions
-</h1>
 
-<p align="center">
+ <p align="center">
   <a href="#-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-license">License</a>
 </p>
+</h1>
 
 <p align="center">
 <a href="https://ibb.co/fSrJqjt"><img src="https://i.ibb.co/KGVnbT7/13d79afae339dc3b6081ba6f00990edb.jpg" alt="13d79afae339dc3b6081ba6f00990edb" border="0"></a>

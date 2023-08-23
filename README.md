@@ -32,8 +32,20 @@
 <a href="https://ibb.co/K25V0tr"><img src="https://i.ibb.co/QPJYbWK/66033a4f3c7b93cc76890798f053294a.jpg" alt="66033a4f3c7b93cc76890798f053294a" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/math-keyboard'></a><br />
 </p>
 
+## 🔆 Review Componet
+
+<p align="left">
+This is what a user review looks like. Reviews show the user profile picture, along with their username, and star rating. You can see their thoughts about the specific attractions, food, or show in the description box. The review componets support likes, comments from other users, and comment likes / dislikes.
+</p>
+
 <p align="center">
 <a href="https://ibb.co/YQy0cvN"><img src="https://i.ibb.co/r0cdxnQ/e06c384147f9f1070627700f43f1ddae.png" alt="e06c384147f9f1070627700f43f1ddae" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/math-keyboard'></a><br />
+</p>
+
+## 🔆 Review Componet
+
+<p align="left">
+This is what a user review looks like. Reviews show the user profile picture, along with their username, and star rating. You can see their thoughts about the specific attractions, food, or show in the description box. The review componets support likes, comments from other users, and comment likes / dislikes.
 </p>
 
 <p align="center">

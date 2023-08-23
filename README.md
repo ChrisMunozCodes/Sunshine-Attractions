@@ -11,11 +11,9 @@
 </p>
 
 <p align="center">
-  <div style="border="3" solid black; display: inline-block;">
-    <a href="https://ibb.co/fSrJqjt">
-      <img src="https://i.ibb.co/KGVnbT7/13d79afae339dc3b6081ba6f00990edb.jpg" alt="13d79afae339dc3b6081ba6f00990edb">
-    </a>
-  </div>
+  <a href="https://ibb.co/fSrJqjt">
+    <img src="https://i.ibb.co/KGVnbT7/13d79afae339dc3b6081ba6f00990edb.jpg" alt="13d79afae339dc3b6081ba6f00990edb" class="border">
+  </a>
 </p>
 
 ## 👨🏻‍💻 About the project

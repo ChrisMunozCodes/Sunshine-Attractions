@@ -3,7 +3,7 @@
 </h1>
 
 <h2 align="center">
- The best review app for Theme Parks in Florida.
+ Track wait times, and review attractions from your favorite Florida theme park.
 </h2>
 
 <p align="center">

@@ -5,6 +5,10 @@ const ReviewSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },    
+  page: {
+    type: String,
+    required: true,
+  },
   reviewedBy: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",

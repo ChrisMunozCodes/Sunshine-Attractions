@@ -5,12 +5,14 @@ const Review = require("../models/Review"); // Import the Review model
 module.exports = {
     createComment: async (req, res) => {
         try {
+          const pageName = req.body.pageName
           const newComment = await Comment.create({
             commentDesc: req.body.commentDesc,
             likes: 0,
             dislikes: 0,
             review: req.params.id, // Associating comment with review
             user: req.user.id,    // Assigning the user who created the comment
+            page: pageName
           });
 
               // Update the corresponding review's comments array

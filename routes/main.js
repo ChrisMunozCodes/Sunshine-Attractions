@@ -30,6 +30,7 @@ router.get("/profile", ensureAuth, userController.getProfile);
 router.get("/disney-selection-homepage", homeController.getDisneySelectionHomepage);
 router.get("/disney-selection-magickingdom", homeController.getDisneySelectionMagicKingdom);
 router.get("/space-mountain", homeController.getSpaceMountain);
+router.get("/thunder-mountain", homeController.getThunderMountain);
 router.get("/review-space-mountain", homeController.reviewSpaceMountain);
 router.get("/your-reviews", ensureAuth, reviewController.getYourReviews);
 router.get("/your-comments", ensureAuth, reviewController.getYourComments);

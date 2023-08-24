@@ -7,6 +7,7 @@ const User = require("../models/User"); // Import the User model
 module.exports = {
    createReview: async (req, res) => {
     try {
+      const pageName = req.body.pageName
       const pageId = req.body.pageId; // Assuming you have a field in the form with the page ID
   
     // Upload images to cloudinary
@@ -34,7 +35,8 @@ module.exports = {
         user: req.user.id,
         reviewedBy: [req.user.id], // Add the user ID to the reviewedBy array
         likes: 0,
-        comments: req.params.id
+        comments: req.params.id,
+        page: pageName
       });
   
       console.log("Review has been added!");

@@ -99,7 +99,7 @@
       <div class="card bg-base-100 shadow-xl shadow-black">
         <div class="relative">
           <figure class="rounded-2xl">  
-            <img class="object-cover" src="assets/image/Sunshine Attractions-logo/space-mountain.jpeg" alt="Photo of Space Mountain">
+            <img class="object-cover" src="assets/image/Sunshine Attractions-logo/big-thunder-mountain.jpeg" alt="Photo of Thunder Mountain">
           </figure>
           <div class="absolute bottom-4 right-4 bg-black text-white text-5xl border border-primaryButton border-4 w-24 h-24 flex flex-col justify-center items-center font-bold text-center shadow-md shadow-black">
             <section id="space-wait">
@@ -112,7 +112,7 @@
           </div>
         </div>
         <div class="card-body flex">
-          <h1 class="text-5xl items-center justify-center w-full flex mt-2 font-karla">Space Mountain</h1>
+          <h1 class="text-5xl items-center justify-center w-full flex mt-2 font-karla">Thunder Mountain</h1>
           <div class="rating m-1 items-center justify-center w-full flex">
             <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
             <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
@@ -149,7 +149,7 @@
 
           <div>
             <h2 class="text-2xl w-full flex mt-2 font-karla">About:</h2>
-            <p class="font-merriweather items-center justify-center">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
+            <p class="font-merriweather items-center justify-center">Thunder Mountain is a fast paced rocky rollercoaster that takes place on a railroad from the old west.</p>
           </div>
 
           <div>
@@ -235,7 +235,7 @@
         </section>
         
         <input type="hidden" name="pageName" value="<%= pageName %>">
-
+        
       </section>
     </form>
       
@@ -256,9 +256,10 @@
         </div>
       </div>
         <!-- Right section -->
-        <!-- Review componet -->  
+        <!-- Review componet -->
+        
         <% for (var i = 0; i < review.length; i++) { %>
-          <% if (review[i].page === 'space-mountain') { %>    
+            <% if (review[i].page === 'thunder-mountain') { %>    
         <div class="card bg-base-100 shadow-xl border border-black m-5 overflow-hidden min-w-[500px] max-w-[500px]">
             <div class="card-body overflow-auto box-border">
               <div>
@@ -453,7 +454,7 @@
           </div>
         </div>
 </div>
-        
+<% } %>
           <script>
             (function(i) {
               // Call the function to set the star rating for this review
@@ -468,7 +469,6 @@
           </script>
           
         <% } %>
-      <% } %>
         <script>
           // Function to calculate the rounded average rating
           function calculateRoundedAverage(averageRating) {

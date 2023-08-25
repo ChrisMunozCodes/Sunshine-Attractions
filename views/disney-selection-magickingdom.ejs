@@ -26,9 +26,10 @@
     <script src="/js/main.js"></script>
     <link rel="stylesheet" href="/css/output.css" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="assets/js/animate-blur.js">
   </head>
 <% if (isDesktop) { %>
-    <div class="desktop-container w-screen h-screen">
+    <div class="desktop-container w-screen h-screen overflow-auto">
         <% if (loggedIn) { %>
           <header>
             <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-3 bg-gray-100">
@@ -78,309 +79,129 @@
               </header>
             <% } %>
 
-  <main class="w-full h-4/5 pl-40 pr-40">
-  <!-- Container for the following three sections -->
+    <main class="w-full h-4/5">
+      <!-- Container -->
 
-    <!-- Section for Rides, Food, and Shows listings -->
-    <section class="w-full h-full">
-      
-        <!-- Ride listings -->
-        <section class="w-full h-1/3 m-5">
-            <section class="w-full h-1/5">
-              <h2 class="text-3xl font-bold font-karla">Rides</h2>
-            </section>
-            <section class="w-full h-2/3">
-              <div class="carousel carousel-center w-full p-4 space-x-4 bg-neutral rounded-box h-40 overflow-x-auto">
-                <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                  <a href="/space-mountain">
-                    <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/space-mountain.jpeg'); background-size: cover;">
-                      <div class="card-body p-4">
-                        <h2 class="card-title text-3xl truncate font-karla">Space Mountain</h2>
-                        <div class="card-actions justify-center mt-4">
-                            <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              
-                <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                  <a href="/thunder-mountain">
-                    <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/big-thunder-mountain.jpeg'); background-size: cover;">
-                      <div class="card-body p-4">
-                        <h2 class="card-title text-3xl truncate font-karla">Thunder Mountain</h2>
-                        <div class="card-actions justify-center mt-4">
-                          <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              
-                <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                  <a href="/disney-selection-homepage">
-                    <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/mine-train.jpeg'); background-size: cover;">
-                      <div class="card-body p-4">
-                        <h2 class="card-title text-3xl truncate font-karla flex-wrap">Seven Dwarfs Mine Train</h2>
-                        <div class="card-actions justify-center mt-4">
-                          <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                  <a href="/disney-selection-homepage">
-                    <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/pirates.jpeg'); background-size: cover;">
-                      <div class="card-body p-4">
-                        <h2 class="card-title text-3xl truncate font-karla">Pirates of the Caribbean</h2>
-                        <div class="card-actions justify-center mt-4">
-                          <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                  <a href="/disney-selection-homepage">
-                    <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/haunted-mansion.jpg'); background-size: cover;">
-                      <div class="card-body p-4">
-                        <h2 class="card-title text-3xl truncate font-karla">Haunted Mansion</h2>
-                        <div class="card-actions justify-center mt-4">
-                          <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                  <a href="/disney-selection-homepage">
-                    <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/peter-pan.jpeg'); background-size: cover;">
-                      <div class="card-body p-4">
-                        <h2 class="card-title text-3xl truncate font-karla">Peter Pan's Flight</h2>
-                        <div class="card-actions justify-center mt-4">
-                          <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                  <a href="/disney-selection-homepage">
-                    <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/jungle-cruise.png'); background-size: cover;">
-                      <div class="card-body p-4">
-                        <h2 class="card-title text-3xl truncate font-karla">The Jungle Cruise</h2>
-                        <div class="card-actions justify-center mt-4">
-                          <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </section>            
-
+        <section class="bg-black font-karla h-1/3 w-screen border-primaryButton border-8  overflow-hidden box-border relative">
+          <div class="w-full h-full absolute inset-0 transition-all duration-1000 bg-black opacity-0 animate-fade-in"></div>
+          <div class="w-full h-full relative">
+            <video class="w-full h-full object-cover animate-blur" autoplay loop muted>
+              <source src="assets/image/Sunshine Attractions-logo/rollercoaster.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <span id="typed-text" class="w-full flex justify-center items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white  text-8xl font-bold"></span>
+          </div>
         </section>
-
-                <!-- Ride listings -->
-                <section class="w-full h-1/3 m-5">
-                  <section class="w-full h-1/5">
-                      <h2 class="text-3xl font-bold font-karla">Dining</h2>
-                  </section>
-                  <section class="w-full h-2/3">
-                    <div class="carousel carousel-center w-full p-4 space-x-4 bg-neutral rounded-box h-40 overflow-x-auto">
-                      <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden">
-                        <a href="/disney-selection-homepage">
-                          <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg'); background-size: cover;">
-                            <div class="card-body p-4">
-                              <h2 class="card-title text-3xl truncate font-karla">Be Our Guest</h2>
-                              <div class="card-actions justify-center mt-4">
-                                <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    
-                      <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                        <a href="/disney-selection-homepage">
-                          <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg'); background-size: cover;">
-                            <div class="card-body p-4">
-                              <h2 class="card-title text-3xl truncate font-karla">Cinderella's Royal Table</h2>
-                              <div class="card-actions justify-center mt-4">
-                                <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    
-                      <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                        <a href="/disney-selection-homepage">
-                          <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg'); background-size: cover;">
-                            <div class="card-body p-4">
-                              <h2 class="card-title text-3xl truncate font-karla">Crystal Palace</h2>
-                              <div class="card-actions justify-center mt-4">
-                                <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                        <a href="/disney-selection-homepage">
-                          <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg'); background-size: cover;">
-                            <div class="card-body p-4">
-                              <h2 class="card-title text-3xl truncate font-karla">Jungle Navigation Co. LTD Skipper Canteen</h2>
-                              <div class="card-actions justify-center mt-4">
-                                <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                        <a href="/disney-selection-homepage">
-                          <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg'); background-size: cover;">
-                            <div class="card-body p-4">
-                              <h2 class="card-title text-3xl truncate font-karla">Liberty Tree Tavern</h2>
-                              <div class="card-actions justify-center mt-4">
-                                <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                        <a href="/disney-selection-homepage">
-                          <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg'); background-size: cover;">
-                            <div class="card-body p-4">
-                              <h2 class="card-title text-3xl truncate font-karla">Tony's Town Square Restaurant</h2>
-                              <div class="card-actions justify-center mt-4">
-                                <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                        <a href="/disney-selection-homepage">
-                          <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg'); background-size: cover;">
-                            <div class="card-body p-4">
-                              <h2 class="card-title text-3xl truncate font-karla">The Plaza Restaurant</h2>
-                              <div class="card-actions justify-center mt-4">
-                                <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </section>            
+        
+        <style>
+          @keyframes blurAnimation {
+            0% {
+              filter: blur(0);
+            }
+            100% {
+              filter: blur(10px);
+            }
+          }
+          
+          @keyframes fadeAnimation {
+            100% {
+              opacity: .2;
+            }
+            0% {
+              opacity: 1;
+            }
+          }
+        
+          .animate-blur {
+            animation: blurAnimation 7s forwards, fadeAnimation 8s forwards;
+          }
+        </style>
+        
+        <script>
+          const text = "Discover Magic Kingdom";
+          const typedTextElement = document.getElementById('typed-text');
+          let index = 0;
+          let typingInterval;
+        
+          function startTyping() {
+            typingInterval = setInterval(typeCharacter, 150);
+          }
+        
+          function typeCharacter() {
+            if (index < text.length) {
+              typedTextElement.textContent += text.charAt(index);
+              index++;
+            } else {
+              clearInterval(typingInterval);
+            }
+          }
+        
+          startTyping();
+        </script>
+        
+          
+          <!-- listings -->
+          <section class="w-screen overflow-auto box-border">
+            <ul class="flex box-border overflow-auto">
+              <li class="w-1/3 m-5 text-center justify-center items-center overflow-auto box-border">
+                  <a href="/disney-magickingdom-rides">
+                   <div class="card w-full h-full bg-base-100 shadow-xl image-full">
+                     <figure><img src="assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg" alt="Shoes" /></figure>
+                     <div class="card-body p-0 overflow-auto flex w-full h-full justify-center items-center">
+                      <section class="p-5">
+                        <h2 class="card-title text-5xl font-karla">RIDES</h2>
+                      </section>
       
-              </section>
-
-                      <!-- Ride listings -->
-        <section class="w-full h-1/3 m-5">
-          <section class="w-full h-1/5">
-              <h2 class="text-3xl font-bold font-karla">Entertainment</h2>
-          </section>
-          <section class="w-full h-2/3">
-            <div class="carousel carousel-center w-full p-4 space-x-4 bg-neutral rounded-box h-40 min-w-xs">
-              <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden">
-                <a href="/disney-selection-homepage">
-                  <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg'); background-size: cover;">
-                    <div class="card-body p-4">
-                      <h2 class="card-title text-3xl truncate font-karla">Happily Ever After</h2>
-                      <div class="card-actions justify-center mt-4">
-                        <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                      </div>
-                    </div>
+                      <section class="card-actions justify-center w-full p-5">
+                       <button class="btn btn-primary bg-primaryButton text-black border-white w-full">Explore</button>
+                      </section>
+                     </div>
+                   </div>
+                  </a>
+              </li>
+              <li class="w-1/3 m-5 text-center justify-center items-center overflow-auto box-border">
+               <a href="/disney-selection">
+                <div class="card w-full h-full bg-base-100 shadow-xl image-full">
+                  <figure><img src="assets/image/Sunshine Attractions-logo/1-universal-orlando-resort-globe-1661870709.jpeg" alt="Shoes" /></figure>
+                  <div class="card-body p-0 overflow-auto flex w-full h-full justify-center items-center">
+    
+                    <section class="p-5">
+                      <h2 class="card-title text-4xl font-karla">FOOD</h2>
+                    </section>
+    
+                    <section class="card-actions justify-center w-full p-5">
+                     <button class="btn btn-primary bg-primaryButton text-black border-white w-full">Explore</button>
+                    </section>
+    
                   </div>
-                </a>
-              </div>
-            
-              <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                <a href="/disney-selection-homepage">
-                  <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg'); background-size: cover;">
-                    <div class="card-body p-4">
-                      <h2 class="card-title text-3xl truncate font-karla">Mickey's PhilharMagic</h2>
-                      <div class="card-actions justify-center mt-4">
-                        <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            
-              <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                <a href="/disney-selection-homepage">
-                  <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg'); background-size: cover;">
-                    <div class="card-body p-4">
-                      <h2 class="card-title text-3xl truncate font-karla">Festival of Fantasy Parade </h2>
-                      <div class="card-actions justify-center mt-4">
-                        <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                <a href="/disney-selection-homepage">
-                  <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg'); background-size: cover;">
-                    <div class="card-body p-4">
-                      <h2 class="card-title text-3xl truncate font-karla">Mickey's Royal Friendship Faire </h2>
-                      <div class="card-actions justify-center mt-4">
-                        <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                <a href="/disney-selection-homepage">
-                  <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg'); background-size: cover;">
-                    <div class="card-body p-4">
-                      <h2 class="card-title text-3xl truncate font-karla">Country Bear Jamboree</h2>
-                      <div class="card-actions justify-center mt-4">
-                        <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                <a href="/disney-selection-homepage">
-                  <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg'); background-size: cover;">
-                    <div class="card-body p-4">
-                      <h2 class="card-title text-3xl truncate font-karla">Enchanted Tiki Room</h2>
-                      <div class="card-actions justify-center mt-4">
-                        <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="carousel-item mx-2 bg-white rounded-lg shadow-lg overflow-hidden min-w-xs">
-                <a href="/disney-selection-homepage">
-                  <div class="card h-full bg-base-100 shadow-xl image-full rounded-lg" style="background-image: url('assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg'); background-size: cover;">
-                    <div class="card-body p-4">
-                      <h2 class="card-title text-3xl truncate font-karla">A Pirate's Adventure </h2>
-                      <div class="card-actions justify-center mt-4">
-                        <button class="btn btn-primary bg-primaryButton text-black border-white">Explore</button>
-                      </div>
-                    </div>
-                  </div>
-                </a>
+                </div>
+               </a>
+           </li>
+         <li class="w-1/3 m-5 text-center justify-center items-center overflow-auto box-border">
+           <a href="/disney-selection">
+            <div class="card w-full h-full bg-base-100 shadow-xl image-full">
+              <figure><img src="assets/image/Sunshine Attractions-logo/st-pete-beach-condo-rentals.jpeg" alt="Shoes" /></figure>
+              <div class="card-body p-0 overflow-auto flex w-full h-full justify-center items-center">
+    
+                <section class="p-5">
+                  <h2 class="card-title text-4xl font-karla">SHOWS<h2>
+                </section>
+    
+                <section class="card-actions justify-center w-full p-5">
+                 <button class="btn btn-primary bg-primaryButton text-black border-white w-full">Explore</button>
+                </section>
+    
               </div>
             </div>
-          </section>            
+           </a>
+       </li>
+     </ul>
+                  
+            
 
-      </section>
- 
-    </section>
+          </section>
 
-</main>
+    </main>
 
   <% } %>
   

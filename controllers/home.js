@@ -19,6 +19,11 @@ module.exports = {
     const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
     res.render('disney-selection-magickingdom', { user: req.user, isDesktop, loggedIn });
   },
+  getDisneyMagicKingdomRides: (req, res) => {
+    const loggedIn = req.isAuthenticated();
+    const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
+    res.render('disney-magickingdom-rides', { user: req.user, isDesktop, loggedIn });
+  },
   getSpaceMountain: async (req, res) => {
     const loggedIn = req.isAuthenticated();
     const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value

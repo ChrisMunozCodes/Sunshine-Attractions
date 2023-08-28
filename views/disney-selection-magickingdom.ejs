@@ -29,67 +29,67 @@
     <link rel="stylesheet" href="assets/js/animate-blur.js">
   </head>
 <% if (isDesktop) { %>
-    <div class="desktop-container w-screen h-screen overflow-auto">
-        <% if (loggedIn) { %>
-          <header>
-            <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-3 bg-gray-100">
-              <div class="logo-container flex justify-center items-center">
-                <a href="/">
-                <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
-                </a>
-              </div>
-              <div class="login-container flex justify-center items-center p-5">
-                <div class="dropdown dropdown-hover">
-                  <form action="/profile">
-                    <div class="avatar">
-                      <div class="w-10 rounded-full">
-                        <img src="<%= user.profilePic || 'assets/image/Sunshine Attractions-logo/default-profile-pic.png' %>" alt="User Profile Picture" />
-                      </div>
+    <div class="desktop-container w-screen h-screen overflow-auto box-border">
+      <% if (loggedIn) { %>
+        <header>
+          <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-3 bg-gray-100">
+            <div class="logo-container flex justify-center items-center">
+              <a href="/">
+              <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+              </a>
+            </div>
+            <div class="login-container flex justify-center items-center p-5">
+              <div class="dropdown dropdown-hover">
+                <form action="/profile">
+                  <div class="avatar">
+                    <div class="w-10 rounded-full">
+                      <img src="<%= user.profilePic || 'assets/image/Sunshine Attractions-logo/default-profile-pic.png' %>" alt="User Profile Picture" />
                     </div>
-                  </form>
-                  <form action="/profile">
-                    <%= user.userName %>
-                  </form>
-                  <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 right-0 menu bg-base-200">
-                      <li><a href="/profile" class="active">Profile</a></li>
-                      <li><a>Your reviews</a></li>
-                      <li><a href="/logout">Logout</a></li>
-                  </ul>
-                </div>
+                  </div>
+                </form>
+                <form action="/profile" class="font-karla">
+                  <%= user.userName %>
+                </form>
+                <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 right-0 menu bg-base-200">
+                    <li><a href="/profile" class="active font-merriweather">Profile</a></li>
+                    <li><a href="/your-reviews" class="font-merriweather">Your reviews</a></li>
+                    <li><a href="/logout" class="font-merriweather">Logout</a></li>
+                </ul>
               </div>
-            </nav>
-          </header>
-            <% } else { %>
-              <header>
-                <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5">
-                  <div class="logo-container flex justify-center items-center">
-                    <a href="/">
-                      <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
-                    </a>
-                  </div>
-                  <div class="login-container flex justify-center items-center p-5">
-                    <form action="/login">
-                      <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather">LOGIN</button>
-                    </form>
-                    <form action="/signup">
-                      <button type="submit" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather">SIGNUP</button>
-                    </form>
-                  </div>
-                </nav>
-              </header>
-            <% } %>
+            </div>
+          </nav>
+        </header>
+      <% } else { %>
+        <header>
+          <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5  bg-gray-100 mb-10">
+            <div class="logo-container flex justify-center items-center">
+              <a href="/">
+                <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+              </a>
+            </div>
+            <div class="login-container flex justify-center items-center p-5">
+              <form action="/login">
+                <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather">LOGIN</button>
+              </form>
+              <form action="/signup">
+                <button type="submit" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather">SIGNUP</button>
+              </form>
+            </div>
+          </nav>
+        </header>
+      <% } %>
 
-    <main class="w-full h-4/5">
+    <main class="w-full h-2/3 overflow-auto box-border flex flex-col">
       <!-- Container -->
 
-        <section class="bg-black font-karla h-1/3 w-screen border-primaryButton border-8  overflow-hidden box-border relative">
+        <section class="bg-black font-karla w-screen h-1/3 border-primaryButton border-8  overflow-auto box-border relative ">
           <div class="w-full h-full absolute inset-0 transition-all duration-1000 bg-black opacity-0 animate-fade-in"></div>
           <div class="w-full h-full relative">
             <video class="w-full h-full object-cover animate-blur" autoplay loop muted>
               <source src="assets/image/Sunshine Attractions-logo/rollercoaster.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            <span id="typed-text" class="w-full flex justify-center items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white  text-8xl font-bold"></span>
+            <span id="typed-text" class="w-full flex justify-center items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white  xl:text-8xl lg:text-5xl md:text-3xl sm:text-xl font-bold"></span>
           </div>
         </section>
         
@@ -141,7 +141,7 @@
         
           
           <!-- listings -->
-          <section class="w-screen overflow-auto box-border">
+          <section class="w-screen h-2/3 overflow-auto box-border">
             <ul class="flex box-border overflow-auto">
               <li class="w-1/3 m-5 text-center justify-center items-center overflow-auto box-border">
                   <a href="/disney-magickingdom-rides">
@@ -149,7 +149,7 @@
                      <figure><img src="assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg" alt="Shoes" /></figure>
                      <div class="card-body p-0 overflow-auto flex w-full h-full justify-center items-center">
                       <section class="p-5">
-                        <h2 class="card-title text-5xl font-karla">RIDES</h2>
+                        <h2 class="card-title xl:text-5xl lg:text-3xl md:text-2xl sm:text-xl font-karla">RIDES</h2>
                       </section>
       
                       <section class="card-actions justify-center w-full p-5">
@@ -162,11 +162,11 @@
               <li class="w-1/3 m-5 text-center justify-center items-center overflow-auto box-border">
                <a href="/disney-selection">
                 <div class="card w-full h-full bg-base-100 shadow-xl image-full">
-                  <figure><img src="assets/image/Sunshine Attractions-logo/1-universal-orlando-resort-globe-1661870709.jpeg" alt="Shoes" /></figure>
+                  <figure><img src="assets/image/Sunshine Attractions-logo/disney-magickingdom-food.jpg" alt="Shoes" /></figure>
                   <div class="card-body p-0 overflow-auto flex w-full h-full justify-center items-center">
     
                     <section class="p-5">
-                      <h2 class="card-title text-4xl font-karla">FOOD</h2>
+                      <h2 class="card-title xl:text-5xl lg:text-3xl md:text-2xl sm:text-xl font-karla">FOOD</h2>
                     </section>
     
                     <section class="card-actions justify-center w-full p-5">
@@ -180,11 +180,11 @@
          <li class="w-1/3 m-5 text-center justify-center items-center overflow-auto box-border">
            <a href="/disney-selection">
             <div class="card w-full h-full bg-base-100 shadow-xl image-full">
-              <figure><img src="assets/image/Sunshine Attractions-logo/st-pete-beach-condo-rentals.jpeg" alt="Shoes" /></figure>
+              <figure><img src="assets/image/Sunshine Attractions-logo/disney-magickingdom-shows.jpg" alt="Shoes" /></figure>
               <div class="card-body p-0 overflow-auto flex w-full h-full justify-center items-center">
     
                 <section class="p-5">
-                  <h2 class="card-title text-4xl font-karla">SHOWS<h2>
+                  <h2 class="card-title xl:text-5xl lg:text-3xl md:text-2xl sm:text-xl font-karla">SHOWS<h2>
                 </section>
     
                 <section class="card-actions justify-center w-full p-5">
@@ -196,12 +196,94 @@
            </a>
        </li>
      </ul>
-                  
-            
 
-          </section>
+    </section>
 
     </main>
+
+    <section class="overflow-auto box-border w-screen h-full flex flex-col">
+      <!-- Ride Selection Start -->
+      <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3">
+        <div class="w-1/12 flex justify-center items-center">
+          <h3 class="text-4xl">1</h3>
+        </div>
+        <div class="w-2/12 flex justify-center items-center">
+          <img class="h-5/6 w-full" src="assets/image/Sunshine Attractions-logo/space-mountain.jpeg" alt="Space Mountain Disney Magic Kingdom">
+        </div>
+        <div class="w-3/12 flex justify-center items-center">
+          <h2 class="text-3xl">Space Mountain</h2>
+        </div>
+        <div class="w-3/12 flex justify-center items-center">
+          <p class="text-1xl">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
+        </div>
+        <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+            <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="3" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="4" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+        </div>
+
+        <a class="w-1/12 flex justify-center items-center" href="/space-mountain">
+          <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full">EXPLORE</button>
+        </a>
+      </div>
+      <!-- Ride Selection End -->
+      <!-- Ride Selection Start -->
+      <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3">
+        <div class="w-1/12 flex justify-center items-center">
+          <h3 class="text-4xl">2</h3>
+        </div>
+        <div class="w-2/12 flex justify-center items-center">
+          <img class="h-5/6 w-full" src="assets/image/Sunshine Attractions-logo/big-thunder-mountain.jpeg" alt="Thunder Mountain Disney Magic Kingdom">
+        </div>
+        <div class="w-3/12 flex justify-center items-center">
+          <h2 class="text-3xl">Thunder Mountain</h2>
+        </div>
+        <div class="w-3/12 flex justify-center items-center">
+          <p class="text-1xl">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
+        </div>
+        <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+            <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="3" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="4" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+        </div>
+
+        <a class="w-1/12 flex justify-center items-center" href="/thunder-mountain">
+          <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full">EXPLORE</button>
+        </a>
+      </div>
+      <!-- Ride Selection End -->
+      <!-- Ride Selection Start -->
+      <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3">
+        <div class="w-1/12 flex justify-center items-center">
+          <h3 class="text-4xl">3</h3>
+        </div>
+        <div class="w-2/12 flex justify-center items-center">
+          <img class="h-5/6 w-full" src="assets/image/Sunshine Attractions-logo/haunted-mansion.jpg" alt="Haunted Mansion Disney Magic Kingdom">
+        </div>
+        <div class="w-3/12 flex justify-center items-center">
+          <h2 class="text-3xl">Haunted Mansion</h2>
+        </div>
+        <div class="w-3/12 flex justify-center items-center">
+          <p class="text-1xl">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
+        </div>
+        <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+            <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="3" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="4" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+            <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
+        </div>
+
+        <a class="w-1/12 flex justify-center items-center" href="/thunder-mountain">
+          <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full">EXPLORE</button>
+        </a>
+      </div>
+      <!-- Ride Selection End -->
+    </section>
 
   <% } %>
   

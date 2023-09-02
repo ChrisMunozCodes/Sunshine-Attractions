@@ -29,7 +29,6 @@ router.post("/signup", authController.postSignup);
 router.get("/profile", ensureAuth, userController.getProfile);
 router.get("/disney-selection-homepage", homeController.getDisneySelectionHomepage);
 router.get("/disney-selection-magickingdom", homeController.getDisneySelectionMagicKingdom);
-router.get("/disney-magickingdom-rides", homeController.getDisneyMagicKingdomRides);
 router.get("/space-mountain", homeController.getSpaceMountain);
 router.get("/thunder-mountain", homeController.getThunderMountain);
 router.get("/review-space-mountain", homeController.reviewSpaceMountain);

@@ -14,10 +14,30 @@ module.exports = {
     const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
     res.render('disney-selection-homepage', { user: req.user, isDesktop, loggedIn });
   },
-  getDisneySelectionMagicKingdom: (req, res) => {
+  getDisneySelectionMagicKingdom: async (req, res) => {
     const loggedIn = req.isAuthenticated();
     const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
-    res.render('disney-selection-magickingdom', { user: req.user, isDesktop, loggedIn });
+
+    // Define an object to store average ratings for different pages
+    const averageRatings = {};
+
+    // Define an array of page names (you can add more as needed)
+    const pageNames = ['thunder-mountain', 'space-mountain', /* Add more page names here */];
+
+    // Loop through each page name
+    for (const pageName of pageNames) {
+      // Query your database to retrieve all reviews for this page
+      const reviews = await Review.find({ page: pageName });
+
+      // Calculate the average rating for this page
+      const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0); // Use a different variable name here
+      const averageRating = reviews.length > 0 ? totalRating / reviews.length : null;
+
+      // Store the average rating in the object
+      averageRatings[pageName] = averageRating;
+    }
+    console.log(averageRatings)
+    res.render('disney-selection-magickingdom', { user: req.user, isDesktop, loggedIn, averageRatings, pageNames});
   },
   getSpaceMountain: async (req, res) => {
     const loggedIn = req.isAuthenticated();

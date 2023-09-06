@@ -33,9 +33,9 @@
 </p>
 
 ## 🔆 Selection Page
-
+<p align="left">
 <a href="https://ibb.co/9pyYSLF"><img src="https://i.ibb.co/9pyYSLF/9cd08b6b5ae4bc90311ccfad2f07f454.jpg" alt="9cd08b6b5ae4bc90311ccfad2f07f454" border="0"></a>
-
+</p>
 ## 🔆 Review Component
 
 <p align="left">

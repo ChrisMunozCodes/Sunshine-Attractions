@@ -5,8 +5,10 @@ fetch(backendApiUrl)
   .then((data) => {
     // Your existing logic for handling the data received from the backend
     let frontierland = data.lands[2];
+    let libertySquare = data.lands[3];
+    let ridesLibertySquare = libertySquare.rides;
     let ridesFrontierland = frontierland.rides;
-
+    // Thunder Mountain Wait Time Code
     let thunderMountain = ridesFrontierland.find((ride) => ride.name === "Big Thunder Mountain Railroad");
 
     if (thunderMountain) {
@@ -18,7 +20,19 @@ fetch(backendApiUrl)
     } else {
       console.log("Thunder Mountain not found in Frontierland.");
     }
+    // Haunted Mansion Wait Time Code
+    let hauntedMansion = ridesLibertySquare.find((ride) => ride.name === "Haunted Mansion");
 
+    if (hauntedMansion) {
+      let hauntedWaitTime = hauntedMansion.wait_time;
+      let hauntedWaitElement = document.getElementById("haunted-wait");
+      if (hauntedWaitElement) {
+        hauntedWaitElement.innerHTML = hauntedWaitTime;
+      }
+    } else {
+      console.log("Haunted Mansion not found in Frontierland.");
+    }
+    // Space Mountain Wait Time Code
     let tomorrowland = data.lands[5];
     let ridesTomorrowland = tomorrowland.rides;
 

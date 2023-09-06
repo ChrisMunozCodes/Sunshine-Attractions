@@ -241,249 +241,101 @@
                   <h2>All Rides</h2>
                 </div>
     <section id="selection-area" class="overflow-auto box-border w-screen h-auto flex flex-col hidden">
-      <!-- Ride Selection Start -->
-      <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 ride">
-        <div class="w-1/12 flex justify-center items-center">
-          <h3 class="text-4xl">1</h3>
+      <% for (let i = 0; i < rideSections.length; i++) { %>
+        <!-- Ride Selection Start -->
+        <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 ride">
+          <div class="w-1/12 flex justify-center items-center">
+            <h3 class="text-4xl"><%= i + 1 %></h3>
+          </div>
+          <div class="w-2/12 flex justify-center items-center">
+            <img class="h-5/6 w-full" src="<%= rideSections[i].src %>" alt="<%= rideSections[i].name %> Disney Magic Kingdom">
+          </div>
+          <div class="w-3/12 flex justify-center items-center">
+            <h2 class="text-2xl flex-wrap text-center"><%= rideSections[i].name %></h2>
+          </div>
+          <div class="w-3/12 flex justify-center items-center">
+            <p class="text-1xl"><%= rideSections[i].description %></p>
+          </div>
+          <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+            <input value="1" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesRide[i]] === 1 ? 'checked' : '' %> />
+            <input value="2" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesRide[i]] === 2 ? 'checked' : '' %> />
+            <input value="3" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesRide[i]] === 3 ? 'checked' : '' %> />
+            <input value="4" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesRide[i]] === 4 ? 'checked' : '' %> />
+            <input value="5" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesRide[i]] === 5 ? 'checked' : '' %> />
+            <!-- Add more rating inputs as needed -->
+          </div>
+      
+          <a class="w-1/12 flex justify-center items-center" href="<%= rideSections[i].buttonSrc %>">
+            <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
+          </a>
         </div>
-        <div class="w-2/12 flex justify-center items-center">
-          <img class="h-5/6 w-full" src="assets/image/Sunshine Attractions-logo/space-mountain.jpeg" alt="Space Mountain Disney Magic Kingdom">
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <h2 class="text-2xl flex-wrap text-center">Space Mountain</h2>
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <p class="text-1xl">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
-        </div>
-        <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
-          <input value="1" type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings['space-mountain'] === 1 ? 'checked' : '' %> />
-          <input value="2" type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings['space-mountain'] === 2 ? 'checked' : '' %> />
-          <input value="3" type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings['space-mountain'] === 3 ? 'checked' : '' %> />
-          <input value="4" type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings['space-mountain'] === 4 ? 'checked' : '' %> />
-          <input value="5" type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings['space-mountain'] === 5 ? 'checked' : '' %> />
-        </div>
+        <!-- Ride Selection End -->
+      <% } %>
 
-        <a class="w-1/12 flex justify-center items-center" href="/space-mountain">
-          <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
-        </a>
-      </div>
-      <!-- Ride Selection End -->
-      <!-- Ride Selection Start -->
-      <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 ride">
-        <div class="w-1/12 flex justify-center items-center">
-          <h3 class="text-4xl">2</h3>
+      <% for (let i = 0; i < foodSections.length; i++) { %>
+        <!-- Food Selection Start -->
+        <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 food">
+          <div class="w-1/12 flex justify-center items-center">
+            <h3 class="text-4xl"><%= i + 1 %></h3>
+          </div>
+          <div class="w-2/12 flex justify-center items-center">
+            <img class="h-5/6 w-full" src="<%= foodSections[i].src %>" alt="<%= foodSections[i].name %> Disney Magic Kingdom">
+          </div>
+          <div class="w-3/12 flex justify-center items-center">
+            <h2 class="text-2xl flex-wrap text-center"><%= foodSections[i].name %></h2>
+          </div>
+          <div class="w-3/12 flex justify-center items-center">
+            <p class="text-1xl"><%= foodSections[i].description %></p>
+          </div>
+          <!-- You can add the rating input for food sections if needed -->
+          <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+            <input value="1" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesFood[i]] === 1 ? 'checked' : '' %> />
+            <input value="2" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesFood[i]] === 2 ? 'checked' : '' %> />
+            <input value="3" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesFood[i]] === 3 ? 'checked' : '' %> />
+            <input value="4" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesFood[i]] === 4 ? 'checked' : '' %> />
+            <input value="5" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesFood[i]] === 5 ? 'checked' : '' %> />
+            <!-- Add more rating inputs as needed -->
+          </div>
+      
+          <a class="w-1/12 flex justify-center items-center" href="<%= foodSections[i].buttonSrc %>">
+            <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
+          </a>
         </div>
-        <div class="w-2/12 flex justify-center items-center">
-          <img class="h-5/6 w-full" src="assets/image/Sunshine Attractions-logo/big-thunder-mountain.jpeg" alt="Thunder Mountain Disney Magic Kingdom">
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <h2 class="text-2xl flex-wrap text-center">Thunder Mountain</h2>
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <p class="text-1xl">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
-        </div>
-        <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
-          <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings['thunder-mountain'] === 1 ? 'checked' : '' %> />
-          <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings['thunder-mountain'] === 2 ? 'checked' : '' %> />
-          <input value="3" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings['thunder-mountain'] === 3 ? 'checked' : '' %> />
-          <input value="4" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings['thunder-mountain'] === 4 ? 'checked' : '' %> />
-          <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings['thunder-mountain'] === 5 ? 'checked' : '' %> />
-        </div>
+        <!-- Food Selection End -->
+      <% } %>
 
-        <a class="w-1/12 flex justify-center items-center" href="/thunder-mountain">
-          <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
-        </a>
-      </div>
-      <!-- Ride Selection End -->
-      <!-- Ride Selection Start -->
-      <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 ride">
-        <div class="w-1/12 flex justify-center items-center">
-          <h3 class="text-4xl">3</h3>
+      <% for (let i = 0; i < showSections.length; i++) { %>
+        <!-- Food Selection Start -->
+        <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 show">
+          <div class="w-1/12 flex justify-center items-center">
+            <h3 class="text-4xl"><%= i + 1 %></h3>
+          </div>
+          <div class="w-2/12 flex justify-center items-center">
+            <img class="h-5/6 w-full" src="<%= foodSections[i].src %>" alt="<%= foodSections[i].name %> Disney Magic Kingdom">
+          </div>
+          <div class="w-3/12 flex justify-center items-center">
+            <h2 class="text-2xl flex-wrap text-center"><%= showSections[i].name %></h2>
+          </div>
+          <div class="w-3/12 flex justify-center items-center">
+            <p class="text-1xl"><%= showSections[i].description %></p>
+          </div>
+          <!-- You can add the rating input for food sections if needed -->
+          <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+            <input value="1" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesShow[i]] === 1 ? 'checked' : '' %> />
+            <input value="2" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesShow[i]] === 2 ? 'checked' : '' %> />
+            <input value="3" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesShow[i]] === 3 ? 'checked' : '' %> />
+            <input value="4" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesShow[i]] === 4 ? 'checked' : '' %> />
+            <input value="5" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesShow[i]] === 5 ? 'checked' : '' %> />
+            <!-- Add more rating inputs as needed -->
+          </div>
+      
+          <a class="w-1/12 flex justify-center items-center" href="<%= foodSections[i].buttonSrc %>">
+            <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
+          </a>
         </div>
-        <div class="w-2/12 flex justify-center items-center">
-          <img class="h-5/6 w-full" src="assets/image/Sunshine Attractions-logo/haunted-mansion.jpg" alt="Haunted Mansion Disney Magic Kingdom">
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <h2 class="text-2xl flex-wrap text-center">Haunted Mansion</h2>
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <p class="text-1xl">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
-        </div>
-        <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
-            <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="3" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="4" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-        </div>
-
-        <a class="w-1/12 flex justify-center items-center" href="/thunder-mountain">
-          <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
-        </a>
-      </div>
-      <!-- Ride Selection End -->
-      <!-- Food Selection Start -->
-      <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 food">
-        <div class="w-1/12 flex justify-center items-center">
-          <h3 class="text-4xl">1</h3>
-        </div>
-        <div class="w-2/12 flex justify-center items-center">
-          <img class="h-5/6 w-full" src="assets/image/Sunshine Attractions-logo/space-mountain.jpeg" alt="Space Mountain Disney Magic Kingdom">
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <h2 class="text-2xl flex-wrap text-center">Tony's Town Square</h2>
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <p class="text-1xl">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
-        </div>
-        <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
-            <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="3" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="4" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-        </div>
-
-        <a class="w-1/12 flex justify-center items-center" href="/space-mountain">
-          <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
-        </a>
-      </div>
-      <!-- Food Selection End -->
-      <!-- Food Selection Start -->
-      <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 food">
-        <div class="w-1/12 flex justify-center items-center">
-          <h3 class="text-4xl">2</h3>
-        </div>
-        <div class="w-2/12 flex justify-center items-center">
-          <img class="h-5/6 w-full" src="assets/image/Sunshine Attractions-logo/big-thunder-mountain.jpeg" alt="Thunder Mountain Disney Magic Kingdom">
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <h2 class="text-2xl flex-wrap text-center">Main Street Cafe</h2>
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <p class="text-1xl">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
-        </div>
-        <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
-            <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="3" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="4" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-        </div>
-
-        <a class="w-1/12 flex justify-center items-center" href="/thunder-mountain">
-          <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
-        </a>
-      </div>
-      <!-- Food Selection End -->
-      <!-- Food Selection Start -->
-      <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 food">
-        <div class="w-1/12 flex justify-center items-center">
-          <h3 class="text-4xl">3</h3>
-        </div>
-        <div class="w-2/12 flex justify-center items-center">
-          <img class="h-5/6 w-full" src="assets/image/Sunshine Attractions-logo/haunted-mansion.jpg" alt="Haunted Mansion Disney Magic Kingdom">
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <h2 class="text-2xl flex-wrap text-center">Plaza Ice Cream Parlor</h2>
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <p class="text-1xl">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
-        </div>
-        <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
-            <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="3" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="4" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-        </div>
-
-        <a class="w-1/12 flex justify-center items-center" href="/thunder-mountain">
-          <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
-        </a>
-      </div>
-      <!-- Food Selection End -->
-      <!-- Show Selection Start -->
-      <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 show">
-        <div class="w-1/12 flex justify-center items-center">
-          <h3 class="text-4xl">1</h3>
-        </div>
-        <div class="w-2/12 flex justify-center items-center">
-          <img class="h-5/6 w-full" src="assets/image/Sunshine Attractions-logo/space-mountain.jpeg" alt="Space Mountain Disney Magic Kingdom">
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <h2 class="text-2xl flex-wrap text-center">Casey's Corner Pianist</h2>
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <p class="text-1xl">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
-        </div>
-        <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
-            <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="3" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="4" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-        </div>
-
-        <a class="w-1/12 flex justify-center items-center" href="/space-mountain">
-          <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
-        </a>
-      </div>
-      <!-- Show Selection End -->
-      <!-- Show Selection Start -->
-      <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 show">
-        <div class="w-1/12 flex justify-center items-center">
-          <h3 class="text-4xl">2</h3>
-        </div>
-        <div class="w-2/12 flex justify-center items-center">
-          <img class="h-5/6 w-full" src="assets/image/Sunshine Attractions-logo/big-thunder-mountain.jpeg" alt="Thunder Mountain Disney Magic Kingdom">
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <h2 class="text-2xl flex-wrap text-center">Disney Festival of Fantasy Parade</h2>
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <p class="text-1xl">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
-        </div>
-        <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
-            <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="3" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="4" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-        </div>
-
-        <a class="w-1/12 flex justify-center items-center" href="/thunder-mountain">
-          <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
-        </a>
-      </div>
-      <!-- Show Selection End -->
-      <!-- Show Selection Start -->
-      <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 show">
-        <div class="w-1/12 flex justify-center items-center">
-          <h3 class="text-4xl">3</h3>
-        </div>
-        <div class="w-2/12 flex justify-center items-center">
-          <img class="h-5/6 w-full" src="assets/image/Sunshine Attractions-logo/haunted-mansion.jpg" alt="Haunted Mansion Disney Magic Kingdom">
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <h2 class="text-2xl flex-wrap text-center">Flag Retreat</h2>
-        </div>
-        <div class="w-3/12 flex justify-center items-center">
-          <p class="text-1xl">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
-        </div>
-        <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
-            <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="3" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="4" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-            <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-        </div>
-
-        <a class="w-1/12 flex justify-center items-center" href="/thunder-mountain">
-          <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
-        </a>
-      </div>
-      <!-- Show Selection End -->                    
+        <!-- Food Selection End -->
+      <% } %>
+                
     </section>
   <% } %>
   

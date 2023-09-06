@@ -99,10 +99,10 @@
       <div class="card bg-base-100 shadow-xl shadow-black">
         <div class="relative">
           <figure class="rounded-2xl">  
-            <img class="object-cover" src="assets/image/Sunshine Attractions-logo/big-thunder-mountain.jpeg" alt="Photo of Thunder Mountain">
+            <img class="object-cover" src="assets/image/Sunshine Attractions-logo/mine-train.jpeg" alt="Photo of Seven Dwarfs Mine Train">
           </figure>
           <div class="absolute bottom-4 right-4 bg-black text-white text-5xl border border-primaryButton border-4 w-24 h-24 flex flex-col justify-center items-center font-bold text-center shadow-md shadow-black">
-            <section id="thunder-wait">
+            <section id="dwarfs-wait">
               <span class="loading loading-spinner text-warning"></span>  
             </section>
             <section>
@@ -112,7 +112,7 @@
           </div>
         </div>
         <div class="card-body flex">
-          <h1 class="text-5xl items-center justify-center w-full flex mt-2 font-karla">Thunder Mountain</h1>
+          <h1 class="text-5xl items-center justify-center w-full flex mt-2 font-karla">Seven Dwarfs Mine Train</h1>
           <div class="rating m-1 items-center justify-center w-full flex">
             <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
             <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
@@ -142,14 +142,14 @@
           </div>
 
           <div>
-            <div class="badge badge-secondary badge-outline">Family-Friendly Thrills</div>
+            <div class="badge badge-secondary badge-outline">dark-ride</div>
             <div class="badge badge-secondary badge-outline">rollercoaster</div>
-            <div class="badge badge-secondary badge-outline">immersive</div>
+            <div class="badge badge-secondary badge-outline">thrill</div>
           </div>
 
           <div>
             <h2 class="text-2xl w-full flex mt-2 font-karla">About:</h2>
-            <p class="font-merriweather items-center justify-center">Thunder Mountain is designed to mimic a thrilling mine train ride through the Wild West. The attraction's most iconic feature is the towering red rock formation known as "Big Thunder Mountain," which serves as the backdrop for the ride's thrilling adventure.</p>
+            <p class="font-merriweather items-center justify-center">The Haunted Mansion is a classic Disney attraction at Magic Kingdom, renowned for its spooky and whimsical take on a haunted house. The attraction is set in a stately antebellum mansion with an eerie graveyard and is filled with "999 happy haunts" that entertain visitors with their supernatural antics.</p>
           </div>
 
           <div>
@@ -173,14 +173,14 @@
           </div>
 
           <div>
-          <h2 class="text-2xl w-full flex mt-2 font-karla">Opening Date</h2>
-          <p class="font-merriweather items-center justify-center">The ride officially opened to the public on November 15, 1980, adding a new dimension of excitement to the park.</p>
-         </div>
-
-        <div>
-          <h2 class="text-2xl w-full flex mt-2 font-karla">A Classic Disney Attraction</h2>
-          <p class="font-merriweather items-center justify-center">Big Thunder Mountain has earned its status as a classic Disney attraction, loved by visitors for its combination of family-friendly thrills and immersive theming.</p>
-        </div>
+            <h2 class="text-2xl w-full flex mt-2 font-karla">Opening Date</h2>
+            <p class="font-merriweather items-center justify-center">The Haunted Mansion opened its eerie doors to park guests on October 1, 1971, the same day as the Magic Kingdom itself.</p>
+           </div>
+  
+          <div>
+            <h2 class="text-2xl w-full flex mt-2 font-karla">Pepper's Ghost Effect</h2>
+            <p class="font-merriweather items-center justify-center">Description: The Haunted Mansion employs the famous "Pepper's Ghost" effect to create ghostly apparitions that appear and disappear before guests' eyes.</p>
+          </div>
 
         
   
@@ -257,11 +257,11 @@
             <h2 id="reviewsHeading" class="font-karla text-3xl w-full m-auto">All Reviews</h2>
           <label tabindex="0" class="btn m-1">Filters</label>
           <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'all' ? 'active' : '' %>" href="/thunder-mountain?filter=all">All reviews</a></li>
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'your' ? 'active' : '' %>" href="/thunder-mountain?filter=your">Your reviews</a></li>
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'highest-rated' ? 'active' : '' %>" href="/thunder-mountain?filter=highest-rated">Highest rated</a></li>
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'most-critical' ? 'active' : '' %>" href="/thunder-mountain?filter=most-critical">Most critical</a></li>
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'most-recent' ? 'active' : '' %>" href="/thunder-mountain?filter=most-recent">Recent reviews</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'all' ? 'active' : '' %>" href="/seven-dwarfs-mine-train?filter=all">All reviews</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'your' ? 'active' : '' %>" href="/seven-dwarfs-mine-train?filter=your">Your reviews</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'highest-rated' ? 'active' : '' %>" href="/seven-dwarfs-mine-train?filter=highest-rated">Highest rated</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'most-critical' ? 'active' : '' %>" href="/seven-dwarfs-mine-train?filter=most-critical">Most critical</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'most-recent' ? 'active' : '' %>" href="/seven-dwarfs-mine-train?filter=most-recent">Recent reviews</a></li>
           </ul>
         </div>
       </div>
@@ -269,7 +269,7 @@
         <!-- Review componet -->
         
         <% for (var i = 0; i < review.length; i++) { %>
-            <% if (review[i].page === 'thunder-mountain') { %>    
+            <% if (review[i].page === 'seven-dwarfs-mine-train') { %>    
         <div class="card bg-base-100 shadow-xl border border-black m-5 overflow-hidden min-w-[500px] max-w-[500px]">
             <div class="card-body overflow-auto box-border">
               <div>

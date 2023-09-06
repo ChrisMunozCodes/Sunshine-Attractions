@@ -41,7 +41,7 @@
     <script src="assets/js/change-filter-heading.js"></script>
   </head>
 <% if (isDesktop) { %>
-    <div class="desktop-container w-screen h-screen overflow-auto">
+    <div class="desktop-container w-screen h-auto overflow-auto">
       <% if (loggedIn) { %>
         <header>
           <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-3 bg-gray-100">
@@ -81,10 +81,10 @@
             </div>
             <div class="login-container flex justify-center items-center p-5">
               <form action="/login">
-                <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather">LOGIN</button>
+                <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather hover:bg-black hover:text-white hover:border-white">LOGIN</button>
               </form>
               <form action="/signup">
-                <button type="submit" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather">SIGNUP</button>
+                <button type="submit" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather hover:bg-black hover:text-white hover:border-white">SIGNUP</button>
               </form>
             </div>
           </nav>
@@ -145,16 +145,17 @@
             <div class="badge badge-secondary badge-outline">dark-ride</div>
             <div class="badge badge-secondary badge-outline">rollercoaster</div>
             <div class="badge badge-secondary badge-outline">thrill</div>
+            <div class="badge badge-secondary badge-outline">immersive</div>
           </div>
 
           <div>
             <h2 class="text-2xl w-full flex mt-2 font-karla">About:</h2>
-            <p class="font-merriweather items-center justify-center">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!</p>
+            <p class="font-merriweather items-center justify-center">Space Mountain is a space themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops! Space Mountain is a beloved roller coaster attraction at Disney World's Magic Kingdom. It's set within a massive, iconic white dome, resembling a futuristic space station.</p>
           </div>
 
           <div>
             <h2 class="text-2xl w-full flex mt-2 font-karla">Height Requirement:</h2>
-            <p class="font-merriweather items-center justify-center">3′ 8″</p>
+            <p class="font-merriweather items-center justify-center">To ride Space Mountain, you must be at least 44 inches (112 cm) tall.</p>
           </div>
 
           <div>
@@ -170,6 +171,16 @@
           <div>
             <h2 class="text-2xl w-full flex mt-2 font-karla">Inversions?</h2>
             <p class="font-merriweather items-center justify-center">No</p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl w-full flex mt-2 font-karla">Opening Date</h2>
+            <p class="font-merriweather items-center justify-center">Space Mountain first opened its doors to thrill-seekers on January 15, 1975. Since then, it has been a staple of the Magic Kingdom experience.</p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl w-full flex mt-2 font-karla">Multiple Tracks</h2>
+            <p class="font-merriweather items-center justify-center">Space Mountain operates with two separate tracks that often run simultaneously, providing riders with slightly different experiences, adding to its replay value.</p>
           </div>
 
         
@@ -231,7 +242,7 @@
         <section class="h-1/5 w-full flex justify-end items-center">
           <input type="hidden" name="pageId" value="123">
           <span class="loading loading-spinner text-warning hidden"></span>
-          <button type="submit" value="Upload" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather" id="submitButton">SUBMIT</button>
+          <button type="submit" value="Upload" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather hover:bg-black hover:text-white hover:border-white" id="submitButton">SUBMIT</button>
         </section>
         
         <input type="hidden" name="pageName" value="<%= pageName %>">

@@ -42,12 +42,6 @@ This is what a user review looks like. Reviews show the user profile picture, al
 <a href="https://ibb.co/YQy0cvN"><img src="https://i.ibb.co/r0cdxnQ/e06c384147f9f1070627700f43f1ddae.png" alt="e06c384147f9f1070627700f43f1ddae" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/math-keyboard'></a><br />
 </p>
 
-## 🔆 Review Componet
-
-<p align="left">
-This is what a user review looks like. Reviews show the user profile picture, along with their username, and star rating. You can see their thoughts about the specific attractions, food, or show in the description box. The review componets support likes, comments from other users, and comment likes / dislikes.
-</p>
-
 <p align="center">
 <a href="https://ibb.co/v4y99BX"><img src="https://i.ibb.co/r2899td/sunshine-review-page.jpg" alt="sunshine-review-page" border="0"></a><br>
 </p>
@@ -107,12 +101,12 @@ If you would like to contribute to this project please reach out to me via disco
 - ~~Comments.~~
 - Lowest wait time feature.
 - ~~Filter reviews~~
-- Following and followers feature 
+- Following and followers feature. 
 - ~~Likes.~~
 - Dark Mode?
-- Interact Quiz to pair attractions.
 - Trip Planner.
 - ~~Adding images to reviews.~~
+- Maps with wait time markers and user geolocation.
 
 
 ---

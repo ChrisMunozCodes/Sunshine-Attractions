@@ -10,14 +10,6 @@
   <a href="#-license">License</a>
 </p>
 
-<p align="center">
- <kbd>
-  <a href="https://ibb.co/fSrJqjt">
-    <img src="https://i.ibb.co/KGVnbT7/13d79afae339dc3b6081ba6f00990edb.jpg" alt="13d79afae339dc3b6081ba6f00990edb" class="border border-black">
-  </a>
- </kbd>
-</p>
-
 ## 👨🏻‍💻 Welcome to Sunshine Attractions
 
 <p align="left" style="color: red;"> Sunshine Attractions is a full-stack review application for theme parks in Florida (The sunshine state). Allowing tourists and locals to find up-to-date information on various rides, shows, and food for Florida theme parks. Users are able to track wait times, engage in other reviewers posts, and manage their profile. More features are planned, one of these features include a tool to better user expierence such as finding lowest wait times for the park they're at. Another feature planned in order to make the app more engaging is allowing reviewers to follow each-other and keep up to date on their feed. Sunshine attractions mission is to better the expierence of theme park goers in Florida.</p>
@@ -33,9 +25,15 @@
 </p>
 
 ## 🔆 Selection Page
+
+<p align="left">
+ Discover 100s of rides, food, and shows at various theme parks.
+</p>
+
 <p align="left">
 <a href="https://ibb.co/9pyYSLF"><img src="https://i.ibb.co/wdp6jX9/9cd08b6b5ae4bc90311ccfad2f07f454.jpg" alt="9cd08b6b5ae4bc90311ccfad2f07f454" border="0"></a>
 </p>
+
 ## 🔆 Review Component
 
 <p align="left">

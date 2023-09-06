@@ -20,7 +20,7 @@
  Welcome to Sunshine Attractions, below you will find the home page that consists of various theme parks in Florida. Users have plenty of options to start exploring new attractions, food, and entertainment.
 </p>
 
-<p align="center">
+<p align="left">
 <a href="https://ibb.co/K25V0tr"><img src="https://i.ibb.co/QPJYbWK/66033a4f3c7b93cc76890798f053294a.jpg" alt="66033a4f3c7b93cc76890798f053294a" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/math-keyboard'></a><br />
 </p>
 
@@ -46,6 +46,23 @@ This is what a user review looks like. Reviews show the user profile picture, al
 
 <p align="center">
 <a href="https://ibb.co/v4y99BX"><img src="https://i.ibb.co/r2899td/sunshine-review-page.jpg" alt="sunshine-review-page" border="0"></a><br>
+</p>
+
+## 🔆 Filter reviews
+<p align="left">
+Filter reviews based on options such as: All reviews, Your reviews, Highest rated, Most critcal, and Recent reviews.
+</p>
+
+<p align="left">
+<a href="https://ibb.co/hL2tJ6Y"><img src="https://i.ibb.co/34SL93R/a4a238090f23ce0914d981f1814fcf68.png" alt="a4a238090f23ce0914d981f1814fcf68" border="0"></a>
+</p>
+
+## 🔆 Find information and wait times
+<p align="left">
+Learn about the attraction you're viewing with various facts, tags, and real time wait times.
+</p>
+<p align="left">
+<a href="https://ibb.co/xSXpNxN"><img src="https://i.ibb.co/FbmSFRF/34d2a7c70eaaf4c581b7d8272f235308.png" alt="34d2a7c70eaaf4c581b7d8272f235308" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>download sharing site</a><br />
 </p>
 
 ## 🚀 Technologies

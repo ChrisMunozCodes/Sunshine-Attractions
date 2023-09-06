@@ -149,7 +149,7 @@
 
           <div>
             <h2 class="text-2xl w-full flex mt-2 font-karla">About:</h2>
-            <p class="font-merriweather items-center justify-center">Thunder Mountain is a fast paced rocky rollercoaster that takes place on a railroad from the old west.</p>
+            <p class="font-merriweather items-center justify-center">Haunted mansion is a spooky mansion!</p>
           </div>
 
           <div>
@@ -247,11 +247,11 @@
             <h2 id="reviewsHeading" class="font-karla text-3xl w-full m-auto">All Reviews</h2>
           <label tabindex="0" class="btn m-1">Filters</label>
           <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'all' ? 'active' : '' %>" href="/space-mountain?filter=all">All reviews</a></li>
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'your' ? 'active' : '' %>" href="/space-mountain?filter=your">Your reviews</a></li>
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'highest-rated' ? 'active' : '' %>" href="/space-mountain?filter=highest-rated">Highest rated</a></li>
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'most-critical' ? 'active' : '' %>" href="/space-mountain?filter=most-critical">Most critical</a></li>
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'most-recent' ? 'active' : '' %>" href="/space-mountain?filter=most-recent">Recent reviews</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'all' ? 'active' : '' %>" href="/haunted-mansion?filter=all">All reviews</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'your' ? 'active' : '' %>" href="/haunted-mansion?filter=your">Your reviews</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'highest-rated' ? 'active' : '' %>" href="/haunted-mansion?filter=highest-rated">Highest rated</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'most-critical' ? 'active' : '' %>" href="/haunted-mansion?filter=most-critical">Most critical</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'most-recent' ? 'active' : '' %>" href="/haunted-mansion?filter=most-recent">Recent reviews</a></li>
           </ul>
         </div>
       </div>
@@ -259,7 +259,7 @@
         <!-- Review componet -->
         
         <% for (var i = 0; i < review.length; i++) { %>
-            <% if (review[i].page === 'thunder-mountain') { %>    
+            <% if (review[i].page === 'haunted-mansion') { %>    
         <div class="card bg-base-100 shadow-xl border border-black m-5 overflow-hidden min-w-[500px] max-w-[500px]">
             <div class="card-body overflow-auto box-border">
               <div>

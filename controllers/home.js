@@ -19,7 +19,9 @@ module.exports = {
     const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
 
     // Define an object to store average ratings for different pages
-    const averageRatings = {};
+    const averageRatingsRide = {};
+    const averageRatingsFood = {};
+    const averageRatingsShow = {};
 
     // Define an array of page names (you can add more as needed)
     const pageNamesRide = ['space-mountain', 'thunder-mountain', 'haunted-mansion' /* Add more page names here */];
@@ -33,10 +35,11 @@ module.exports = {
 
       // Calculate the average rating for this page
       const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0); // Use a different variable name here
-      const averageRating = reviews.length > 0 ? totalRating / reviews.length : null;
+      const averageRatingRide = reviews.length > 0 ? totalRating / reviews.length : null;
 
       // Store the average rating in the object
-      averageRatings[pageName] = averageRating;
+      averageRatingsRide[pageName] = averageRatingRide;
+      console.log(averageRatingRide)
     }
 
     // Loop through each page name
@@ -46,12 +49,12 @@ module.exports = {
 
       // Calculate the average rating for this page
       const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0); // Use a different variable name here
-      const averageRating = reviews.length > 0 ? totalRating / reviews.length : null;
+      const averageRatingFood = reviews.length > 0 ? totalRating / reviews.length : null;
 
       // Store the average rating in the object
-      averageRatings[pageName] = averageRating;
+      averageRatingsFood[pageName] = averageRatingFood;
     }    
-    console.log(averageRatings)
+    console.log(averageRatingsFood)
 
     // Loop through each page name
     for (const pageName of pageNamesShow) {
@@ -60,26 +63,29 @@ module.exports = {
 
       // Calculate the average rating for this page
       const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0); // Use a different variable name here
-      const averageRating = reviews.length > 0 ? totalRating / reviews.length : null;
+      const averageRatingShow = reviews.length > 0 ? totalRating / reviews.length : null;
 
       // Store the average rating in the object
-      averageRatings[pageName] = averageRating;
+      averageRatingsShow[pageName] = averageRatingShow;
     }
     const rideSections = [
       {
           name: 'Space Mountain',
+          rating: averageRatingsRide['space-mountain'],
           description: 'Space Mountain is a space-themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!',
           src: 'assets/image/Sunshine Attractions-logo/space-mountain.jpeg',
           buttonSrc: '/space-mountain' // Button source
       },
       {
           name: 'Thunder Mountain',
+          rating: averageRatingsRide['thunder-mountain'],
           description: 'Big Thunder Mountain is a rollercoaster ride that takes place in an old western setting.',
           src: 'assets/image/Sunshine Attractions-logo/big-thunder-mountain.jpeg',
           buttonSrc: '/thunder-mountain' // Button source
       },
       {
           name: 'Haunted Mansion',
+          rating: averageRatingsRide['haunted-mansion'],
           description: 'Haunted Mansion is a dark slow ride through a spooky mansion, get ready to see ghosts, and get immersed into a well crafted disney haunt.',
           src: 'assets/image/Sunshine Attractions-logo/haunted-mansion.jpg',
           buttonSrc: '/haunted-mansion' // Button source
@@ -138,9 +144,14 @@ module.exports = {
     ];
 
     // Sort the ride sections by average rating in descending order
-    rideSections.sort((a, b) => b.averageRatings - a.averageRatings);
+    rideSections.sort((a, b) => b.rating - a.rating);
+    foodSections.sort((a, b) => b.rating - a.rating);
+    showSections.sort((a, b) => b.rating - a.rating);
+    console.log(rideSections)
 
-    res.render('disney-selection-magickingdom', { user: req.user, isDesktop, loggedIn, averageRatings, pageNamesRide, pageNamesFood, pageNamesShow, rideSections, foodSections, showSections});
+    console.log(rideSections)
+
+    res.render('disney-selection-magickingdom', { user: req.user, isDesktop, loggedIn, averageRatingsRide, averageRatingsFood, averageRatingsShow, pageNamesRide, pageNamesFood, pageNamesShow, rideSections, foodSections, showSections});
   },
   getSpaceMountain: async (req, res) => {
     const loggedIn = req.isAuthenticated();
@@ -151,7 +162,7 @@ module.exports = {
   
   if (filter === 'all') {
     // Fetch all reviews without any specific filtering
-    filteredReview = await Review.find({})
+    filteredReview = await Review.find({ page: 'space-mountain' })
       .populate('user')
       .populate({
         path: 'comments',
@@ -171,7 +182,7 @@ module.exports = {
       });
   } else if (filter === 'highest-rated') {
     // Fetch reviews sorted by highest rating
-    filteredReview = await Review.find({})
+    filteredReview = await Review.find({ page: 'space-mountain' })
       .sort('-rating')
       .populate('user')
       .populate({
@@ -189,7 +200,7 @@ module.exports = {
     });
 } else if (filter === 'most-recent') {
   // Fetch reviews sorted by most recent
-  filteredReview = await Review.find({})
+  filteredReview = await Review.find({ page: 'space-mountain' })
     .sort('-createdAt')
     .populate('user')
     .populate({
@@ -198,13 +209,13 @@ module.exports = {
     });
 }
     const pageName = 'space-mountain'
-    const comments = await Comment.find({})
+    const comments = await Comment.find({ page: 'space-mountain' })
     .populate('user')
     .populate({
       path: 'comments', // Populate the 'comments' field for each review
       populate: { path: 'user' } // Populate the 'user' field for comments
     });
-    const review = await Review.find({})
+    const review = await Review.find({ page: 'space-mountain' })
       .populate('user')
       .populate({
         path: 'comments', // Populate the 'comments' field for each review
@@ -250,7 +261,7 @@ module.exports = {
   
     if (filter === 'all') {
       // Fetch all reviews without any specific filtering
-      filteredReview = await Review.find({})
+      filteredReview = await Review.find({ page: 'thunder-mountain' })
         .populate('user')
         .populate({
           path: 'comments',
@@ -270,7 +281,7 @@ module.exports = {
         });
     } else if (filter === 'highest-rated') {
       // Fetch reviews sorted by highest rating
-      filteredReview = await Review.find({})
+      filteredReview = await Review.find({ page: 'thunder-mountain' })
         .sort('-rating')
         .populate('user')
         .populate({
@@ -279,7 +290,7 @@ module.exports = {
         });
     } else if (filter === 'most-critical') {
     // Fetch reviews sorted by lowest rating
-    filteredReview = await Review.find({})
+    filteredReview = await Review.find({ page: 'thunder-mountain' })
       .sort('rating')
       .populate('user')
       .populate({
@@ -288,7 +299,7 @@ module.exports = {
       });
     } else if (filter === 'most-recent') {
       // Fetch reviews sorted by most recent
-      filteredReview = await Review.find({})
+      filteredReview = await Review.find({ page: 'thunder-mountain' })
         .sort('-createdAt')
         .populate('user')
         .populate({
@@ -298,13 +309,13 @@ module.exports = {
     }
     
     const pageName = 'thunder-mountain'
-    const comments = await Comment.find({})
+    const comments = await Comment.find({ page: 'thunder-mountain' })
     .populate('user')
     .populate({
       path: 'comments', // Populate the 'comments' field for each review
       populate: { path: 'user' } // Populate the 'user' field for comments
     });
-    const review = await Review.find({})
+    const review = await Review.find({ page: 'thunder-mountain' })
       .populate('user')
       .populate({
         path: 'comments', // Populate the 'comments' field for each review
@@ -349,7 +360,7 @@ module.exports = {
   
     if (filter === 'all') {
       // Fetch all reviews without any specific filtering
-      filteredReview = await Review.find({})
+      filteredReview = await Review.find({ page: 'haunted-mansion' })
         .populate('user')
         .populate({
           path: 'comments',
@@ -369,7 +380,7 @@ module.exports = {
         });
     } else if (filter === 'highest-rated') {
       // Fetch reviews sorted by highest rating
-      filteredReview = await Review.find({})
+      filteredReview = await Review.find({ page: 'haunted-mansion' })
         .sort('-rating')
         .populate('user')
         .populate({
@@ -378,7 +389,7 @@ module.exports = {
         });
     } else if (filter === 'most-critical') {
     // Fetch reviews sorted by lowest rating
-    filteredReview = await Review.find({})
+    filteredReview = await Review.find({ page: 'haunted-mansion' })
       .sort('rating')
       .populate('user')
       .populate({
@@ -387,7 +398,7 @@ module.exports = {
       });
     } else if (filter === 'most-recent') {
       // Fetch reviews sorted by most recent
-      filteredReview = await Review.find({})
+      filteredReview = await Review.find({ page: 'haunted-mansion' })
         .sort('-createdAt')
         .populate('user')
         .populate({
@@ -396,14 +407,14 @@ module.exports = {
         });
     }
     
-    const pageName = 'thunder-mountain'
-    const comments = await Comment.find({})
+    const pageName = 'haunted-mansion'
+    const comments = await Comment.find({ page: 'haunted-mansion' })
     .populate('user')
     .populate({
       path: 'comments', // Populate the 'comments' field for each review
       populate: { path: 'user' } // Populate the 'user' field for comments
     });
-    const review = await Review.find({})
+    const review = await Review.find({ page: 'haunted-mansion' })
       .populate('user')
       .populate({
         path: 'comments', // Populate the 'comments' field for each review
@@ -425,7 +436,7 @@ module.exports = {
     
     if (req.user) {
       existingReview = await Review.findOne({
-        page: 'thunder-mountain',
+        page: 'haunted-mansion',
         user: req.user.id,
         reviewedBy: { $in: [req.user.id] },
       });

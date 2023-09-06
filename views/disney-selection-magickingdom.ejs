@@ -257,11 +257,11 @@
             <p class="text-1xl"><%= rideSections[i].description %></p>
           </div>
           <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
-            <input value="1" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesRide[i]] === 1 ? 'checked' : '' %> />
-            <input value="2" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesRide[i]] === 2 ? 'checked' : '' %> />
-            <input value="3" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesRide[i]] === 3 ? 'checked' : '' %> />
-            <input value="4" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesRide[i]] === 4 ? 'checked' : '' %> />
-            <input value="5" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesRide[i]] === 5 ? 'checked' : '' %> />
+            <input value="1" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= rideSections[i].rating === 1 ? 'checked' : '' %> />
+            <input value="2" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= rideSections[i].rating === 2 ? 'checked' : '' %> />
+            <input value="3" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= rideSections[i].rating === 3 ? 'checked' : '' %> />
+            <input value="4" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= rideSections[i].rating === 4 ? 'checked' : '' %> />
+            <input value="5" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= rideSections[i].rating === 5 ? 'checked' : '' %> />
             <!-- Add more rating inputs as needed -->
           </div>
       
@@ -289,11 +289,11 @@
           </div>
           <!-- You can add the rating input for food sections if needed -->
           <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
-            <input value="1" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesFood[i]] === 1 ? 'checked' : '' %> />
-            <input value="2" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesFood[i]] === 2 ? 'checked' : '' %> />
-            <input value="3" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesFood[i]] === 3 ? 'checked' : '' %> />
-            <input value="4" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesFood[i]] === 4 ? 'checked' : '' %> />
-            <input value="5" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesFood[i]] === 5 ? 'checked' : '' %> />
+            <input value="1" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= foodSections[i].rating === 1 ? 'checked' : '' %> />
+            <input value="2" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= foodSections[i].rating === 2 ? 'checked' : '' %> />
+            <input value="3" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= foodSections[i].rating === 3 ? 'checked' : '' %> />
+            <input value="4" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= foodSections[i].rating === 4 ? 'checked' : '' %> />
+            <input value="5" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= foodSections[i].rating === 5 ? 'checked' : '' %> />
             <!-- Add more rating inputs as needed -->
           </div>
       
@@ -321,11 +321,11 @@
           </div>
           <!-- You can add the rating input for food sections if needed -->
           <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
-            <input value="1" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesShow[i]] === 1 ? 'checked' : '' %> />
-            <input value="2" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesShow[i]] === 2 ? 'checked' : '' %> />
-            <input value="3" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesShow[i]] === 3 ? 'checked' : '' %> />
-            <input value="4" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesShow[i]] === 4 ? 'checked' : '' %> />
-            <input value="5" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= averageRatings[pageNamesShow[i]] === 5 ? 'checked' : '' %> />
+            <input value="1" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= showSections[i].rating === 1 ? 'checked' : '' %> />
+            <input value="2" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= showSections[i].rating === 2 ? 'checked' : '' %> />
+            <input value="3" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= showSections[i].rating === 3 ? 'checked' : '' %> />
+            <input value="4" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= showSections[i].rating === 4 ? 'checked' : '' %> />
+            <input value="5" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= showSections[i].rating === 5 ? 'checked' : '' %> />
             <!-- Add more rating inputs as needed -->
           </div>
       

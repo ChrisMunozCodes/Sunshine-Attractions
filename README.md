@@ -32,6 +32,10 @@
 <a href="https://ibb.co/K25V0tr"><img src="https://i.ibb.co/QPJYbWK/66033a4f3c7b93cc76890798f053294a.jpg" alt="66033a4f3c7b93cc76890798f053294a" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/math-keyboard'></a><br />
 </p>
 
+## 🔆 Selection Page
+
+<a href="https://ibb.co/9pyYSLF"><img src="https://i.ibb.co/9pyYSLF/9cd08b6b5ae4bc90311ccfad2f07f454.jpg" alt="9cd08b6b5ae4bc90311ccfad2f07f454" border="0"></a>
+
 ## 🔆 Review Component
 
 <p align="left">

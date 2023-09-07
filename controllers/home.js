@@ -24,7 +24,7 @@ module.exports = {
     const averageRatingsShow = {};
 
     // Define an array of page names (you can add more as needed)
-    const pageNamesRide = ['space-mountain', 'thunder-mountain', 'haunted-mansion' /* Add more page names here */];
+    const pageNamesRide = ['space-mountain', 'thunder-mountain', 'haunted-mansion', 'seven-dwarfs-mine-train' /* Add more page names here */];
     const pageNamesFood = ['space-mountain', 'thunder-mountain', 'haunted-mansion' /* Add more page names here */];
     const pageNamesShow = ['space-mountain', 'thunder-mountain', 'haunted-mansion' /* Add more page names here */];
 
@@ -90,6 +90,13 @@ module.exports = {
           src: 'assets/image/Sunshine Attractions-logo/haunted-mansion.jpg',
           buttonSrc: '/haunted-mansion' // Button source
       },
+      {
+        name: 'Seven Dwarfs Mine Train',
+        rating: averageRatingsRide['seven-dwarfs-mine-train'],
+        description: `Seven Dwarfs Mine Train is a popular roller coaster attraction at Disney World's Magic Kingdom, themed around Disney's classic film, Snow White and the Seven Dwarfs.`,
+        src: 'assets/image/Sunshine Attractions-logo/mine-train.jpeg',
+        buttonSrc: '/seven-dwarfs-mine-train' // Button source
+    },
   
   
       // Add more ride sections here
@@ -545,7 +552,6 @@ module.exports = {
     }
   
     res.render('seven-dwarfs-mine-train', { user: req.user, isDesktop, loggedIn, review: filteredReview, averageRating, disableReviewButton, comments: comments, filter: filter, pageName: pageName });
-
   },
 };
 

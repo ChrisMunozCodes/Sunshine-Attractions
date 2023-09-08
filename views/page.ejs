@@ -30,15 +30,15 @@
     <script src="/js/main.js"></script>
         <!-- Don't remove this script tag, it needs to be on top for the inline script that handles converting the rating value into which star
     is selected in user reviews. -->
-    <script src="assets/js/transfer-review-star-data.js"></script>
-    <script src="assets/js/average-review.js"></script>
-    <script src="assets/js/form-submit-control.js"></script>
-    <script src="assets/js/control-modal-4.js"></script>
-    <script src="assets/js/toggleHiddenComments.js"></script>
-    <script src="assets/js/ajax-comment-like.js"></script>
-    <script src="assets/js/ajax-comment-dislike.js"></script>
-    <script src="assets/js/ajax-review-like.js"></script>
-    <script src="assets/js/change-filter-heading.js"></script>
+    <script src="/assets/js/transfer-review-star-data.js"></script>
+    <script src="/assets/js/average-review.js"></script>
+    <script src="/assets/js/form-submit-control.js"></script>
+    <script src="/assets/js/control-modal-4.js"></script>
+    <script src="/assets/js/toggleHiddenComments.js"></script>
+    <script src="/assets/js/ajax-comment-like.js"></script>
+    <script src="/assets/js/ajax-comment-dislike.js"></script>
+    <script src="/assets/js/ajax-review-like.js"></script>
+    <script src="/assets/js/change-filter-heading.js"></script>
   </head>
 <% if (isDesktop) { %>
     <div class="desktop-container w-screen h-screen overflow-auto">
@@ -47,7 +47,7 @@
           <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-3 bg-gray-100">
             <div class="logo-container flex justify-center items-center">
               <a href="/">
-              <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+              <img class="w-full h-6/12" src="/assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
               </a>
             </div>
             <div class="login-container flex justify-center items-center p-5">
@@ -55,7 +55,7 @@
                 <form action="/profile">
                   <div class="avatar">
                     <div class="w-10 rounded-full">
-                      <img src="<%= user.profilePic || 'assets/image/Sunshine Attractions-logo/default-profile-pic.png' %>" alt="User Profile Picture" />
+                      <img src="<%= user.profilePic || '/assets/image/Sunshine Attractions-logo/default-profile-pic.png' %>" alt="User Profile Picture" />
                     </div>
                   </div>
                 </form>
@@ -76,15 +76,15 @@
           <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5  bg-gray-100 mb-10">
             <div class="logo-container flex justify-center items-center">
               <a href="/">
-                <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+                <img class="w-full h-6/12" src="/assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
               </a>
             </div>
             <div class="login-container flex justify-center items-center p-5">
               <form action="/login">
-                <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather">LOGIN</button>
+                <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather hover:bg-black hover:text-white hover:border-white">LOGIN</button>
               </form>
               <form action="/signup">
-                <button type="submit" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather">SIGNUP</button>
+                <button type="submit" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather hover:bg-black hover:text-white hover:border-white">SIGNUP</button>
               </form>
             </div>
           </nav>
@@ -99,10 +99,10 @@
       <div class="card bg-base-100 shadow-xl shadow-black">
         <div class="relative">
           <figure class="rounded-2xl">  
-            <img class="object-cover" src="assets/image/Sunshine Attractions-logo/big-thunder-mountain.jpeg" alt="Photo of Thunder Mountain">
+            <img class="object-cover" src="<%= pageData[pageId].src %>" alt="<%= pageData[pageId].alt %>">
           </figure>
           <div class="absolute bottom-4 right-4 bg-black text-white text-5xl border border-primaryButton border-4 w-24 h-24 flex flex-col justify-center items-center font-bold text-center shadow-md shadow-black">
-            <section id="thunder-wait">
+            <section id="space-wait">
               <span class="loading loading-spinner text-warning"></span>  
             </section>
             <section>
@@ -112,7 +112,7 @@
           </div>
         </div>
         <div class="card-body flex">
-          <h1 class="text-5xl items-center justify-center w-full flex mt-2 font-karla">Thunder Mountain</h1>
+          <h1 class="text-5xl items-center justify-center w-full flex mt-2 font-karla">Space Mountain</h1>
           <div class="rating m-1 items-center justify-center w-full flex">
             <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
             <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
@@ -142,48 +142,48 @@
           </div>
 
           <div>
-            <div class="badge badge-secondary badge-outline">Family-Friendly Thrills</div>
-            <div class="badge badge-secondary badge-outline">rollercoaster</div>
-            <div class="badge badge-secondary badge-outline">immersive</div>
+            <% if (pageData[pageId].tags && pageData[pageId].tags.length > 0) { %>
+              <% pageData[pageId].tags.forEach(function(tag) { %>
+                <div class="badge badge-secondary badge-outline"><%= tag %></div>
+              <% }); %>
+            <% } %>
           </div>
 
           <div>
             <h2 class="text-2xl w-full flex mt-2 font-karla">About:</h2>
-            <p class="font-merriweather items-center justify-center">Thunder Mountain is designed to mimic a thrilling mine train ride through the Wild West. The attraction's most iconic feature is the towering red rock formation known as "Big Thunder Mountain," which serves as the backdrop for the ride's thrilling adventure.</p>
+            <p class="font-merriweather items-center justify-center"><%= pageData[pageId].about %></p>
           </div>
-
+          
           <div>
             <h2 class="text-2xl w-full flex mt-2 font-karla">Height Requirement:</h2>
-            <p class="font-merriweather items-center justify-center">3′ 8″</p>
+            <p class="font-merriweather items-center justify-center"><%= pageData[pageId].height %></p>
           </div>
-
+          
           <div>
             <h2 class="text-2xl w-full flex mt-2 font-karla">Duration:</h2>
-            <p class="font-merriweather items-center justify-center">3 Minutes</p>
+            <p class="font-merriweather items-center justify-center"><%= pageData[pageId].duration %></p>
           </div>
-
+          
           <div>
             <h2 class="text-2xl w-full flex mt-2 font-karla">Drop height:</h2>
-            <p class="font-merriweather items-center justify-center">26′</p>
+            <p class="font-merriweather items-center justify-center"><%= pageData[pageId].drop %></p>
           </div>
-
+          
           <div>
             <h2 class="text-2xl w-full flex mt-2 font-karla">Inversions?</h2>
-            <p class="font-merriweather items-center justify-center">No</p>
+            <p class="font-merriweather items-center justify-center"><%= pageData[pageId].inversions %></p>
           </div>
-
+          
           <div>
-          <h2 class="text-2xl w-full flex mt-2 font-karla">Opening Date</h2>
-          <p class="font-merriweather items-center justify-center">The ride officially opened to the public on November 15, 1980, adding a new dimension of excitement to the park.</p>
-         </div>
-
-        <div>
-          <h2 class="text-2xl w-full flex mt-2 font-karla">A Classic Disney Attraction</h2>
-          <p class="font-merriweather items-center justify-center">Big Thunder Mountain has earned its status as a classic Disney attraction, loved by visitors for its combination of family-friendly thrills and immersive theming.</p>
-        </div>
-
+            <h2 class="text-2xl w-full flex mt-2 font-karla">Opening Date:</h2>
+            <p class="font-merriweather items-center justify-center"><%= pageData[pageId].opening %></p>
+          </div>
+          
+          <div>
+            <h2 class="text-2xl w-full flex mt-2 font-karla">Fun Fact:</h2>
+            <p class="font-merriweather items-center justify-center"><%= pageData[pageId].fact %></p>
+          </div>          
         
-  
         </div>
       </div>
 
@@ -201,7 +201,7 @@
               <% if (user && user.profilePic) { %>
                 <img src="<%= user.profilePic %>" alt="User Profile Picture" />
               <% } else { %>
-                <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" alt="Default Profile Picture" />
+                <img src="/assets/image/Sunshine Attractions-logo/default-profile-pic.png" alt="Default Profile Picture" />
               <% } %>
             </div>
           </div>
@@ -241,11 +241,11 @@
         <section class="h-1/5 w-full flex justify-end items-center">
           <input type="hidden" name="pageId" value="123">
           <span class="loading loading-spinner text-warning hidden"></span>
-          <button type="submit" value="Upload" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather" id="submitButton">SUBMIT</button>
+          <button type="submit" value="Upload" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather hover:bg-black hover:text-white hover:border-white" id="submitButton">SUBMIT</button>
         </section>
         
         <input type="hidden" name="pageName" value="<%= pageName %>">
-        
+
       </section>
     </form>
       
@@ -257,20 +257,19 @@
             <h2 id="reviewsHeading" class="font-karla text-3xl w-full m-auto">All Reviews</h2>
           <label tabindex="0" class="btn m-1">Filters</label>
           <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'all' ? 'active' : '' %>" href="/thunder-mountain?filter=all">All reviews</a></li>
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'your' ? 'active' : '' %>" href="/thunder-mountain?filter=your">Your reviews</a></li>
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'highest-rated' ? 'active' : '' %>" href="/thunder-mountain?filter=highest-rated">Highest rated</a></li>
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'most-critical' ? 'active' : '' %>" href="/thunder-mountain?filter=most-critical">Most critical</a></li>
-            <li><a id="filter-link" class="font-merriweather <%= filter === 'most-recent' ? 'active' : '' %>" href="/thunder-mountain?filter=most-recent">Recent reviews</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'all' ? 'active' : '' %>" href="/<%= pageId %>?filter=all">All reviews</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'your' ? 'active' : '' %>" href="/<%= pageId %>?filter=your">Your reviews</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'highest-rated' ? 'active' : '' %>" href="/<%= pageId %>?filter=highest-rated">Highest rated</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'most-critical' ? 'active' : '' %>" href="/<%= pageId %>?filter=most-critical">Most critical</a></li>
+            <li><a id="filter-link" class="font-merriweather <%= filter === 'most-recent' ? 'active' : '' %>" href="/<%= pageId %>?filter=most-recent">Recent reviews</a></li>
           </ul>
         </div>
       </div>
         <!-- Right section -->
-        <!-- Review componet -->
-        
+        <!-- Review componet -->  
         <% for (var i = 0; i < review.length; i++) { %>
-            <% if (review[i].page === 'thunder-mountain') { %>    
-        <div class="card bg-base-100 shadow-xl border border-black m-5 overflow-hidden min-w-[500px] max-w-[500px]">
+            <% if (review[i].page === pageId) { %>  
+        <div class="card bg-base-100 shadow-xl border border-gray-100 m-5 overflow-hidden min-w-[500px] max-w-[500px]">
             <div class="card-body overflow-auto box-border">
               <div>
                 <section class="flex">
@@ -280,7 +279,7 @@
                         <% if (review[i].user && review[i].user.profilePic) { %>
                           <img src="<%= review[i].user.profilePic %>" alt="User Profile Picture" />
                         <% } else { %>
-                          <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" alt="Default Profile Picture" />
+                          <img src="/assets/image/Sunshine Attractions-logo/default-profile-pic.png" alt="Default Profile Picture" />
                         <% } %>
                       </div>
                     </div>
@@ -417,7 +416,7 @@
                 <% if (comments[k].user && comments[k].user.profilePic) { %>
                   <img src="<%= comments[k].user.profilePic %>" alt="User Profile Picture" />
                 <% } else { %>
-                  <img src="assets/image/Sunshine Attractions-logo/default-profile-pic.png" alt="Default Profile Picture" />
+                  <img src="/assets/image/Sunshine Attractions-logo/default-profile-pic.png" alt="Default Profile Picture" />
                 <% } %>
               </div>
             </div>
@@ -464,7 +463,7 @@
           </div>
         </div>
 </div>
-<% } %>
+        
           <script>
             (function(i) {
               // Call the function to set the star rating for this review
@@ -479,6 +478,7 @@
           </script>
           
         <% } %>
+      <% } %>
         <script>
           // Function to calculate the rounded average rating
           function calculateRoundedAverage(averageRating) {
@@ -498,11 +498,11 @@
             star.disabled = true;
           });
         </script>
-        <script src="assets/js/larger-image-modal.js"></script>
-        <script src="assets/js/loading-spinner.js"></script>
-        <script src="assets/js/wait-time-api.js"></script>
-        <script src="assets/js/close-modal.js"></script>
-        <script src="assets/js/keep-scroll-position.js"></script>
+        <script src="/assets/js/larger-image-modal.js"></script>
+        <script src="/assets/js/loading-spinner.js"></script>
+        <script src="/assets/js/wait-time-api.js"></script>
+        <script src="/assets/js/close-modal.js"></script>
+        <script src="/assets/js/keep-scroll-position.js"></script>
 
   <% } %>
 

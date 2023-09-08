@@ -29,12 +29,12 @@ router.post("/signup", authController.postSignup);
 router.get("/profile", ensureAuth, userController.getProfile);
 router.get("/disney-selection-homepage", homeController.getDisneySelectionHomepage);
 router.get("/disney-selection-magickingdom", homeController.getDisneySelectionMagicKingdom);
-router.get("/space-mountain", homeController.getSpaceMountain);
-router.get("/thunder-mountain", homeController.getThunderMountain);
 router.get("/haunted-mansion", homeController.getHauntedMansion);
 router.get("/seven-dwarfs-mine-train", homeController.getSevenDwarfsMineTrain);
 router.get("/your-reviews", ensureAuth, reviewController.getYourReviews);
 router.get("/your-comments", ensureAuth, reviewController.getYourComments);
+
+router.get("/page/:id", homeController.getPage);
 
 
 module.exports = router;

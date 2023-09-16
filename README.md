@@ -73,8 +73,11 @@ Technologies that I used to develop this app
 - [Tailwind](tailwindcss.com)
 - [Cloudinary]([https://cloudinary.com/])
 
-## 💻 Getting started
+## 💻 Getting started - Setting up your environment.
 
+1. Clone the files.
+2. Use 'npm i' in the console in order to install the dependencies.
+3. 
 - Create a `.env` file in config folder and add the following as `key = value`
   - PORT = 2121 (can be any port example: 3000)
   - DB_STRING = `your database URI`

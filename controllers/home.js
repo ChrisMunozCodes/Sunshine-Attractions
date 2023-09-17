@@ -41,8 +41,41 @@ module.exports = {
       'the-magic-carpets-of-aladdin'
       /* Add more page names here if needed */
     ];    
-    const pageNamesFood = ['space-mountain', 'thunder-mountain', 'haunted-mansion' /* Add more page names here */];
-    const pageNamesShow = ['space-mountain', 'thunder-mountain', 'haunted-mansion' /* Add more page names here */];
+    const pageNamesFood = [
+      'cinderellas-royal-table',
+      'be-our-guest-restaurant',
+      'the-crystal-palace',
+      'liberty-tree-tavern',
+      'tonys-town-square-restaurant',
+      'the-plaza-restaurant',
+      'caseys-corner',
+      'pecos-bill-tall-tale-inn-and-cafe',
+      'columbia-harbour-house',
+      'aloha-isle',
+      'sleepy-hollow',
+      'gastons-tavern',
+      'cosmic-rays-starlight-cafe',
+      'the-friars-nook',
+      'pinocchio-village-haus',
+      'storybook-treats',
+      /* Add more page names here */
+    ];
+    
+    const pageNamesShow = [
+      "happily-ever-after",
+      "festival-of-fantasy-parade",
+      "enchanted-tiki-room",
+      "hickey's-philharMagic",
+      "country-bear-jamboree",
+      "walt-disney's-carousel-of-progress",
+      "monsters,-inc.-laugh-floor",
+      "a-pirate's-adventure-treasures-of-the-seven-seas",
+      "the-muppets-present...-great-moments-in-american-history",
+      "main-street-trolley-show",
+      "character-meet-and-greets",
+      "the-dapper-dans"
+      /* Add more show names here */
+    ];
 
     // Loop through each page name
     for (const pageName of pageNamesRide) {
@@ -193,51 +226,206 @@ module.exports = {
     ];
 
     const foodSections = [
-      {
-          name: 'Space Mountain',
-          description: 'Space Mountain is a space-themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!',
-          src: 'assets/image/Sunshine Attractions-logo/space-mountain.jpeg',
-          buttonSrc: '/space-mountain' // Button source
-      },
-      {
-          name: 'Thunder Mountain',
-          description: 'Big Thunder Mountain is a rollercoaster ride that takes place in an old western setting.',
-          src: 'assets/image/Sunshine Attractions-logo/big-thunder-mountain.jpeg',
-          buttonSrc: '/thunder-mountain' // Button source
-      },
-      {
-          name: 'Haunted Mansion',
-          description: 'Haunted Mansion is a dark slow ride through a spooky mansion, get ready to see ghosts, and get immersed into a well crafted disney haunt.',
-          src: 'assets/image/Sunshine Attractions-logo/haunted-mansion.jpg',
-          buttonSrc: '/haunted-mansion' // Button source
-      },
 
-      
-  
-      // Add more ride sections here
+      {
+        name: 'Columbia Harbour House',
+        rating: averageRatingsFood['columbia-harbour-house'],
+        description: 'Columbia Harbour House offers seafood, sandwiches, and more in a nautical-themed setting. Enjoy a maritime meal in Liberty Square.',
+        src: '', // Leave this blank
+        buttonSrc: '/page/columbia-harbour-house' // Button source
+      },
+      {
+        name: 'Aloha Isle',
+        rating: averageRatingsFood['aloha-isle'],
+        description: 'Aloha Isle is your destination for Dole Whip treats and refreshments. Experience a taste of the tropics in Adventureland.',
+        src: '', // Leave this blank
+        buttonSrc: '/page/aloha-isle' // Button source
+      },
+      {
+        name: "Casey's Corner",
+        rating: averageRatingsFood['caseys-corner'],
+        description: "Casey's Corner serves classic ballpark fare, including hot dogs and corn dog nuggets. Experience the spirit of baseball on Main Street, U.S.A.",
+        src: '', // Leave this blank
+        buttonSrc: "/page/caseys-corner" // Button source
+      },
+      {
+        name: "Cosmic Ray's Starlight Cafe",
+        rating: averageRatingsFood['cosmic-rays-starlight-cafe'],
+        description: "Cosmic Ray's Starlight Cafe offers a variety of quick-service options and live entertainment from Sonny Eclipse. Enjoy an out-of-this-world meal in Tomorrowland.",
+        src: '', // Leave this blank
+        buttonSrc: "/page/cosmic-rays-starlight-cafe" // Button source
+      },
+      {
+        name: 'The Crystal Palace',
+        rating: averageRatingsFood['the-crystal-palace'],
+        description: 'The Crystal Palace offers character dining and a buffet with American cuisine. Dine with Winnie the Pooh and friends in a Victorian greenhouse setting on Main Street, U.S.A.',
+        src: '', // Leave this blank
+        buttonSrc: '/page/the-crystal-palace' // Button source
+      },
+      {
+        name: 'Liberty Tree Tavern',
+        rating: averageRatingsFood['liberty-tree-tavern'],
+        description: 'Liberty Tree Tavern serves colonial-inspired meals and an all-you-can-eat feast. Dine in a historic setting in Liberty Square.',
+        src: '', // Leave this blank
+        buttonSrc: '/page/liberty-tree-tavern' // Button source
+      },
+      {
+        name: "Tony's Town Square Restaurant",
+        rating: averageRatingsFood['tonys-town-square-restaurant'],
+        description: "Tony's Town Square Restaurant offers Italian dishes in an Italian trattoria setting. Dine with Lady and the Tramp on Main Street, U.S.A.",
+        src: '', // Leave this blank
+        buttonSrc: "/page/tonys-town-square-restaurant" // Button source
+      },
+      {
+        name: 'Sleepy Hollow',
+        rating: averageRatingsFood['sleepy-hollow'],
+        description: 'Sleepy Hollow offers delicious snacks and treats in a charming colonial-style setting. It\'s the perfect stop for a quick bite in Liberty Square.',
+        src: '', // Leave this blank
+        buttonSrc: '/page/sleepy-hollow' // Button source
+      },
+      {
+        name: "Gaston's Tavern",
+        rating: averageRatingsFood['gastons-tavern'],
+        description: "Gaston's Tavern is a rustic quick-service spot inspired by Gaston from Beauty and the Beast. Enjoy snacks and a cozy atmosphere in Fantasyland.",
+        src: '', // Leave this blank
+        buttonSrc: "/page/gastons-tavern" // Button source
+      },
+      {
+        name: "The Friar's Nook",
+        rating: averageRatingsFood['the-friars-nook'],
+        description: "The Friar's Nook offers comfort food with a fairytale twist. Enjoy your meal in a charming nook in Fantasyland.",
+        src: '', // Leave this blank
+        buttonSrc: "/page/the-friars-nook" // Button source
+      },
+      {
+        name: 'Pinocchio Village Haus',
+        rating: averageRatingsFood['pinocchio-village-haus'],
+        description: 'Pinocchio Village Haus offers Italian-inspired quick-service meals in a charming Fantasyland setting. It\'s a great spot for pizza and more.',
+        src: '', // Leave this blank
+        buttonSrc: '/page/pinocchio-village-haus' // Button source
+      },
+      {
+        name: "Cinderella's Royal Table",
+        rating: averageRatingsFood['cinderellas-royal-table'],
+        description: 'Cinderella\'s Royal Table offers a character dining experience inside Cinderella Castle. Enjoy a royal meal fit for a princess!',
+        src: '', // Leave this blank
+        buttonSrc: "/page/cinderellas-royal-table" // Button source
+      },
+      {
+        name: "Be Our Guest Restaurant",
+        rating: averageRatingsFood['be-our-guest-restaurant'],
+        description: 'Be Our Guest Restaurant is inspired by Beauty and the Beast, offering French-inspired cuisine in a magical setting.',
+        src: '', // Leave this blank
+        buttonSrc: "/page/be-our-guest-restaurant" // Button source
+      },    
+      {
+        name: "The Plaza Restaurant",
+        rating: averageRatingsFood['the-plaza-restaurant'],
+        description: 'The Plaza Restaurant offers casual American dining located on Main Street, U.S.A. Enjoy a delightful meal on Main Street.',
+        src: '', // Leave this blank
+        buttonSrc: "/page/the-plaza-restaurant" // Button source
+      },
+      {
+        name: 'Pecos Bill Tall Tale Inn and Cafe',
+        rating: averageRatingsFood['pecos-bill-tall-tale-inn-and-cafe'],
+        description: 'Pecos Bill Tall Tale Inn and Cafe serves Tex-Mex favorites in a Wild West setting. Saddle up and enjoy a meal in Frontierland.',
+        src: '', // Leave this blank
+        buttonSrc: '/page/pecos-bill-tall-tale-inn-and-cafe' // Button source
+      },
+      {
+        name: 'Storybook Treats',
+        rating: averageRatingsFood['storybook-treats'],
+        description: 'Storybook Treats offers sweet treats and soft-serve ice cream in a fairytale setting. Satisfy your sweet tooth in Fantasyland.',
+        src: '', // Leave this blank
+        buttonSrc: '/page/storybook-treats' // Button source
+      }    
     ];
 
     const showSections = [
-      {
-          name: 'Space Mountain',
-          description: 'Space Mountain is a space-themed dark ride indoor rollercoaster. Expect twists, turns, and sudden drops!',
-          src: 'assets/image/Sunshine Attractions-logo/space-mountain.jpeg',
-          buttonSrc: '/space-mountain' // Button source
-      },
-      {
-          name: 'Thunder Mountain',
-          description: 'Big Thunder Mountain is a rollercoaster ride that takes place in an old western setting.',
-          src: 'assets/image/Sunshine Attractions-logo/big-thunder-mountain.jpeg',
-          buttonSrc: '/thunder-mountain' // Button source
-      },
-      {
-          name: 'Haunted Mansion',
-          description: 'Haunted Mansion is a dark slow ride through a spooky mansion, get ready to see ghosts, and get immersed into a well crafted disney haunt.',
-          src: 'assets/image/Sunshine Attractions-logo/haunted-mansion.jpg',
-          buttonSrc: '/haunted-mansion' // Button source
-      },
-  
-  
+        {
+          name: "Happily Ever After",
+          rating: averageRatingsShow["happily-ever-after"],
+          description: "Happily Ever After is a spectacular nighttime fireworks and projection show that takes place over Cinderella Castle. Be prepared to be enchanted by Disney's most beloved stories.",
+          src: "",
+          buttonSrc: "/page/happily-ever-after"
+        },
+        {
+          name: "Festival of Fantasy Parade",
+          rating: averageRatingsShow["festival-of-fantasy-parade"],
+          description: "The Festival of Fantasy Parade is a colorful and musical parade featuring Disney characters and floats. Join the celebration on Main Street, U.S.A.",
+          src: "",
+          buttonSrc: "/page/festival-of-fantasy-parade"
+        },
+        {
+          name: "Enchanted Tiki Room",
+          rating: averageRatingsShow["enchanted-tiki-room"],
+          description: "The Enchanted Tiki Room is a classic attraction featuring animatronic birds and a tropical show. Enjoy a taste of the South Pacific right in the heart of Adventureland.",
+          src: "",
+          buttonSrc: "/page/enchanted-tiki-room"
+        },
+        {
+          name: "Mickey's PhilharMagic",
+          rating: averageRatingsShow["mickeys-philharmagic"],
+          description: "Mickey's PhilharMagic is a 3D musical adventure featuring classic Disney songs and characters. Don your opera glasses and join the fun in Fantasyland.",
+          src: "",
+          buttonSrc: "/page/mickeys-philharmagic"
+        },
+        {
+          name: "Country Bear Jamboree",
+          rating: averageRatingsShow["country-bear-jamboree"],
+          description: "The Country Bear Jamboree is a humorous musical show featuring animatronic bears. Visit Grizzly Hall in Frontierland for some good old-fashioned country fun.",
+          src: "",
+          buttonSrc: "/page/country-bear-jamboree"
+        },
+        {
+          name: "Walt Disney's Carousel of Progress",
+          rating: averageRatingsShow["carousel-of-progress"],
+          description: "Walt Disney's Carousel of Progress is a rotating theater show that takes you through the progress of technology and American life. Step into the future in Tomorrowland.",
+          src: "",
+          buttonSrc: "/page/carousel-of-progress"
+        },
+        {
+          name: "Monsters, Inc. Laugh Floor",
+          rating: averageRatingsShow["monsters-inc-laugh-floor"],
+          description: "Monsters, Inc. Laugh Floor is an interactive comedy show featuring the hilarious antics of Mike Wazowski and other Monsters, Inc. characters. Have a laugh in Tomorrowland.",
+          src: "",
+          buttonSrc: "/page/monsters-inc-laugh-floor"
+        },
+        {
+          name: "A Pirate's Adventure - Treasures of the Seven Seas",
+          rating: averageRatingsShow["pirates-adventure"],
+          description: "A Pirate's Adventure - Treasures of the Seven Seas is an interactive quest where you join Captain Jack Sparrow's crew and search for hidden treasures in Adventureland.",
+          src: "",
+          buttonSrc: "/page/pirates-adventure"
+        },
+        {
+          name: "The Muppets Present... Great Moments in American History",
+          rating: averageRatingsShow["muppets-great-moments"],
+          description: "The Muppets Present... Great Moments in American History is a humorous show that retells historical moments with the Muppets' unique twist. Laugh and learn on Liberty Square.",
+          src: "",
+          buttonSrc: "/page/muppets-great-moments"
+        },
+        {
+          name: "Main Street Trolley Show",
+          rating: averageRatingsShow["main-street-trolley-show"],
+          description: "The Main Street Trolley Show is a delightful performance featuring the Dapper Dans and other Main Street entertainers. Catch this show at the entrance to Magic Kingdom.",
+          src: "",
+          buttonSrc: "/page/main-street-trolley-show"
+        },
+        {
+          name: "Character Meet and Greets",
+          rating: averageRatingsShow["character-meet-greets"],
+          description: "Character Meet and Greets allow you to meet your favorite Disney characters and take photos with them. Find them throughout Magic Kingdom.",
+          src: "",
+          buttonSrc: "/page/character-meet-greets"
+        },
+        {
+          name: "The Dapper Dans",
+          rating: averageRatingsShow["dapper-dans"],
+          description: "The Dapper Dans are a barbershop quartet that performs on Main Street, U.S.A. Enjoy their harmonious tunes and classic songs.",
+          src: "",
+          buttonSrc: "/page/dapper-dans"
+        } 
       // Add more ride sections here
     ];
 
@@ -454,8 +642,305 @@ module.exports = {
         fact: 'The ride allows guests to control the height of their carpets, adding an interactive element to the experience.',
         src: "/assets/image/Sunshine Attractions-logo/640px-Tokyo_DisneySea_The_Magic_Carpets_of_Aladdin_201306.jpeg", // Leave this blank
         alt: 'Photo of The Magic Carpets of Aladdin' // Leave this blank
-      }      
-
+      },
+      //FOOD AREA STARTS HERE
+      'cinderellas-royal-table': {
+        tags: ['Character Dining', 'Fine Dining', 'Cinderella Castle'],
+        name: "Cinderella's Royal Table",
+        about: "Cinderella's Royal Table offers a royal character dining experience inside the iconic Cinderella Castle. Meet Disney princesses while enjoying a fine dining meal.",
+        pricing: 'Prices vary by meal and time of day. Check the official Disney website for current pricing.',
+        atmosphere: 'Experience a regal and enchanting atmosphere with castle interiors and character interactions.',
+        specialty: 'Signature dishes include the Royal Feast and dessert selections.',
+        reservation: 'Reservations are highly recommended due to popularity.',
+        dietaryOptions: 'Special dietary requests can be accommodated with advance notice.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'be-our-guest-restaurant': {
+        tags: ['Beauty and the Beast', 'French Cuisine', 'Fine Dining'],
+        name: 'Be Our Guest Restaurant',
+        about: 'Be Our Guest Restaurant is inspired by Beauty and the Beast and offers French-inspired cuisine. Dine in the grand ballroom or the Beast’s enchanted castle.',
+        pricing: 'Prices vary by meal and time of day. Check the official Disney website for current pricing.',
+        atmosphere: 'Step into the magical world of Beauty and the Beast with themed dining rooms and immersive decor.',
+        specialty: 'Try the Grey Stuff for a delicious dessert treat.',
+        reservation: 'Reservations are highly recommended due to popularity.',
+        dietaryOptions: 'Special dietary requests can be accommodated with advance notice.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'aloha-isle': {
+        tags: ['Snacks', 'Dole Whip', 'Tropical'],
+        name: 'Aloha Isle',
+        about: 'Aloha Isle is famous for its Dole Whip, a delicious pineapple soft-serve treat. Enjoy a taste of the tropics in the heart of Magic Kingdom.',
+        pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
+        atmosphere: 'Escape to a tropical paradise with tiki-inspired decor and outdoor seating.',
+        specialty: 'Try the classic Dole Whip or indulge in a Dole Whip float.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'caseys-corner': {
+        tags: ['Quick Service', 'American Classics', 'Baseball'],
+        name: "Casey's Corner",
+        about: "Casey's Corner is a classic American eatery known for hot dogs and baseball-themed fare. It's a taste of Americana at the heart of Magic Kingdom.",
+        pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
+        atmosphere: 'Step into a vintage baseball-inspired setting with classic tunes and memorabilia.',
+        specialty: 'Try the famous Foot-long Hot Dog or the Chili Cheese Dog.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'columbia-harbour-house': {
+        tags: ['Seafood', 'New England', 'Nautical'],
+        name: 'Columbia Harbour House',
+        about: 'Columbia Harbour House offers seafood and comfort food in a charming New England-style setting. Enjoy a maritime meal in Liberty Square.',
+        pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
+        atmosphere: 'Dine in a nautical-themed eatery with cozy corners and seaside decor.',
+        specialty: 'Try the Lobster Roll or the Fried Shrimp Platter.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'cosmic-rays-starlight-cafe': {
+        tags: ['Quick Service', 'Space', 'Entertainment'],
+        name: "Cosmic Ray's Starlight Café",
+        about: "Cosmic Ray's Starlight Café is an out-of-this-world dining experience with burgers and entertainment. It's a space-age adventure in Tomorrowland.",
+        pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
+        atmosphere: 'Enjoy a cosmic atmosphere with animatronic entertainment by Sonny Eclipse.',
+        specialty: 'Try the Bacon Cheeseburger or the Rotisserie Chicken.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'the-crystal-palace': {
+        tags: ['Character Dining', 'Buffet', 'Victorian'],
+        name: 'The Crystal Palace',
+        about: 'The Crystal Palace offers character dining with Winnie the Pooh and friends in a beautiful Victorian greenhouse. Enjoy a buffet meal with Disney charm.',
+        pricing: 'Prices vary by meal and time of day. Check the official Disney website for current pricing.',
+        atmosphere: 'Dine in an elegant Victorian setting surrounded by lush greenery and natural light.',
+        specialty: 'Indulge in a buffet with classic American and international dishes.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'liberty-tree-tavern': {
+        tags: ['American Classics', 'Colonial', 'Family Style'],
+        name: 'Liberty Tree Tavern',
+        about: 'Liberty Tree Tavern serves colonial-inspired family-style meals in a historic setting. Step back in time to the days of early America.',
+        pricing: 'Prices vary by meal and time of day. Check the official Disney website for current pricing.',
+        atmosphere: 'Experience the charm of colonial America with themed dining rooms and period decor.',
+        specialty: `Enjoy hearty family-style dishes like the Patriot's Platter.`,
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'tonys-town-square-restaurant': {
+        tags: ['Italian', 'Lady and the Tramp', 'Romantic'],
+        name: "Tony's Town Square Restaurant",
+        about: "Tony's Town Square Restaurant offers Italian cuisine in a charming setting inspired by Lady and the Tramp. It's perfect for a romantic meal.",
+        pricing: 'Prices vary by meal and time of day. Check the official Disney website for current pricing.',
+        atmosphere: 'Dine in an Italian-inspired trattoria with a romantic ambiance.',
+        specialty: 'Try the Spaghetti and Meatballs, a nod to the iconic Lady and the Tramp scene.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'the-plaza-restaurant': {
+        tags: ['American Classics', 'Victorian', 'Casual'],
+        name: 'The Plaza Restaurant',
+        about: 'The Plaza Restaurant offers American classics in a charming Victorian setting on Main Street, U.S.A. Enjoy a casual meal with a view of Cinderella Castle.',
+        pricing: 'Prices vary by meal and time of day. Check the official Disney website for current pricing.',
+        atmosphere: 'Relax in a casual Victorian-style restaurant with a view of Main Street.',
+        specialty: 'Try the Plaza Club or the Plaza Loaded Fries.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'pecos-bill-tall-tale-inn-and-cafe': {
+        tags: ['Quick Service', 'Tex-Mex', 'Wild West'],
+        name: 'Pecos Bill Tall Tale Inn and Cafe',
+        about: 'Pecos Bill Tall Tale Inn and Cafe serves Tex-Mex favorites in a Wild West setting. Saddle up and enjoy a meal in Frontierland.',
+        pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
+        atmosphere: 'Step into a Wild West saloon with rustic decor and cowboy charm.',
+        specialty: 'Try the Fajita Platter or the Southwest Salad.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'sleepy-hollow': {
+        tags: ['Quick Service', 'Snacks', 'Colonial'],
+        name: 'Sleepy Hollow',
+        about: `Sleepy Hollow offers delicious snacks and treats in a charming colonial-style setting. It's the perfect stop for a quick bite in Liberty Square.`,
+        pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
+        atmosphere: 'Enjoy your snack in a colonial-inspired setting with a view of Cinderella Castle.',
+        specialty: 'Try the Sweet and Spicy Chicken Waffle Sandwich or the Nutella and Fresh Fruit Waffle Sandwich.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'gastons-tavern': {
+        tags: ['Quick Service', 'Gaston', 'Tavern'],
+        name: "Gaston's Tavern",
+        about: "Gaston's Tavern is a rustic quick-service spot inspired by Gaston from Beauty and the Beast. Enjoy snacks and a cozy atmosphere in Fantasyland.",
+        pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
+        atmosphere: `Step into a rustic tavern with antler decor and Gaston's charm.`,
+        specialty: 'Try the LeFou\'s Brew or the Warm Cinnamon Roll.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'the-friars-nook': {
+        tags: ['Quick Service', 'Comfort Food', 'Fairytale'],
+        name: "The Friar's Nook",
+        about: "The Friar's Nook offers comfort food with a fairytale twist. Enjoy your meal in a charming nook in Fantasyland.",
+        pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
+        atmosphere: 'Dine in a fairytale-inspired nook with whimsical decor.',
+        specialty: 'Try the Loaded Buffalo Chicken Tots or the Brat and Tots.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'pinocchio-village-haus': {
+        tags: ['Quick Service', 'Italian', 'Fantasy'],
+        name: 'Pinocchio Village Haus',
+        about: `Pinocchio Village Haus offers Italian-inspired quick-service meals in a charming Fantasyland setting. It's a great spot for pizza and more.`,
+        pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
+        atmosphere: 'Dine in a whimsical village setting with a view of "it\'s a small world."',
+        specialty: 'Try the Flatbreads or the Caprese Flatbread Sandwich.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      'storybook-treats': {
+        tags: ['Quick Service', 'Ice Cream', 'Fairytale'],
+        name: 'Storybook Treats',
+        about: 'Storybook Treats offers ice cream and sweet treats in a fairytale-themed setting. Satisfy your sweet tooth in Fantasyland.',
+        pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
+        atmosphere: 'Indulge in sweet delights in a charming fairytale setting.',
+        specialty: 'Try the Peter Pan Float or the Soft-Serve Ice Cream Sundae.',
+        src: '', // Leave this blank
+        alt: '' // Leave this blank
+      },
+      // SHOWS START HERE
+      'happily-ever-after': {
+        tags: ['fireworks', 'music', 'fantasy'],
+        name: 'Happily Ever After',
+        wait: 'happily-ever-after-wait',
+        about: 'Happily Ever After is a nighttime fireworks spectacular featuring Disney music and storytelling. Witness the magic in front of Cinderella Castle.',
+        'show-schedule': 'Check the daily schedule for showtimes.',
+        duration: 'Approximately 18 minutes',
+        fact: 'The show features more than 50 choreographed spotlights, and the fireworks launch from 18 different launch points across the Magic Kingdom park.',
+        src: '', // Leave this blank
+        alt: '', // Leave this blank
+      },
+      'festival-of-fantasy-parade': {
+        tags: ['parade', 'entertainment', 'music'],
+        name: 'Festival of Fantasy Parade',
+        wait: 'parade-wait',
+        about: 'The Festival of Fantasy Parade is a colorful and musical parade featuring Disney characters and floats. Join the celebration on Main Street, U.S.A.',
+        'show-schedule': 'Check the daily schedule for parade times.',
+        duration: 'Approximately 12 minutes',
+        fact: 'The parade includes intricately designed floats, including the steampunk-inspired Maleficent Dragon float, which breathes fire during the show.',
+        src: '', // Leave this blank
+        alt: '', // Leave this blank
+      },
+      'enchanted-tiki-room': {
+        tags: ['tropical', 'animatronics', 'musical'],
+        name: 'Enchanted Tiki Room',
+        wait: 'tiki-wait',
+        about: 'The Enchanted Tiki Room is a classic attraction featuring animatronic birds and a tropical show. Enjoy a taste of the South Pacific right in the heart of Adventureland.',
+        'show-schedule': 'Check the daily schedule for showtimes.',
+        duration: 'Approximately 10 minutes',
+        fact: "The Enchanted Tiki Room was the first attraction to feature audio-animatronic technology when it opened at Disneyland in 1963.",
+        src: '', // Leave this blank
+        alt: '', // Leave this blank
+      },
+      'mickeys-philharmagic': {
+        tags: ['3D', 'musical', 'fantasy'],
+        name: "Mickey's PhilharMagic",
+        wait: 'philharmagic-wait',
+        about: "Mickey's PhilharMagic is a 3D musical adventure featuring classic Disney songs and characters. Don your opera glasses and join the fun in Fantasyland.",
+        'show-schedule': 'Check the daily schedule for showtimes.',
+        duration: 'Approximately 12 minutes',
+        fact: "The show features 3D effects and scents to immerse the audience in the Disney magic, making it a sensory experience.",
+        src: '', // Leave this blank
+        alt: '', // Leave this blank
+      },
+      'country-bear-jamboree': {
+        tags: ['musical', 'comedy', 'animatronics'],
+        name: 'Country Bear Jamboree',
+        wait: 'jamboree-wait',
+        about: "The Country Bear Jamboree is a humorous musical show featuring animatronic bears. Visit Grizzly Hall in Frontierland for some good old-fashioned country fun.",
+        'show-schedule': 'Check the daily schedule for showtimes.',
+        duration: 'Approximately 16 minutes',
+        fact: "The show features a cast of singing bears, including Big Al, Liver Lips McGrowl, and the Sun Bonnets, and it has been entertaining audiences since 1971.",
+        src: '', // Leave this blank
+        alt: '', // Leave this blank
+      },
+      'monsters-inc-laugh-floor': {
+        tags: ['comedy', 'interactive', 'monsters'],
+        name: "Monsters, Inc. Laugh Floor",
+        wait: 'laugh-floor-wait',
+        about: "Monsters, Inc. Laugh Floor is an interactive comedy show featuring characters from Disney-Pixar's Monsters, Inc. Share your laughs with the monsters in Tomorrowland.",
+        'show-schedule': 'Check the daily schedule for showtimes.',
+        duration: 'Approximately 15 minutes',
+        fact: "The show features real-time audience interaction, and your jokes and laughter become part of the performance.",
+        src: '', // Leave this blank
+        alt: '', // Leave this blank
+      },
+      'a-pirates-adventure-treasures-of-the-seven-seas': {
+        tags: ['adventure', 'interactive', 'pirates'],
+        name: "A Pirate's Adventure - Treasures of the Seven Seas",
+        wait: 'pirate-adventure-wait',
+        about: "Embark on a pirate adventure and solve mysteries in Adventureland. Join Captain Jack Sparrow in the quest for hidden treasures.",
+        'show-schedule': 'Check the daily schedule for showtimes.',
+        duration: 'Varies (multiple missions)',
+        fact: "This interactive adventure allows you to use a pirate map and magic talisman to uncover hidden treasures throughout Adventureland.",
+        src: '', // Leave this blank
+        alt: '', // Leave this blank
+      },
+      'the-muppets-present-great-moments-in-american-history': {
+        tags: ['comedy', 'history', 'muppets'],
+        name: "The Muppets Present... Great Moments in American History",
+        wait: 'muppets-wait',
+        about: "Join the Muppets for a humorous take on American history in Liberty Square. Enjoy the wit and wisdom of the Muppets in a patriotic show.",
+        'show-schedule': 'Check the daily schedule for showtimes.',
+        duration: 'Approximately 10 minutes',
+        fact: "This show features favorite Muppet characters like Sam Eagle, Kermit the Frog, Miss Piggy, Fozzie Bear, and Gonzo as they reenact historic moments.",
+        src: '', // Leave this blank
+        alt: '', // Leave this blank
+      },
+      'main-street-trolley-show': {
+        tags: ['entertainment', 'music', 'parade'],
+        name: "Main Street Trolley Show",
+        wait: 'trolley-show-wait',
+        about: "Enjoy a delightful musical performance on Main Street, U.S.A. as the trolley performers entertain you with classic songs and dance.",
+        'show-schedule': 'Check the daily schedule for showtimes.',
+        duration: 'Approximately 10 minutes',
+        fact: "The Main Street Trolley Show brings a touch of nostalgia with its vintage costumes and charming performances.",
+        src: '', // Leave this blank
+        alt: '', // Leave this blank
+      },
+      'character-meet-and-greets': {
+        tags: ['meet-and-greet', 'characters', 'photo-op'],
+        name: "Character Meet and Greets",
+        wait: 'meet-greet-wait',
+        about: "Meet your favorite Disney characters throughout the park for photos, autographs, and magical moments.",
+        'show-schedule': 'Check the daily schedule for character locations and times.',
+        duration: 'Varies',
+        fact: "Character Meet and Greets allow you to create cherished memories by interacting with beloved Disney characters.",
+        src: '', // Leave this blank
+        alt: '', // Leave this blank
+      },
+      'the-dapper-dans': {
+        tags: ['music', 'barbershop', 'acapella'],
+        name: "The Dapper Dans",
+        wait: 'dapper-dans-wait',
+        about: "The Dapper Dans are a talented barbershop quartet that performs on Main Street, U.S.A. Enjoy their harmonious acapella melodies and comedy.",
+        'show-schedule': 'Check the daily schedule for showtimes.',
+        duration: 'Approximately 20 minutes (multiple sets)',
+        fact: "The Dapper Dans have been performing on Main Street, U.S.A. since the park's opening, and their music is a beloved part of Disney's history.",
+        src: '', // Leave this blank
+        alt: '', // Leave this blank
+      },
+      'walt-disneys-carousel-of-progress': {
+        tags: ['theater', 'history', 'audio-animatronics'],
+        name: "Walt Disney's Carousel of Progress",
+        wait: 'carousel-progress-wait',
+        about: "Experience the history of innovation and technology through the lens of one American family in this classic theater show. Witness the progress of technology from the turn of the 20th century to today.",
+        'show-schedule': 'Check the daily schedule for showtimes.',
+        duration: 'Approximately 21 minutes',
+        fact: "Walt Disney's Carousel of Progress was originally created by Walt Disney himself for the 1964 New York World's Fair. It showcases how technology has improved our lives over the years.",
+        src: '', // Leave this blank
+        alt: '', // Leave this blank
+      },
       // Add more pages and their data here
     };
 

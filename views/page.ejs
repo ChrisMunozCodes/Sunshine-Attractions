@@ -149,40 +149,75 @@
             <% } %>
           </div>
 
-          <div>
-            <h2 class="text-2xl w-full flex mt-2 font-karla">About:</h2>
-            <p class="font-merriweather items-center justify-center"><%= pageData[pageId].about %></p>
-          </div>
+          <% if (pageData[pageId].about) { %>
+            <div>
+              <h2 class="text-2xl w-full flex mt-2 font-karla">About:</h2>
+              <p class="font-merriweather items-center justify-center"><%= pageData[pageId].about %></p>
+            </div>
+          <% } %>
+
+          <% if (pageData[pageId].pricing) { %>
+            <div>
+              <h2 class="text-2xl w-full flex mt-2 font-karla">Pricing:</h2>
+              <p class="font-merriweather items-center justify-center"><%= pageData[pageId].pricing %></p>
+            </div>
+          <% } %>
+
+          <% if (pageData[pageId].atmosphere) { %>
+            <div>
+              <h2 class="text-2xl w-full flex mt-2 font-karla">Atmosphere:</h2>
+              <p class="font-merriweather items-center justify-center"><%= pageData[pageId].atmosphere %></p>
+            </div>
+          <% } %>
+
+          <% if (pageData[pageId].specialty) { %>
+            <div>
+              <h2 class="text-2xl w-full flex mt-2 font-karla">Specialty:</h2>
+              <p class="font-merriweather items-center justify-center"><%= pageData[pageId].specialty %></p>
+            </div>
+          <% } %>
+
+          <% if (pageData[pageId].height) { %>
+            <div>
+              <h2 class="text-2xl w-full flex mt-2 font-karla">Height Requirement:</h2>
+              <p class="font-merriweather items-center justify-center"><%= pageData[pageId].height %></p>
+            </div>
+          <% } %>
           
-          <div>
-            <h2 class="text-2xl w-full flex mt-2 font-karla">Height Requirement:</h2>
-            <p class="font-merriweather items-center justify-center"><%= pageData[pageId].height %></p>
-          </div>
+          <% if (pageData[pageId].duration) { %>
+            <div>
+              <h2 class="text-2xl w-full flex mt-2 font-karla">Duration:</h2>
+              <p class="font-merriweather items-center justify-center"><%= pageData[pageId].duration %></p>
+            </div>
+          <% } %>
           
-          <div>
-            <h2 class="text-2xl w-full flex mt-2 font-karla">Duration:</h2>
-            <p class="font-merriweather items-center justify-center"><%= pageData[pageId].duration %></p>
-          </div>
+          <% if (pageData[pageId].drop) { %>
+            <div>
+              <h2 class="text-2xl w-full flex mt-2 font-karla">Drop height:</h2>
+              <p class="font-merriweather items-center justify-center"><%= pageData[pageId].drop %></p>
+            </div>
+          <% } %>
           
-          <div>
-            <h2 class="text-2xl w-full flex mt-2 font-karla">Drop height:</h2>
-            <p class="font-merriweather items-center justify-center"><%= pageData[pageId].drop %></p>
-          </div>
+          <% if (pageData[pageId].inversions) { %>
+            <div>
+              <h2 class="text-2xl w-full flex mt-2 font-karla">Inversions?</h2>
+              <p class="font-merriweather items-center justify-center"><%= pageData[pageId].inversions %></p>
+            </div>
+          <% } %>
           
-          <div>
-            <h2 class="text-2xl w-full flex mt-2 font-karla">Inversions?</h2>
-            <p class="font-merriweather items-center justify-center"><%= pageData[pageId].inversions %></p>
-          </div>
+          <% if (pageData[pageId].opening) { %>
+            <div>
+              <h2 class="text-2xl w-full flex mt-2 font-karla">Opening Date:</h2>
+              <p class="font-merriweather items-center justify-center"><%= pageData[pageId].opening %></p>
+            </div>
+          <% } %>
           
-          <div>
-            <h2 class="text-2xl w-full flex mt-2 font-karla">Opening Date:</h2>
-            <p class="font-merriweather items-center justify-center"><%= pageData[pageId].opening %></p>
-          </div>
-          
-          <div>
-            <h2 class="text-2xl w-full flex mt-2 font-karla">Fun Fact:</h2>
-            <p class="font-merriweather items-center justify-center"><%= pageData[pageId].fact %></p>
-          </div>          
+          <% if (pageData[pageId].fact) { %>
+            <div>
+              <h2 class="text-2xl w-full flex mt-2 font-karla">Fun Fact:</h2>
+              <p class="font-merriweather items-center justify-center"><%= pageData[pageId].fact %></p>
+            </div>
+          <% } %>
         
         </div>
       </div>

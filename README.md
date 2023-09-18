@@ -66,8 +66,8 @@ Learn about the attraction you're viewing with various facts, tags, and real tim
 Technologies that I used to develop this app
 
 - [Node.js](https://nodejs.org/en/)
-- [MongoDB](https://www.w3schools.com/mongodb/)
 - [Express](https://expressjs.com/pt-br/)
+- [MongoDB](https://www.w3schools.com/mongodb/)
 - [JavaScript](https://www.javascript.com/)
 - [EJS](https://ejs.co/)
 - [Tailwind](tailwindcss.com)

@@ -35,7 +35,7 @@ module.exports = {
       'tomorrowland-transit-authority-peoplemover',
       'its-a-small-world',
       'prince-charming-regal-carrousel',
-      "peter-pan's-flight",
+      "peter-pans-flight",
       'under-the-sea-journey-of-the-little-mermaid',
       'the-barnstormer',
       'the-magic-carpets-of-aladdin'
@@ -192,8 +192,8 @@ module.exports = {
       name: "Peter Pan's Flight",
       rating: averageRatingsRide["peter-pan's-flight"],
       description: "Peter Pan's Flight is a magical dark ride that allows you to embark on a whimsical journey to Neverland. Soar over London, encounter Captain Hook, and join Peter Pan in this enchanting adventure through the skies.",
-      src: "assets/image/Sunshine Attractions-logo/peter-pan.jpeg", // Leave this blank
-      buttonSrc: "/page/peter-pan's-flight" // Button source
+      src: "/assets/image/Sunshine Attractions-logo/peter-pan.jpeg", // Leave this blank
+      buttonSrc: "/page/peter-pans-flight" // Button source
     },
     {
       name: 'Under the Sea - Journey of the Little Mermaid',

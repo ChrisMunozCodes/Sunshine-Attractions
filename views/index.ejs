@@ -68,15 +68,10 @@
               </a>
             </div>
             <div class="login-container flex justify-center items-center p-5">
-              <a href="/">
-                <h3 class="text-lg font-karla font-bold p-3 m-2">Home</h3>
-              </a>  
-              <a href="/">
-                <h3 class="text-lg font-karla font-bold p-3 m-2">Parks</h3>
-              </a>  
-              <a href="/">
-                <input type="text">
-              </a>  
+              <ul class="menu menu-horizontal bg-base-200">
+                <li><a href="/" class="xl:text-xl md:text-l font-karla font-bold p-3 m-2">HOME</a></li>
+                <li><a href="/maps" class="xl:text-xl md:text-l font-karla font-bold p-3 m-2">MAPS</a></li>
+              </ul>
               <form action="/login">
                 <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather hover:bg-black hover:text-white hover:border-white">LOGIN</button>
               </form>
@@ -202,40 +197,8 @@
   
   <!-- Mobile Version -->
   <% if (!isDesktop) { %>
-    <div class="mobile-container">
-      <!-- Mobile-specific HTML structure -->
-      <header>
-        <!-- Large box for the app title on mobile -->
-        <h1>Sunshine <br> Attractions </br> </h1>
-      </header>
-
-      <div class="search-container">
-        <!-- Search bar content here -->
-      </div>
-
-      <main>
-        <ul>
-            <li>
-                <a href="">Disney</a>
-            </li>
-            <li>
-                <a href="">Universal</a>
-            </li>
-            <li>
-                <a href="">Seaworld</a>
-            </li>
-            <li>
-                <a href="">Busch Gardens</a>
-            </li>
-         </ul>
-      </main>
-
-      <section>
-        <article>
-            <h2>Halloween Horror Nights 2023</h2>
-        </article>
-      </section>
-
+    <div class="mobile-container w-screen h-screen bg-black flex">
+      <h1 class="text-white text-3xl justify-center content-center">SORRY! <br>Sunshine Attractions is currently only supported on desktop. <br> Mobile Support will be released in the near future.</h1>
     </div>
   <% } %>
 </body>

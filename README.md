@@ -12,7 +12,7 @@
 
 ## 👨🏻‍💻 Welcome to Sunshine Attractions
 
-<p align="left" style="color: red;"> Sunshine Attractions is a full-stack review application for theme parks in Florida (The sunshine state). Allowing tourists and locals to find up-to-date information on various rides, shows, and food for Florida theme parks. Users are able to track wait times, engage in other reviewers posts, and manage their profile. More features are planned, one of these features include a tool to better user expierence such as finding lowest wait times for the park they're at. Another feature planned in order to make the app more engaging is allowing reviewers to follow each-other and keep up to date on their feed. Sunshine attractions mission is to better the expierence of theme park goers in Florida.</p>
+<p align="left" style="color: red;"> Sunshine Attractions is a full-stack review application for theme parks in Florida (The sunshine state). Allowing tourists and locals to find up-to-date information on various rides, shows, and food for Florida theme parks. Users are able to track live wait times of rides, engage in other reviewers posts, and manage their profile.</p>
 
 ## 🔆 Home Page
 
@@ -66,8 +66,8 @@ Learn about the attraction you're viewing with various facts, tags, and real tim
 Technologies that I used to develop this app
 
 - [Node.js](https://nodejs.org/en/)
-- [MongoDB](https://www.w3schools.com/mongodb/)
 - [Express](https://expressjs.com/pt-br/)
+- [MongoDB](https://www.w3schools.com/mongodb/)
 - [JavaScript](https://www.javascript.com/)
 - [EJS](https://ejs.co/)
 - [Tailwind](tailwindcss.com)
@@ -115,16 +115,17 @@ If you would like to contribute to this project please reach out to me via disco
 9. Now go back to your github and a button will appear that prompts you to make a pull request
 ```
 
-# Things to add
+# Things to add (Wish list)
+- Maps of theme parks with wait time markers and user geolocation (High Priority).
+- Lowest wait time rides near the user based on the users location within the theme park map. (High Priority).
+- Mobile Layout (Responsiveness for mobile layouts) (High Priority).
+- Following and followers feature (Med Priority).
+- Trip Planner (Low Priority).
+- Dark Mode? (Low Priority).
 - ~~Comments.~~
-- Lowest wait time feature.
 - ~~Filter reviews~~
-- Following and followers feature. 
 - ~~Likes.~~
-- Dark Mode?
-- Trip Planner.
 - ~~Adding images to reviews.~~
-- Maps with wait time markers and user geolocation.
 
 
 ---

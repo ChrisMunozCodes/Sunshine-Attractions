@@ -84,6 +84,8 @@ Technologies that I used to develop this app
   - CLOUD_NAME = `your cloudinary cloud name`
   - API_KEY = `your cloudinary api key`
   - API_SECRET = `your cloudinary api secret`
+  - GOOGLE_MAP_API = 'Your google maps api key'
+  - GOOGLE_MAP_ID = 'Your google maps ID'
 
 Install the dependencies: npm install
 

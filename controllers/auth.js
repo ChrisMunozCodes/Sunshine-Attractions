@@ -86,12 +86,15 @@ exports.postSignup = (req, res, next) => {
     gmail_remove_dots: false,
   });
 
+  // Append a unique identifier (timestamp) to the default profile picture URL
+  const defaultProfilePic = 'assets/image/Sunshine Attractions-logo/default-profile-pic.png';
+  const uniqueProfilePic = `${defaultProfilePic}?timestamp=${Date.now()}`;
+
   const user = new User({
     userName: req.body.userName,
     email: req.body.email,
     password: req.body.password,
-    profilePic: 'assets/image/Sunshine Attractions-logo/default-profile-pic.png'
-
+    profilePic: uniqueProfilePic
   });
 
   User.findOne(

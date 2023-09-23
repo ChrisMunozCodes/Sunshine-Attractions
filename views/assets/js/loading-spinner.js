@@ -20,5 +20,5 @@ document.getElementById('submitButton').addEventListener('click', function(event
     
     // Submit the form programmatically
     event.target.closest('form').submit();
-  }, 60000); // Simulate a 4-second delay
+  }, 4000); // Simulate a 4-second delay
 });

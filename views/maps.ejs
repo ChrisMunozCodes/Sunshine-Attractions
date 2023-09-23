@@ -30,54 +30,58 @@
 
 <% if (isDesktop) { %>
   <div class="desktop-container w-screen h-screen">
-  <% if (loggedIn) { %>
-    <header>
-      <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-3 bg-gray-100">
-        <div class="logo-container flex justify-center items-center">
-          <a href="/">
-          <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
-          </a>
-        </div>
-        <div class="login-container flex justify-center items-center p-5">
-          <div class="dropdown dropdown-hover">
-            <form action="/profile">
-              <div class="avatar">
-                <div class="w-10 rounded-full">
-                  <img src="<%= user.profilePic || 'assets/image/Sunshine Attractions-logo/default-profile-pic.png' %>" alt="User Profile Picture" />
-                </div>
-              </div>
-            </form>
-            <form action="/profile" class="font-karla">
-              <%= user.userName %>
-            </form>
-            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 right-0 menu bg-base-200">
-                <li><a href="/profile" class="active font-merriweather">Profile</a></li>
-                <li><a href="/your-reviews" class="font-merriweather">Your reviews</a></li>
-                <li><a href="/logout" class="font-merriweather">Logout</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-  <% } else { %>
-    <header>
-      <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5  bg-gray-100 mb-10">
-        <div class="logo-container flex justify-center items-center">
-          <a href="/">
+    <% if (loggedIn) { %>
+      <header>
+        <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-3 bg-gray-100">
+          <div class="logo-container flex justify-center items-center">
+            <a href="/">
             <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
-          </a>
-        </div>
-        <div class="login-container flex justify-center items-center p-5">
-          <form action="/login">
-            <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather hover:bg-black hover:text-white hover:border-white">LOGIN</button>
-          </form>
-          <form action="/signup">
-            <button type="submit" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather hover:bg-black hover:text-white hover:border-white">SIGNUP</button>
-          </form>
-        </div>
-      </nav>
-    </header>
-  <% } %>
+            </a>
+          </div>
+          <div class="login-container flex justify-center items-center p-5">
+            <div class="dropdown dropdown-hover">
+              <form action="/profile">
+                <div class="avatar">
+                  <div class="w-10 rounded-full">
+                    <img src="<%= user.profilePic || 'assets/image/Sunshine Attractions-logo/default-profile-pic.png' %>" alt="User Profile Picture" />
+                  </div>
+                </div>
+              </form>
+              <form action="/profile" class="font-karla">
+                <%= user.userName %>
+              </form>
+              <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 right-0 menu bg-base-200">
+                  <li><a href="/profile" class="active font-merriweather">Profile</a></li>
+                  <li><a href="/your-reviews" class="font-merriweather">Your reviews</a></li>
+                  <li><a href="/logout" class="font-merriweather">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <% } else { %>
+      <header>
+        <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5  bg-gray-100">
+          <div class="logo-container flex justify-center items-center">
+            <a href="/">
+              <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+            </a>
+          </div>
+          <div class="login-container flex justify-center items-center p-5">
+            <ul class="menu menu-horizontal bg-base-200">
+              <li><a href="/" class="xl:text-xl md:text-l font-karla font-bold p-3 m-2">HOME</a></li>
+              <li><a href="/maps" class="xl:text-xl md:text-l font-karla font-bold p-3 m-2">MAPS</a></li>
+            </ul>
+            <form action="/login">
+              <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather hover:bg-black hover:text-white hover:border-white">LOGIN</button>
+            </form>
+            <form action="/signup">
+              <button type="submit" class="bg-primaryButton border rounded-md shadow-sm p-3 m-2 font-merriweather hover:bg-black hover:text-white hover:border-white">SIGNUP</button>
+            </form>
+          </div>
+        </nav>
+      </header>
+    <% } %>
 
 <main class="flex justify-center items-top w-full h-auto">
   

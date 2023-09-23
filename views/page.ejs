@@ -31,7 +31,6 @@
         <!-- Don't remove this script tag, it needs to be on top for the inline script that handles converting the rating value into which star
     is selected in user reviews. -->
     <script src="/assets/js/transfer-review-star-data.js"></script>
-    <script src="/assets/js/average-review.js"></script>
     <script src="/assets/js/form-submit-control.js"></script>
     <script src="/assets/js/control-modal-4.js"></script>
     <script src="/assets/js/toggleHiddenComments.js"></script>
@@ -47,7 +46,7 @@
           <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-3 bg-gray-100">
             <div class="logo-container flex justify-center items-center">
               <a href="/">
-              <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+              <img class="w-full h-6/12" src="/assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
               </a>
             </div>
             <div class="login-container flex justify-center items-center p-5">
@@ -73,7 +72,7 @@
         </header>
       <% } else { %>
         <header>
-          <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5  bg-gray-100">
+          <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5  bg-gray-100 mb-10">
             <div class="logo-container flex justify-center items-center">
               <a href="/">
                 <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
@@ -123,11 +122,7 @@
             <input value="3" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
             <input value="4" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
             <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
-          </div>
-
-          <script>
-            initializeStarRating();
-          </script>      
+          </div>   
 
           <div class="flex justify-center items-center font-karla xl">
             Rating: <%= averageRating.toFixed(1) %>

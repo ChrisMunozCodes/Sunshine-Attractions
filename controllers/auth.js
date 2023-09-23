@@ -87,14 +87,11 @@ exports.postSignup = (req, res, next) => {
   });
 
   // Append a unique identifier (timestamp) to the default profile picture URL
-  const defaultProfilePic = 'assets/image/Sunshine Attractions-logo/default-profile-pic.png';
-  const uniqueProfilePic = `${defaultProfilePic}?timestamp=${Date.now()}`;
-
   const user = new User({
     userName: req.body.userName,
     email: req.body.email,
     password: req.body.password,
-    profilePic: uniqueProfilePic
+    profilePic: null
   });
 
   User.findOne(

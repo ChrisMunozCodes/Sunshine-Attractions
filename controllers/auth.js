@@ -90,7 +90,7 @@ exports.postSignup = (req, res, next) => {
     userName: req.body.userName,
     email: req.body.email,
     password: req.body.password,
-    profilePic: 'assets/image/Sunshine Attractions-logo/default-profile-pic.png'
+    profilePic: '/assets/image/Sunshine%20Attractions-logo/default-profile-pic.png'
   });
 
   User.findOne(

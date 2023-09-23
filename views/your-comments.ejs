@@ -111,7 +111,7 @@
         <section class="p-8 flex items-center flex-col w-full h-full">
         <% for (var i = 0; i < review.length; i++) { %>
             <% for (let k = 0; k < comments.length; k++) { %>
-                <% if (comments[k].review._id.toString() === review[i]._id.toString()) { %>
+              <% if (comments[k].review._id.toString() === review[i]._id.toString() && comments[k].user._id.toString() === user._id.toString()) { %>
                     <div class="card w-96 bg-base-100 shadow-xl border border-black m-5 overflow-hidden">
                   <div class="card-body">
                     <div class="flex justify-center items-center w-1/3 h-1/2">

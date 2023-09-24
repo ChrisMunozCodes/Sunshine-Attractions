@@ -57,7 +57,6 @@ app.use(express.static("image"));
 app.use(express.static("assets"));
 app.use('/test', express.static('assets'));
 app.use("/css", express.static("dist"));
-app.use("/page", express.static("assets"));
 
 //Exposes view folder for tailwind.
 app.use(express.static(path.join(__dirname, 'views')))

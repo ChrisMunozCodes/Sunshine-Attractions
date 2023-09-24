@@ -60,6 +60,7 @@ app.use("/css", express.static("dist"));
 
 //Exposes view folder for tailwind.
 app.use(express.static(path.join(__dirname, 'views')))
+app.use(express.static(__dirname + 'views'))
 
 
 //Body Parsing

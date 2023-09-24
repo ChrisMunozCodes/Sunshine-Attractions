@@ -59,7 +59,9 @@
                 <form action="/profile">
                   <div class="avatar">
                     <div class="w-10 rounded-full">
-                      <img src="<%= user.profilePic %>" alt="User Profile Picture" />
+                      <% if (user.profilePic) { %>      
+                        <img src="<%= user.profilePic %>" alt="User Profile Picture" />
+                      <% } %>
                     </div>
                   </div>
                 </form>
@@ -109,6 +111,7 @@
           <figure class="rounded-2xl">  
             <img class="object-cover" src="<%= pageData[pageId].src %>" alt="<%= pageData[pageId].alt %>">
           </figure>
+          <% if (pageData[pageId].wait) { %>
           <div class="absolute bottom-4 right-4 bg-black text-white text-5xl border border-primaryButton border-4 w-24 h-24 flex flex-col justify-center items-center font-bold text-center shadow-md shadow-black">
             <section id="<%= pageData[pageId].wait %>">
               <span class="loading loading-spinner text-warning"></span>  
@@ -116,8 +119,8 @@
             <section>
               <h2 class="text-sm">Wait Time</h2>
             </section>
-
           </div>
+          <% } %>
         </div>
         <div class="card-body flex">
           <h1 class="text-5xl items-center justify-center w-full flex mt-2 font-karla"><%= pageData[pageId].name %></h1>
@@ -237,7 +240,9 @@
         <div class="flex justify-center items-center p-5 w-1/3 h-1/2">
           <div class="avatar">
             <div class="w-20 rounded-full">
+              <% if (loggedIn) { %>      
                 <img src="<%= user.profilePic %>" alt="User Profile Picture" />
+              <% } %>
             </div>
           </div>
           <h2 class="m-2 text-2xl">
@@ -348,7 +353,7 @@
                 </section>
 
               
-                
+
                 
                 
                 

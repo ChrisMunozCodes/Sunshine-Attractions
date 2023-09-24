@@ -264,6 +264,7 @@
           <div class="w-3/12 flex justify-center items-center">
             <p class="text-1xl"><%= rideSections[i].description %></p>
           </div>
+          <% if (rideSections[i].rating > 0) { %>
           <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
             <input value="1" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= rideSections[i].rating === 1 ? 'checked' : '' %> />
             <input value="2" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= rideSections[i].rating === 2 ? 'checked' : '' %> />
@@ -272,7 +273,11 @@
             <input value="5" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= rideSections[i].rating === 5 ? 'checked' : '' %> />
             <!-- Add more rating inputs as needed -->
           </div>
-      
+          <% } else { %>
+            <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+              <p>Not yet rated</p>
+            </div>
+          <% } %>
           <a class="w-1/12 flex justify-center items-center" href="<%= rideSections[i].buttonSrc %>">
             <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
           </a>
@@ -296,6 +301,7 @@
             <p class="text-1xl"><%= foodSections[i].description %></p>
           </div>
           <!-- You can add the rating input for food sections if needed -->
+          <% if (foodSections[i].rating > 0) { %>
           <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
             <input value="1" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= foodSections[i].rating === 1 ? 'checked' : '' %> />
             <input value="2" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= foodSections[i].rating === 2 ? 'checked' : '' %> />
@@ -304,6 +310,11 @@
             <input value="5" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= foodSections[i].rating === 5 ? 'checked' : '' %> />
             <!-- Add more rating inputs as needed -->
           </div>
+          <% } else { %>
+            <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+              <p>Not yet rated</p>
+            </div>
+          <% } %>
       
           <a class="w-1/12 flex justify-center items-center" href="<%= foodSections[i].buttonSrc %>">
             <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
@@ -328,6 +339,7 @@
             <p class="text-1xl"><%= showSections[i].description %></p>
           </div>
           <!-- You can add the rating input for food sections if needed -->
+          <% if (foodSections[i].rating > 0) { %>
           <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
             <input value="1" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= showSections[i].rating === 1 ? 'checked' : '' %> />
             <input value="2" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= showSections[i].rating === 2 ? 'checked' : '' %> />
@@ -336,6 +348,11 @@
             <input value="5" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= showSections[i].rating === 5 ? 'checked' : '' %> />
             <!-- Add more rating inputs as needed -->
           </div>
+          <% } else { %>
+            <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+              <p>Not yet rated</p>
+            </div>
+          <% } %>
       
           <a class="w-1/12 flex justify-center items-center" href="<%= showSections[i].buttonSrc %>">
             <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>

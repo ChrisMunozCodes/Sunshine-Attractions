@@ -124,6 +124,7 @@
         </div>
         <div class="card-body flex">
           <h1 class="text-5xl items-center justify-center w-full flex mt-2 font-karla"><%= pageData[pageId].name %></h1>
+          <% if (averageRating > 0) { %>
           <div class="rating m-1 items-center justify-center w-full flex">
             <input value="1" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
             <input value="2" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
@@ -131,6 +132,11 @@
             <input value="4" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
             <input value="5" type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" />
           </div>   
+          <% } else { %>
+            <div class="flex rating m-1 items-center justify-center w-full" style="margin: 0; padding: 0;">
+              <span>NO RATING YET</span>
+            </div>
+          <% } %>
 
           <div class="flex justify-center items-center font-karla xl">
             Rating: <%= averageRating.toFixed(1) %>

@@ -231,112 +231,112 @@ module.exports = {
         name: 'Columbia Harbour House',
         rating: averageRatingsFood['columbia-harbour-house'],
         description: 'Columbia Harbour House offers seafood, sandwiches, and more in a nautical-themed setting. Enjoy a maritime meal in Liberty Square.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: '/page/columbia-harbour-house' // Button source
       },
       {
         name: 'Aloha Isle',
         rating: averageRatingsFood['aloha-isle'],
         description: 'Aloha Isle is your destination for Dole Whip treats and refreshments. Experience a taste of the tropics in Adventureland.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: '/page/aloha-isle' // Button source
       },
       {
         name: "Casey's Corner",
         rating: averageRatingsFood['caseys-corner'],
         description: "Casey's Corner serves classic ballpark fare, including hot dogs and corn dog nuggets. Experience the spirit of baseball on Main Street, U.S.A.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: "/page/caseys-corner" // Button source
       },
       {
         name: "Cosmic Ray's Starlight Cafe",
         rating: averageRatingsFood['cosmic-rays-starlight-cafe'],
         description: "Cosmic Ray's Starlight Cafe offers a variety of quick-service options and live entertainment from Sonny Eclipse. Enjoy an out-of-this-world meal in Tomorrowland.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: "/page/cosmic-rays-starlight-cafe" // Button source
       },
       {
         name: 'The Crystal Palace',
         rating: averageRatingsFood['the-crystal-palace'],
         description: 'The Crystal Palace offers character dining and a buffet with American cuisine. Dine with Winnie the Pooh and friends in a Victorian greenhouse setting on Main Street, U.S.A.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: '/page/the-crystal-palace' // Button source
       },
       {
         name: 'Liberty Tree Tavern',
         rating: averageRatingsFood['liberty-tree-tavern'],
         description: 'Liberty Tree Tavern serves colonial-inspired meals and an all-you-can-eat feast. Dine in a historic setting in Liberty Square.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: '/page/liberty-tree-tavern' // Button source
       },
       {
         name: "Tony's Town Square Restaurant",
         rating: averageRatingsFood['tonys-town-square-restaurant'],
         description: "Tony's Town Square Restaurant offers Italian dishes in an Italian trattoria setting. Dine with Lady and the Tramp on Main Street, U.S.A.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: "/page/tonys-town-square-restaurant" // Button source
       },
       {
         name: 'Sleepy Hollow',
         rating: averageRatingsFood['sleepy-hollow'],
         description: 'Sleepy Hollow offers delicious snacks and treats in a charming colonial-style setting. It\'s the perfect stop for a quick bite in Liberty Square.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: '/page/sleepy-hollow' // Button source
       },
       {
         name: "Gaston's Tavern",
         rating: averageRatingsFood['gastons-tavern'],
         description: "Gaston's Tavern is a rustic quick-service spot inspired by Gaston from Beauty and the Beast. Enjoy snacks and a cozy atmosphere in Fantasyland.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: "/page/gastons-tavern" // Button source
       },
       {
         name: "The Friar's Nook",
         rating: averageRatingsFood['the-friars-nook'],
         description: "The Friar's Nook offers comfort food with a fairytale twist. Enjoy your meal in a charming nook in Fantasyland.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: "/page/the-friars-nook" // Button source
       },
       {
         name: 'Pinocchio Village Haus',
         rating: averageRatingsFood['pinocchio-village-haus'],
         description: 'Pinocchio Village Haus offers Italian-inspired quick-service meals in a charming Fantasyland setting. It\'s a great spot for pizza and more.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: '/page/pinocchio-village-haus' // Button source
       },
       {
         name: "Cinderella's Royal Table",
         rating: averageRatingsFood['cinderellas-royal-table'],
         description: 'Cinderella\'s Royal Table offers a character dining experience inside Cinderella Castle. Enjoy a royal meal fit for a princess!',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: "/page/cinderellas-royal-table" // Button source
       },
       {
         name: "Be Our Guest Restaurant",
         rating: averageRatingsFood['be-our-guest-restaurant'],
         description: 'Be Our Guest Restaurant is inspired by Beauty and the Beast, offering French-inspired cuisine in a magical setting.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: "/page/be-our-guest-restaurant" // Button source
       },    
       {
         name: "The Plaza Restaurant",
         rating: averageRatingsFood['the-plaza-restaurant'],
         description: 'The Plaza Restaurant offers casual American dining located on Main Street, U.S.A. Enjoy a delightful meal on Main Street.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: "/page/the-plaza-restaurant" // Button source
       },
       {
         name: 'Pecos Bill Tall Tale Inn and Cafe',
         rating: averageRatingsFood['pecos-bill-tall-tale-inn-and-cafe'],
         description: 'Pecos Bill Tall Tale Inn and Cafe serves Tex-Mex favorites in a Wild West setting. Saddle up and enjoy a meal in Frontierland.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: '/page/pecos-bill-tall-tale-inn-and-cafe' // Button source
       },
       {
         name: 'Storybook Treats',
         rating: averageRatingsFood['storybook-treats'],
         description: 'Storybook Treats offers sweet treats and soft-serve ice cream in a fairytale setting. Satisfy your sweet tooth in Fantasyland.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         buttonSrc: '/page/storybook-treats' // Button source
       }    
     ];
@@ -346,84 +346,84 @@ module.exports = {
           name: "Happily Ever After",
           rating: averageRatingsShow["happily-ever-after"],
           description: "Happily Ever After is a spectacular nighttime fireworks and projection show that takes place over Cinderella Castle. Be prepared to be enchanted by Disney's most beloved stories.",
-          src: "",
+          src: "/assets/image/Sunshine Attractions-logo/black.jpeg",
           buttonSrc: "/page/happily-ever-after"
         },
         {
           name: "Festival of Fantasy Parade",
           rating: averageRatingsShow["festival-of-fantasy-parade"],
           description: "The Festival of Fantasy Parade is a colorful and musical parade featuring Disney characters and floats. Join the celebration on Main Street, U.S.A.",
-          src: "",
+          src: "/assets/image/Sunshine Attractions-logo/black.jpeg",
           buttonSrc: "/page/festival-of-fantasy-parade"
         },
         {
           name: "Enchanted Tiki Room",
           rating: averageRatingsShow["enchanted-tiki-room"],
           description: "The Enchanted Tiki Room is a classic attraction featuring animatronic birds and a tropical show. Enjoy a taste of the South Pacific right in the heart of Adventureland.",
-          src: "",
+          src: "/assets/image/Sunshine Attractions-logo/black.jpeg",
           buttonSrc: "/page/enchanted-tiki-room"
         },
         {
           name: "Mickey's PhilharMagic",
           rating: averageRatingsShow["mickeys-philharmagic"],
           description: "Mickey's PhilharMagic is a 3D musical adventure featuring classic Disney songs and characters. Don your opera glasses and join the fun in Fantasyland.",
-          src: "",
+          src: "/assets/image/Sunshine Attractions-logo/black.jpeg",
           buttonSrc: "/page/mickeys-philharmagic"
         },
         {
           name: "Country Bear Jamboree",
           rating: averageRatingsShow["country-bear-jamboree"],
           description: "The Country Bear Jamboree is a humorous musical show featuring animatronic bears. Visit Grizzly Hall in Frontierland for some good old-fashioned country fun.",
-          src: "",
+          src: "/assets/image/Sunshine Attractions-logo/black.jpeg",
           buttonSrc: "/page/country-bear-jamboree"
         },
         {
           name: "Walt Disney's Carousel of Progress",
           rating: averageRatingsShow["carousel-of-progress"],
           description: "Walt Disney's Carousel of Progress is a rotating theater show that takes you through the progress of technology and American life. Step into the future in Tomorrowland.",
-          src: "",
+          src: "/assets/image/Sunshine Attractions-logo/black.jpeg",
           buttonSrc: "/page/carousel-of-progress"
         },
         {
           name: "Monsters, Inc. Laugh Floor",
           rating: averageRatingsShow["monsters-inc-laugh-floor"],
           description: "Monsters, Inc. Laugh Floor is an interactive comedy show featuring the hilarious antics of Mike Wazowski and other Monsters, Inc. characters. Have a laugh in Tomorrowland.",
-          src: "",
+          src: "/assets/image/Sunshine Attractions-logo/black.jpeg",
           buttonSrc: "/page/monsters-inc-laugh-floor"
         },
         {
           name: "A Pirate's Adventure - Treasures of the Seven Seas",
           rating: averageRatingsShow["pirates-adventure"],
           description: "A Pirate's Adventure - Treasures of the Seven Seas is an interactive quest where you join Captain Jack Sparrow's crew and search for hidden treasures in Adventureland.",
-          src: "",
+          src: "/assets/image/Sunshine Attractions-logo/black.jpeg",
           buttonSrc: "/page/pirates-adventure"
         },
         {
           name: "The Muppets Present... Great Moments in American History",
           rating: averageRatingsShow["muppets-great-moments"],
           description: "The Muppets Present... Great Moments in American History is a humorous show that retells historical moments with the Muppets' unique twist. Laugh and learn on Liberty Square.",
-          src: "",
+          src: "/assets/image/Sunshine Attractions-logo/black.jpeg",
           buttonSrc: "/page/muppets-great-moments"
         },
         {
           name: "Main Street Trolley Show",
           rating: averageRatingsShow["main-street-trolley-show"],
           description: "The Main Street Trolley Show is a delightful performance featuring the Dapper Dans and other Main Street entertainers. Catch this show at the entrance to Magic Kingdom.",
-          src: "",
+          src: "/assets/image/Sunshine Attractions-logo/black.jpeg",
           buttonSrc: "/page/main-street-trolley-show"
         },
         {
           name: "Character Meet and Greets",
           rating: averageRatingsShow["character-meet-greets"],
           description: "Character Meet and Greets allow you to meet your favorite Disney characters and take photos with them. Find them throughout Magic Kingdom.",
-          src: "",
+          src: "/assets/image/Sunshine Attractions-logo/black.jpeg",
           buttonSrc: "/page/character-meet-greets"
         },
         {
           name: "The Dapper Dans",
           rating: averageRatingsShow["dapper-dans"],
           description: "The Dapper Dans are a barbershop quartet that performs on Main Street, U.S.A. Enjoy their harmonious tunes and classic songs.",
-          src: "",
+          src: "/assets/image/Sunshine Attractions-logo/black.jpeg",
           buttonSrc: "/page/dapper-dans"
         } 
       // Add more ride sections here
@@ -653,7 +653,7 @@ module.exports = {
         specialty: 'Signature dishes include the Royal Feast and dessert selections.',
         reservation: 'Reservations are highly recommended due to popularity.',
         dietaryOptions: 'Special dietary requests can be accommodated with advance notice.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'be-our-guest-restaurant': {
@@ -665,7 +665,7 @@ module.exports = {
         specialty: 'Try the Grey Stuff for a delicious dessert treat.',
         reservation: 'Reservations are highly recommended due to popularity.',
         dietaryOptions: 'Special dietary requests can be accommodated with advance notice.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'aloha-isle': {
@@ -675,7 +675,7 @@ module.exports = {
         pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
         atmosphere: 'Escape to a tropical paradise with tiki-inspired decor and outdoor seating.',
         specialty: 'Try the classic Dole Whip or indulge in a Dole Whip float.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'caseys-corner': {
@@ -685,7 +685,7 @@ module.exports = {
         pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
         atmosphere: 'Step into a vintage baseball-inspired setting with classic tunes and memorabilia.',
         specialty: 'Try the famous Foot-long Hot Dog or the Chili Cheese Dog.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'columbia-harbour-house': {
@@ -695,7 +695,7 @@ module.exports = {
         pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
         atmosphere: 'Dine in a nautical-themed eatery with cozy corners and seaside decor.',
         specialty: 'Try the Lobster Roll or the Fried Shrimp Platter.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'cosmic-rays-starlight-cafe': {
@@ -705,7 +705,7 @@ module.exports = {
         pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
         atmosphere: 'Enjoy a cosmic atmosphere with animatronic entertainment by Sonny Eclipse.',
         specialty: 'Try the Bacon Cheeseburger or the Rotisserie Chicken.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'the-crystal-palace': {
@@ -715,7 +715,7 @@ module.exports = {
         pricing: 'Prices vary by meal and time of day. Check the official Disney website for current pricing.',
         atmosphere: 'Dine in an elegant Victorian setting surrounded by lush greenery and natural light.',
         specialty: 'Indulge in a buffet with classic American and international dishes.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'liberty-tree-tavern': {
@@ -725,7 +725,7 @@ module.exports = {
         pricing: 'Prices vary by meal and time of day. Check the official Disney website for current pricing.',
         atmosphere: 'Experience the charm of colonial America with themed dining rooms and period decor.',
         specialty: `Enjoy hearty family-style dishes like the Patriot's Platter.`,
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'tonys-town-square-restaurant': {
@@ -735,7 +735,7 @@ module.exports = {
         pricing: 'Prices vary by meal and time of day. Check the official Disney website for current pricing.',
         atmosphere: 'Dine in an Italian-inspired trattoria with a romantic ambiance.',
         specialty: 'Try the Spaghetti and Meatballs, a nod to the iconic Lady and the Tramp scene.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'the-plaza-restaurant': {
@@ -745,7 +745,7 @@ module.exports = {
         pricing: 'Prices vary by meal and time of day. Check the official Disney website for current pricing.',
         atmosphere: 'Relax in a casual Victorian-style restaurant with a view of Main Street.',
         specialty: 'Try the Plaza Club or the Plaza Loaded Fries.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'pecos-bill-tall-tale-inn-and-cafe': {
@@ -755,7 +755,7 @@ module.exports = {
         pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
         atmosphere: 'Step into a Wild West saloon with rustic decor and cowboy charm.',
         specialty: 'Try the Fajita Platter or the Southwest Salad.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'sleepy-hollow': {
@@ -765,7 +765,7 @@ module.exports = {
         pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
         atmosphere: 'Enjoy your snack in a colonial-inspired setting with a view of Cinderella Castle.',
         specialty: 'Try the Sweet and Spicy Chicken Waffle Sandwich or the Nutella and Fresh Fruit Waffle Sandwich.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'gastons-tavern': {
@@ -775,7 +775,7 @@ module.exports = {
         pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
         atmosphere: `Step into a rustic tavern with antler decor and Gaston's charm.`,
         specialty: 'Try the LeFou\'s Brew or the Warm Cinnamon Roll.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'the-friars-nook': {
@@ -785,7 +785,7 @@ module.exports = {
         pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
         atmosphere: 'Dine in a fairytale-inspired nook with whimsical decor.',
         specialty: 'Try the Loaded Buffalo Chicken Tots or the Brat and Tots.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'pinocchio-village-haus': {
@@ -795,7 +795,7 @@ module.exports = {
         pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
         atmosphere: 'Dine in a whimsical village setting with a view of "it\'s a small world."',
         specialty: 'Try the Flatbreads or the Caprese Flatbread Sandwich.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       'storybook-treats': {
@@ -805,7 +805,7 @@ module.exports = {
         pricing: 'Prices vary by item. Check the official Disney website for current pricing.',
         atmosphere: 'Indulge in sweet delights in a charming fairytale setting.',
         specialty: 'Try the Peter Pan Float or the Soft-Serve Ice Cream Sundae.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '' // Leave this blank
       },
       // SHOWS START HERE
@@ -817,7 +817,7 @@ module.exports = {
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 18 minutes',
         fact: 'The show features more than 50 choreographed spotlights, and the fireworks launch from 18 different launch points across the Magic Kingdom park.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '', // Leave this blank
       },
       'festival-of-fantasy-parade': {
@@ -828,7 +828,7 @@ module.exports = {
         'show-schedule': 'Check the daily schedule for parade times.',
         duration: 'Approximately 12 minutes',
         fact: 'The parade includes intricately designed floats, including the steampunk-inspired Maleficent Dragon float, which breathes fire during the show.',
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '', // Leave this blank
       },
       'enchanted-tiki-room': {
@@ -839,7 +839,7 @@ module.exports = {
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 10 minutes',
         fact: "The Enchanted Tiki Room was the first attraction to feature audio-animatronic technology when it opened at Disneyland in 1963.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '', // Leave this blank
       },
       'mickeys-philharmagic': {
@@ -850,7 +850,7 @@ module.exports = {
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 12 minutes',
         fact: "The show features 3D effects and scents to immerse the audience in the Disney magic, making it a sensory experience.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '', // Leave this blank
       },
       'country-bear-jamboree': {
@@ -861,7 +861,7 @@ module.exports = {
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 16 minutes',
         fact: "The show features a cast of singing bears, including Big Al, Liver Lips McGrowl, and the Sun Bonnets, and it has been entertaining audiences since 1971.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '', // Leave this blank
       },
       'monsters-inc-laugh-floor': {
@@ -872,7 +872,7 @@ module.exports = {
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 15 minutes',
         fact: "The show features real-time audience interaction, and your jokes and laughter become part of the performance.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '', // Leave this blank
       },
       'a-pirates-adventure-treasures-of-the-seven-seas': {
@@ -883,7 +883,7 @@ module.exports = {
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Varies (multiple missions)',
         fact: "This interactive adventure allows you to use a pirate map and magic talisman to uncover hidden treasures throughout Adventureland.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '', // Leave this blank
       },
       'the-muppets-present-great-moments-in-american-history': {
@@ -894,7 +894,7 @@ module.exports = {
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 10 minutes',
         fact: "This show features favorite Muppet characters like Sam Eagle, Kermit the Frog, Miss Piggy, Fozzie Bear, and Gonzo as they reenact historic moments.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '', // Leave this blank
       },
       'main-street-trolley-show': {
@@ -905,7 +905,7 @@ module.exports = {
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 10 minutes',
         fact: "The Main Street Trolley Show brings a touch of nostalgia with its vintage costumes and charming performances.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '', // Leave this blank
       },
       'character-meet-and-greets': {
@@ -916,7 +916,7 @@ module.exports = {
         'show-schedule': 'Check the daily schedule for character locations and times.',
         duration: 'Varies',
         fact: "Character Meet and Greets allow you to create cherished memories by interacting with beloved Disney characters.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '', // Leave this blank
       },
       'the-dapper-dans': {
@@ -927,7 +927,7 @@ module.exports = {
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 20 minutes (multiple sets)',
         fact: "The Dapper Dans have been performing on Main Street, U.S.A. since the park's opening, and their music is a beloved part of Disney's history.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '', // Leave this blank
       },
       'walt-disneys-carousel-of-progress': {
@@ -938,7 +938,7 @@ module.exports = {
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 21 minutes',
         fact: "Walt Disney's Carousel of Progress was originally created by Walt Disney himself for the 1964 New York World's Fair. It showcases how technology has improved our lives over the years.",
-        src: '', // Leave this blank
+        src: '/assets/image/Sunshine Attractions-logo/black.jpeg', // Leave this blank
         alt: '', // Leave this blank
       },
       // Add more pages and their data here

@@ -60,6 +60,7 @@ app.use("/css", express.static("dist"));
 app.use(express.static(path.join(__dirname, 'views')))
 app.use(express.static(__dirname + 'views'));
 app.use(express.static(__dirname + 'page'));
+app.use(express.static(__dirname + 'assets'));
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));

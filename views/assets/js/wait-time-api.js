@@ -1,4 +1,4 @@
-const backendApiUrl = 'http://localhost:2155/wait-times';
+const backendApiUrl = 'https://sunshine-attractions-mkbs.onrender.com//wait-times';
 
 fetch(backendApiUrl)
   .then((response) => response.json())

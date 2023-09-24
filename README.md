@@ -61,6 +61,16 @@ Learn about the attraction you're viewing with various facts, tags, and real tim
 <a href="https://ibb.co/xSXpNxN"><img src="https://i.ibb.co/FbmSFRF/34d2a7c70eaaf4c581b7d8272f235308.png" alt="34d2a7c70eaaf4c581b7d8272f235308" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>download sharing site</a><br />
 </p>
 
+## 🔆 Change your profile picture!
+<p align="left">
+Is the default profile picture a little too boring? Worry not! Sunshine Attractions allows you to upload your own custom profile picture!
+</p>
+
+## 🔆 Remove your comments and reviews
+<p align="left">
+In the user profile section, you can also view and delete any comment, or review you have posted with a click of a button!
+</p>
+
 ## 🚀 Technologies
 
 Technologies that I used to develop this app

@@ -10,7 +10,7 @@
   <a href="#-license">License</a>
 </p>
 
-## 👨🏻‍💻 Welcome to Sunshine Attractions
+## 👨🏻‍💻 Welcome to Sunshine Attractions (Currently only supported on Desktop).
 
 <p align="left" style="color: red;"> Sunshine Attractions is a full-stack review application for theme parks in Florida (The sunshine state). Allowing tourists and locals to find up-to-date information on various rides, shows, and food for Florida theme parks. Users are able to track live wait times of rides, engage in other reviewers posts, and manage their profile.</p>
 
@@ -27,7 +27,7 @@
 ## 🔆 Selection Page
 
 <p align="left">
- Discover 100s of rides, food, and shows at various theme parks.
+ Discover 100s of rides, food, and shows at various theme parks. Dynamically renders information from the backend for each page.
 </p>
 
 <p align="left">
@@ -59,6 +59,16 @@ Learn about the attraction you're viewing with various facts, tags, and real tim
 </p>
 <p align="left">
 <a href="https://ibb.co/xSXpNxN"><img src="https://i.ibb.co/FbmSFRF/34d2a7c70eaaf4c581b7d8272f235308.png" alt="34d2a7c70eaaf4c581b7d8272f235308" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>download sharing site</a><br />
+</p>
+
+## 🔆 Change your profile picture!
+<p align="left">
+Is the default profile picture a little too boring? Worry not! Sunshine Attractions allows you to upload your own custom profile picture!
+</p>
+
+## 🔆 Remove your comments and reviews
+<p align="left">
+In the user profile section, you can also view and delete any comment, or review you have posted with a click of a button!
 </p>
 
 ## 🚀 Technologies

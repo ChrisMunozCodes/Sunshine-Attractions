@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
-<% if (isDesktop) { %>
     <div class="desktop-container w-screen h-screen">
       <% if (loggedIn) { %>
         <header>
@@ -144,11 +143,9 @@
       </section>
   </main>
 </div>
-
-  <% } %>
   
   <!-- Mobile Version -->
-  <% if (!isDesktop) { %>
+  <% if (isDesktop === false) { %>
     <div class="mobile-container">
       <!-- Mobile-specific HTML structure -->
       <header>

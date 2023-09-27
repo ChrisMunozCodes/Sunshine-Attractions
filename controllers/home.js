@@ -445,7 +445,7 @@ module.exports = {
     const isDesktop = req.cookies.isDesktop === 'true';
     // pageId stores the :id to track the page id
     const pageId = req.params.id;
-
+    
     const pageData = {
       'space-mountain': {
         tags: ['dark-ride', 'rollercoaster', 'thrill', 'immersive'],
@@ -812,7 +812,6 @@ module.exports = {
       'happily-ever-after': {
         tags: ['fireworks', 'music', 'fantasy'],
         name: 'Happily Ever After',
-        wait: 'happily-ever-after-wait',
         about: 'Happily Ever After is a nighttime fireworks spectacular featuring Disney music and storytelling. Witness the magic in front of Cinderella Castle.',
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 18 minutes',
@@ -823,7 +822,6 @@ module.exports = {
       'festival-of-fantasy-parade': {
         tags: ['parade', 'entertainment', 'music'],
         name: 'Festival of Fantasy Parade',
-        wait: 'parade-wait',
         about: 'The Festival of Fantasy Parade is a colorful and musical parade featuring Disney characters and floats. Join the celebration on Main Street, U.S.A.',
         'show-schedule': 'Check the daily schedule for parade times.',
         duration: 'Approximately 12 minutes',
@@ -834,7 +832,6 @@ module.exports = {
       'enchanted-tiki-room': {
         tags: ['tropical', 'animatronics', 'musical'],
         name: 'Enchanted Tiki Room',
-        wait: 'tiki-wait',
         about: 'The Enchanted Tiki Room is a classic attraction featuring animatronic birds and a tropical show. Enjoy a taste of the South Pacific right in the heart of Adventureland.',
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 10 minutes',
@@ -845,7 +842,6 @@ module.exports = {
       'mickeys-philharmagic': {
         tags: ['3D', 'musical', 'fantasy'],
         name: "Mickey's PhilharMagic",
-        wait: 'philharmagic-wait',
         about: "Mickey's PhilharMagic is a 3D musical adventure featuring classic Disney songs and characters. Don your opera glasses and join the fun in Fantasyland.",
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 12 minutes',
@@ -856,7 +852,6 @@ module.exports = {
       'country-bear-jamboree': {
         tags: ['musical', 'comedy', 'animatronics'],
         name: 'Country Bear Jamboree',
-        wait: 'jamboree-wait',
         about: "The Country Bear Jamboree is a humorous musical show featuring animatronic bears. Visit Grizzly Hall in Frontierland for some good old-fashioned country fun.",
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 16 minutes',
@@ -867,7 +862,6 @@ module.exports = {
       'monsters-inc-laugh-floor': {
         tags: ['comedy', 'interactive', 'monsters'],
         name: "Monsters, Inc. Laugh Floor",
-        wait: 'laugh-floor-wait',
         about: "Monsters, Inc. Laugh Floor is an interactive comedy show featuring characters from Disney-Pixar's Monsters, Inc. Share your laughs with the monsters in Tomorrowland.",
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 15 minutes',
@@ -878,7 +872,6 @@ module.exports = {
       'a-pirates-adventure-treasures-of-the-seven-seas': {
         tags: ['adventure', 'interactive', 'pirates'],
         name: "A Pirate's Adventure - Treasures of the Seven Seas",
-        wait: 'pirate-adventure-wait',
         about: "Embark on a pirate adventure and solve mysteries in Adventureland. Join Captain Jack Sparrow in the quest for hidden treasures.",
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Varies (multiple missions)',
@@ -889,7 +882,6 @@ module.exports = {
       'the-muppets-present-great-moments-in-american-history': {
         tags: ['comedy', 'history', 'muppets'],
         name: "The Muppets Present... Great Moments in American History",
-        wait: 'muppets-wait',
         about: "Join the Muppets for a humorous take on American history in Liberty Square. Enjoy the wit and wisdom of the Muppets in a patriotic show.",
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 10 minutes',
@@ -900,7 +892,6 @@ module.exports = {
       'main-street-trolley-show': {
         tags: ['entertainment', 'music', 'parade'],
         name: "Main Street Trolley Show",
-        wait: 'trolley-show-wait',
         about: "Enjoy a delightful musical performance on Main Street, U.S.A. as the trolley performers entertain you with classic songs and dance.",
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 10 minutes',
@@ -911,7 +902,6 @@ module.exports = {
       'character-meet-and-greets': {
         tags: ['meet-and-greet', 'characters', 'photo-op'],
         name: "Character Meet and Greets",
-        wait: 'meet-greet-wait',
         about: "Meet your favorite Disney characters throughout the park for photos, autographs, and magical moments.",
         'show-schedule': 'Check the daily schedule for character locations and times.',
         duration: 'Varies',
@@ -922,7 +912,6 @@ module.exports = {
       'the-dapper-dans': {
         tags: ['music', 'barbershop', 'acapella'],
         name: "The Dapper Dans",
-        wait: 'dapper-dans-wait',
         about: "The Dapper Dans are a talented barbershop quartet that performs on Main Street, U.S.A. Enjoy their harmonious acapella melodies and comedy.",
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 20 minutes (multiple sets)',
@@ -933,7 +922,6 @@ module.exports = {
       'walt-disneys-carousel-of-progress': {
         tags: ['theater', 'history', 'audio-animatronics'],
         name: "Walt Disney's Carousel of Progress",
-        wait: 'carousel-progress-wait',
         about: "Experience the history of innovation and technology through the lens of one American family in this classic theater show. Witness the progress of technology from the turn of the 20th century to today.",
         'show-schedule': 'Check the daily schedule for showtimes.',
         duration: 'Approximately 21 minutes',
@@ -943,7 +931,7 @@ module.exports = {
       },
       // Add more pages and their data here
     };
-
+    
   // Initialize variables for filtering
   let filter = req.query.filter || 'all'; // Default to 'all' filter
   let filteredReview = [];

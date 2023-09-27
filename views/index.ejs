@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
-<% if (isDesktop) { %>
     <div class="desktop-container w-screen overflow-auto">
       <% if (loggedIn) { %>
         <header>
@@ -196,11 +195,9 @@
 
   </main>
 </div>
-
-  <% } %>
   
   <!-- Mobile Version -->
-  <% if (!isDesktop) { %>
+  <% if (isDesktop === false) { %>
     <div class="mobile-container w-screen h-screen bg-black flex">
       <h1 class="text-white text-3xl justify-center content-center">SORRY! <br>Sunshine Attractions is currently only supported on desktop. <br> Mobile Support will be released in the near future.</h1>
     </div>

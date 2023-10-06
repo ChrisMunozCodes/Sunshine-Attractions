@@ -1030,7 +1030,7 @@ module.exports = {
   getMaps: (req, res) => {
     const loggedIn = req.isAuthenticated();
     const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
-    res.render('maps', { isDesktop, loggedIn });
+    res.render('maps', { user: req.user, isDesktop, loggedIn });
   },
   getMagicKingdomMaps: (req, res) => {
     const loggedIn = req.isAuthenticated();
@@ -1040,7 +1040,7 @@ module.exports = {
     GOOGLE_MAP_ID = process.env.GOOGLE_MAP_ID
 
     const mapAPIURL = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API}&map_ids=${GOOGLE_MAP_ID}&callback=initMap`
-    res.render('magickingdom-maps', { isDesktop, loggedIn, mapAPIURL});
+    res.render('magickingdom-maps', { user: req.user, isDesktop, loggedIn, mapAPIURL});
   },
 };
 

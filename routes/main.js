@@ -12,12 +12,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 // Intial homepage route, has an additional isDesktop variable to track what screen the user is using in order to show them the proper css
 // layout.
 
-router.get('/', (req, res) => {
-    console.log(req.cookies.isDesktop)
-    const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
-    const loggedIn = req.isAuthenticated();
-    res.render('index', { isDesktop, loggedIn, user: req.user });
-  });
+router.get("/", homeController.getIndex);
 
 router.post("/updateProfilePicture", upload.single("file"), userController.updateProfilePicture);
 

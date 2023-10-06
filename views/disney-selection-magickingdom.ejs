@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="assets/js/animate-blur.js">
   </head>
-<% if (isDesktop) { %>
     <div class="desktop-container w-screen h-screen overflow-auto box-border">
       <% if (loggedIn) { %>
         <header>
@@ -362,46 +361,6 @@
       <% } %>
                 
     </section>
-  <% } %>
-  
-  <!-- Mobile Version -->
-  <% if (!isDesktop) { %>
-    <div class="mobile-container">
-      <!-- Mobile-specific HTML structure -->
-      <header>
-        <!-- Large box for the app title on mobile -->
-        <h1>Sunshine <br> Attractions </br> </h1>
-      </header>
-
-      <div class="search-container">
-        <!-- Search bar content here -->
-      </div>
-
-      <main>
-        <ul>
-            <li>
-                <a href="">Disney</a>
-            </li>
-            <li>
-                <a href="">Universal</a>
-            </li>
-            <li>
-                <a href="">Seaworld</a>
-            </li>
-            <li>
-                <a href="">Busch Gardens</a>
-            </li>
-         </ul>
-      </main>
-
-      <section>
-        <article>
-            <h2>Halloween Horror Nights 2023</h2>
-        </article>
-      </section>
-
-    </div>
-  <% } %>
 </body>
 <script>
   const stars = document.querySelectorAll('input[type=radio]');

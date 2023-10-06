@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="/css/output.css" />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
-<% if (isDesktop) { %>
+
     <div class="desktop-container w-screen h-screen">
       <% if (loggedIn) { %>
         <header>
@@ -109,46 +109,5 @@
   </div>
 
 </main>
-
-  <% } %>
-  
-  <!-- Mobile Version -->
-  <% if (!isDesktop) { %>
-    <div class="mobile-container">
-      <!-- Mobile-specific HTML structure -->
-      <header>
-        <!-- Large box for the app title on mobile -->
-        <h1>Sunshine <br> Attractions </br> </h1>
-      </header>
-
-      <div class="search-container">
-        <!-- Search bar content here -->
-      </div>
-
-      <main>
-        <ul>
-            <li>
-                <a href="">Disney</a>
-            </li>
-            <li>
-                <a href="">Universal</a>
-            </li>
-            <li>
-                <a href="">Seaworld</a>
-            </li>
-            <li>
-                <a href="">Busch Gardens</a>
-            </li>
-         </ul>
-      </main>
-
-      <section>
-        <article>
-            <h2>Halloween Horror Nights 2023</h2>
-        </article>
-      </section>
-
-    </div>
-  <% } %>
 </body>
 </html>

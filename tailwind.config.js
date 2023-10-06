@@ -1,6 +1,9 @@
 module.exports = {
   content: ["./views/**/*.ejs"],
   theme: {
+    screens: {
+      '812breakpoint': '812px',
+    },
     extend: {
       colors: {
         text: '#0a0600',

@@ -31,16 +31,24 @@
     <div class="desktop-container w-screen overflow-auto">
       <% if (loggedIn) { %>
         <header>
-          <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-3 bg-gray-100">
+          <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5 bg-gray-100">
             <div class="logo-container flex justify-center items-center">
               <a href="/">
-              <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
+                <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
               </a>
             </div>
-            <div class="login-container flex justify-center items-center p-5">
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="xl:hidden lg:hidden 812breakpoint:hidden block text-gray-600 focus:outline-none">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>         
+
+            <div class="hidden xl:flex lg:flex 812breakpoint:flex items-center">
               <ul class="menu menu-horizontal bg-base-200">
-                <li><a href="/" class="xl:text-xl md:text-l font-karla font-bold p-3 m-2">HOME</a></li>
-                <li><a href="/maps" class="xl:text-xl md:text-l font-karla font-bold p-3 m-2">MAPS</a></li>
+                <li><a href="/" class="812breakpoint:text-lg font-karla font-bold p-3 m-2">HOME</a></li>
+                <li><a href="/maps" class="812breakpoint:text-lg  font-karla font-bold p-3 m-2">MAPS</a></li>
               </ul>
               <div class="dropdown dropdown-hover m-2">
                 <form action="/profile">
@@ -61,19 +69,63 @@
               </div>
             </div>
           </nav>
+
+          <!-- Mobile Menu (hidden by default) -->
+          <div id="mobile-menu" class="hidden xl:hidden lg:hidden">
+            <ul class="menu bg-gray-100 text-center">
+              <li><a href="/profile" class="block py-3 border-t border-gray-300">PROFILE</a></li>
+              <li><a href="/" class="block py-3 border-t border-gray-300">HOME</a></li>
+              <li><a href="/maps" class="block py-3 border-t border-gray-300">MAPS</a></li>
+            </ul>
+          </div>
+                    
         </header>
+
+        <script>
+          // Function to toggle the mobile menu
+          function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (window.innerWidth < 768) { // Adjust the breakpoint as needed
+              mobileMenu.classList.toggle('hidden');
+            } else {
+              mobileMenu.classList.add('hidden');
+            }
+          }
+        
+          // Event listener for the mobile menu button
+          document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            toggleMobileMenu();
+          });
+        
+          // Event listener for window resize
+          window.addEventListener('resize', function () {
+            toggleMobileMenu();
+          });
+        
+          // Initial check and toggle when the page loads
+          window.addEventListener('load', function () {
+            toggleMobileMenu();
+          });
+        </script>
       <% } else { %>
         <header>
-          <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5  bg-gray-100 mb-10">
+          <nav class="desktop-navbar w-full h-1/5 flex justify-between items-center p-5 bg-gray-100">
             <div class="logo-container flex justify-center items-center">
               <a href="/">
                 <img class="w-full h-6/12" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
               </a>
             </div>
-            <div class="login-container flex justify-center items-center p-5">
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="xl:hidden lg:hidden 812breakpoint:hidden block text-gray-600 focus:outline-none">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+            <!-- Desktop Menu -->
+            <div class="hidden xl:flex lg:flex 812breakpoint:flex items-center">
               <ul class="menu menu-horizontal bg-base-200">
-                <li><a href="/" class="xl:text-xl md:text-l font-karla font-bold p-3 m-2">HOME</a></li>
-                <li><a href="/maps" class="xl:text-xl md:text-l font-karla font-bold p-3 m-2">MAPS</a></li>
+                <li><a href="/" class="812breakpoint:text-lg font-karla font-bold p-3 m-2">HOME</a></li>
+                <li><a href="/maps" class="812breakpoint:text-lg  font-karla font-bold p-3 m-2">MAPS</a></li>
               </ul>
               <form action="/login">
                 <button type="submit" class="border border-gray-300 rounded-md shadow-sm bg-secondaryButton p-3 m-2 font-merriweather hover:bg-black hover:text-white hover:border-white">LOGIN</button>
@@ -83,7 +135,44 @@
               </form>
             </div>
           </nav>
+          <!-- Mobile Menu (hidden by default) -->
+          <div id="mobile-menu" class="hidden xl:hidden lg:hidden">
+            <ul class="menu bg-gray-100 text-center">
+              <li><a href="/" class="block py-3 border-t border-gray-300">HOME</a></li>
+              <li><a href="/maps" class="block py-3 border-t border-gray-300">MAPS</a></li>
+              <li><a href="/login" class="block py-3 border-t border-gray-300">LOGIN</a></li>
+              <li><a href="/signup" class="block py-3 border-t border-gray-300">SIGNUP</a></li>
+            </ul>
+          </div>
         </header>
+        
+        <script>
+          // Function to toggle the mobile menu
+          function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (window.innerWidth < 768) { // Adjust the breakpoint as needed
+              mobileMenu.classList.toggle('hidden');
+            } else {
+              mobileMenu.classList.add('hidden');
+            }
+          }
+        
+          // Event listener for the mobile menu button
+          document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            toggleMobileMenu();
+          });
+        
+          // Event listener for window resize
+          window.addEventListener('resize', function () {
+            toggleMobileMenu();
+          });
+        
+          // Initial check and toggle when the page loads
+          window.addEventListener('load', function () {
+            toggleMobileMenu();
+          });
+        </script>
+        
       <% } %>
 
   <main class="w-auto h-auto flex overflow-auto border-box">

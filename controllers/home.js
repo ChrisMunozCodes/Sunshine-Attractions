@@ -7,7 +7,7 @@ module.exports = {
   getIndex: (req, res) => {
     const loggedIn = req.isAuthenticated();
     const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
-    res.render('index', { isDesktop, loggedIn });
+    res.render('index', { user: req.user, isDesktop, loggedIn });
   },
   getDisneySelectionHomepage: (req, res) => {
     const loggedIn = req.isAuthenticated();

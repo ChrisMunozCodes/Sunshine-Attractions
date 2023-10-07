@@ -3607,8 +3607,32 @@ html {
     display: none;
   }
 
+  .\38 12breakpoint\:h-2\/3 {
+    height: 66.666667%;
+  }
+
+  .\38 12breakpoint\:h-40 {
+    height: 10rem;
+  }
+
+  .\38 12breakpoint\:w-1\/12 {
+    width: 8.333333%;
+  }
+
+  .\38 12breakpoint\:w-2\/12 {
+    width: 16.666667%;
+  }
+
+  .\38 12breakpoint\:w-3\/12 {
+    width: 25%;
+  }
+
   .\38 12breakpoint\:flex-none {
     flex: none;
+  }
+
+  .\38 12breakpoint\:flex-1 {
+    flex: 1 1 0%;
   }
 
   .\38 12breakpoint\:flex-row {

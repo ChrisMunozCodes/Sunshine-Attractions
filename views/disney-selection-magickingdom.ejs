@@ -175,7 +175,7 @@
         
       <% } %>
 
-    <main class="w-full h-2/3 overflow-none box-border flex flex-col">
+    <main class="w-full h-auto 812breakpoint:h-2/3 overflow-none box-border flex flex-col">
       <!-- Container -->
 
         <section class="bg-black font-karla w-screen h-1/3 border-primaryButton border-8  overflow-none box-border relative ">
@@ -237,10 +237,9 @@
         
           
           <!-- listings -->
-          <section class="w-screen h-2/3 overflow-none box-border">
-
-            <ul class="flex box-border overflow-auto 812breakpoint:flex-none">
-              <li class="w-1/3 m-5 text-center justify-center items-center overflow-auto box-border">
+          <section class="w-screen 812breakpoint:h-2/3 box-border overflow-auto">
+            <ul class="flex-none 812breakpoint:flex box-border overflow-auto h-auto">
+              <li class="flex-1 m-5 text-center justify-center items-center overflow-auto box-border">
                   <a id="ride-selection">
                    <div class="card w-full h-full bg-base-100 shadow-xl image-full">
                      <figure><img src="/assets/image/Sunshine Attractions-logo/8731_castle_landing_page_image_nu_2a8f8e6a-a1f9-45fd-8eca-596c92d04a7c.jpeg" alt="Rides" /></figure>
@@ -256,7 +255,7 @@
                    </div>
                   </a>
               </li>
-              <li class="w-1/3 m-5 text-center justify-center items-center overflow-auto box-border">
+              <li class="flex-1 m-5 text-center justify-center items-center overflow-auto box-border">
                <a id="food-selection">
                 <div class="card w-full h-full bg-base-100 shadow-xl image-full">
                   <figure><img src="/assets/image/Sunshine Attractions-logo/disney-magickingdom-food.jpg" alt="Shoes" /></figure>
@@ -274,7 +273,7 @@
                 </div>
                </a>
            </li>
-         <li class="w-1/3 m-5 text-center justify-center items-center overflow-auto box-border">
+         <li class="flex-1 m-5 text-center justify-center items-center overflow-auto box-border">
            <a id="show-selection">
             <div class="card w-full h-full bg-base-100 shadow-xl image-full">
               <figure><img src="/assets/image/Sunshine Attractions-logo/disney-magickingdom-shows.jpg" alt="Shoes" /></figure>
@@ -339,21 +338,21 @@
     <section id="selection-area" class="overflow-auto box-border w-screen h-auto flex flex-col hidden">
       <% for (let i = 0; i < rideSections.length; i++) { %>
         <!-- Ride Selection Start -->
-        <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 ride">
-          <div class="w-1/12 flex justify-center items-center">
+        <div class="border border-gray-100 w-full 812breakpoint:h-40 overflow-auto box-border 812breakpoint:flex p-3 ride">
+          <div class="812breakpoint:w-1/12 flex justify-center items-center">
             <h3 class="text-4xl"><%= i + 1 %></h3>
           </div>
-          <div class="w-2/12 flex justify-center items-center">
+          <div class="812breakpoint:w-2/12 flex justify-center items-center">
             <img class="h-5/6 w-full" src="<%= rideSections[i].src %>" alt="<%= rideSections[i].name %> Disney Magic Kingdom">
           </div>
-          <div class="w-3/12 flex justify-center items-center">
+          <div class="812breakpoint:w-3/12 flex justify-center items-center">
             <h2 class="text-2xl flex-wrap text-center"><%= rideSections[i].name %></h2>
           </div>
-          <div class="w-3/12 flex justify-center items-center">
+          <div class="812breakpoint:w-3/12 flex justify-center items-center">
             <p class="text-1xl"><%= rideSections[i].description %></p>
           </div>
           <% if (rideSections[i].rating > 0) { %>
-          <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+          <div class="rating m-1 items-center justify-center 812breakpoint:w-3/12 flex justify-center items-center">
             <input value="1" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= rideSections[i].rating === 1 ? 'checked' : '' %> />
             <input value="2" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= rideSections[i].rating === 2 ? 'checked' : '' %> />
             <input value="3" type="radio" name="ride-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= rideSections[i].rating === 3 ? 'checked' : '' %> />
@@ -362,11 +361,11 @@
             <!-- Add more rating inputs as needed -->
           </div>
           <% } else { %>
-            <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+            <div class="rating m-1 items-center justify-center 812breakpoint:w-3/12 flex justify-center items-center">
               <p>Not yet rated</p>
             </div>
           <% } %>
-          <a class="w-1/12 flex justify-center items-center" href="<%= rideSections[i].buttonSrc %>">
+          <a class="812breakpoint:w-1/12 flex justify-center items-center" href="<%= rideSections[i].buttonSrc %>">
             <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
           </a>
         </div>
@@ -375,22 +374,22 @@
 
       <% for (let i = 0; i < foodSections.length; i++) { %>
         <!-- Food Selection Start -->
-        <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 food">
-          <div class="w-1/12 flex justify-center items-center">
+        <div class="border border-gray-100 w-full 812breakpoint:h-40 overflow-auto box-border flex p-3 food">
+          <div class="812breakpoint:w-1/12 flex justify-center items-center">
             <h3 class="text-4xl"><%= i + 1 %></h3>
           </div>
-          <div class="w-2/12 flex justify-center items-center">
+          <div class="812breakpoint:w-2/12 flex justify-center items-center">
             <img class="h-5/6 w-full" src="<%= foodSections[i].src %>" alt="<%= foodSections[i].name %> Disney Magic Kingdom">
           </div>
-          <div class="w-3/12 flex justify-center items-center">
+          <div class="812breakpoint:w-3/12 flex justify-center items-center">
             <h2 class="text-2xl flex-wrap text-center"><%= foodSections[i].name %></h2>
           </div>
-          <div class="w-3/12 flex justify-center items-center">
+          <div class="812breakpoint:w-3/12 flex justify-center items-center">
             <p class="text-1xl"><%= foodSections[i].description %></p>
           </div>
           <!-- You can add the rating input for food sections if needed -->
           <% if (foodSections[i].rating > 0) { %>
-          <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+          <div class="rating m-1 items-center justify-center 812breakpoint:w-3/12 flex justify-center items-center">
             <input value="1" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= foodSections[i].rating === 1 ? 'checked' : '' %> />
             <input value="2" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= foodSections[i].rating === 2 ? 'checked' : '' %> />
             <input value="3" type="radio" name="food-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= foodSections[i].rating === 3 ? 'checked' : '' %> />
@@ -399,12 +398,12 @@
             <!-- Add more rating inputs as needed -->
           </div>
           <% } else { %>
-            <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+            <div class="rating m-1 items-center justify-center 812breakpoint:w-3/12 flex justify-center items-center">
               <p>Not yet rated</p>
             </div>
           <% } %>
       
-          <a class="w-1/12 flex justify-center items-center" href="<%= foodSections[i].buttonSrc %>">
+          <a class="812breakpoint:w-1/12 flex justify-center items-center" href="<%= foodSections[i].buttonSrc %>">
             <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
           </a>
         </div>
@@ -413,22 +412,22 @@
 
       <% for (let i = 0; i < showSections.length; i++) { %>
         <!-- Food Selection Start -->
-        <div class="border border-gray-100 w-full h-40 overflow-auto box-border flex p-3 show">
-          <div class="w-1/12 flex justify-center items-center">
+        <div class="border border-gray-100 w-full 812breakpoint:h-40 overflow-auto box-border flex p-3 show">
+          <div class="812breakpoint:w-1/12 flex justify-center items-center">
             <h3 class="text-4xl"><%= i + 1 %></h3>
           </div>
-          <div class="w-2/12 flex justify-center items-center">
+          <div class="812breakpoint:w-2/12 flex justify-center items-center">
             <img class="h-5/6 w-full" src="<%= foodSections[i].src %>" alt="<%= foodSections[i].name %> Disney Magic Kingdom">
           </div>
-          <div class="w-3/12 flex justify-center items-center">
+          <div class="812breakpoint:w-3/12 flex justify-center items-center">
             <h2 class="text-2xl flex-wrap text-center"><%= showSections[i].name %></h2>
           </div>
-          <div class="w-3/12 flex justify-center items-center">
+          <div class="812breakpoint:w-3/12 flex justify-center items-center">
             <p class="text-1xl"><%= showSections[i].description %></p>
           </div>
           <!-- You can add the rating input for food sections if needed -->
           <% if (foodSections[i].rating > 0) { %>
-          <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+          <div class="rating m-1 items-center justify-center 812breakpoint:w-3/12 flex justify-center items-center">
             <input value="1" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= showSections[i].rating === 1 ? 'checked' : '' %> />
             <input value="2" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= showSections[i].rating === 2 ? 'checked' : '' %> />
             <input value="3" type="radio" name="show-rating-<%= i %>" class="mask mask-star-2 bg-orange-400 m-1 w-10 h-10" <%= showSections[i].rating === 3 ? 'checked' : '' %> />
@@ -437,12 +436,12 @@
             <!-- Add more rating inputs as needed -->
           </div>
           <% } else { %>
-            <div class="rating m-1 items-center justify-center w-3/12 flex justify-center items-center">
+            <div class="rating m-1 items-center justify-center 812breakpoint:w-3/12 flex justify-center items-center">
               <p>Not yet rated</p>
             </div>
           <% } %>
       
-          <a class="w-1/12 flex justify-center items-center" href="<%= showSections[i].buttonSrc %>">
+          <a class="812breakpoint:w-1/12 flex justify-center items-center" href="<%= showSections[i].buttonSrc %>">
             <button class="bg-primaryButton border rounded-md shadow-sm font-merriweather w-full h-full hover:bg-black hover:text-white hover:border-white">EXPLORE</button>
           </a>
         </div>

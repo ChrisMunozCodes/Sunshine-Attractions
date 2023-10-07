@@ -3130,6 +3130,10 @@ html {
   flex: 1 1 0%;
 }
 
+.flex-none {
+  flex: none;
+}
+
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -3466,6 +3470,11 @@ html {
   line-height: 1.75rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -3585,6 +3594,18 @@ html {
 
   .\38 12breakpoint\:hidden {
     display: none;
+  }
+
+  .\38 12breakpoint\:flex-none {
+    flex: none;
+  }
+
+  .\38 12breakpoint\:flex-row {
+    flex-direction: row;
+  }
+
+  .\38 12breakpoint\:flex-col {
+    flex-direction: column;
   }
 
   .\38 12breakpoint\:text-xl {

@@ -55,15 +55,20 @@
       function toggleMobileMenu() {
         const mobileMenu = document.getElementById('mobile-menu');
         if (window.innerWidth < 768) { // Adjust the breakpoint as needed
-          mobileMenu.classList.toggle('hidden');
+          mobileMenu.classList.add('hidden');
         } else {
           mobileMenu.classList.add('hidden');
         }
       }
+
+      function mobileMenuClick() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden')
+      }
     
       // Event listener for the mobile menu button
       document.getElementById('mobile-menu-button').addEventListener('click', function () {
-        toggleMobileMenu();
+        mobileMenuClick();
       });
     
       // Event listener for window resize

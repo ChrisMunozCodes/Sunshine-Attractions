@@ -177,9 +177,10 @@
 
 <main class="flex justify-center items-top w-full h-5/6">
   
-      <section class="w-1/3 h-3/4 border border-gray-400 p-5 flex justify-center items-center">
+      <section class="w-full 812breakpoint:w-1/3 812breakpoint:h-3/4 border border-gray-400 p-5 m-10 flex justify-center items-center bg-secondaryButton">
         <div class="card-body">
           <div class="form-control">
+            <img class="m-10" src="assets/image/Sunshine Attractions-logo/sunshine-logo-transparent (2).png" alt="Sunshine Attractions Logo">
             <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
               <div class="alert alert-danger"><%= el.msg %></div>
               <% }) %> <% } %> <% if (locals.messages.info) { %> <%
@@ -188,7 +189,7 @@
               <% }) %> <% } %>
             <form action="/login" method="POST">
               <label class="label form-label" for="exampleInputEmail1">
-                <span class="label-text">Email</span>
+                <span class="label-text text-lg">Email</span>
               </label>
               <input 
               type="email" 
@@ -202,7 +203,7 @@
 
             <div class="form-control">
               <label class="label" for="exampleInputPassword1">
-                <span class="label-text">Password</span>
+                <span class="label-text text-lg">Password</span>
               </label>
               <input 
                placeholder="password"
@@ -212,7 +213,7 @@
                type="password"
                />
               <label class="label">
-                <a href="/signup" class="label-text-alt link link-hover">Create an account</a>
+                <a href="/signup" class="label-text-alt link link-hover text-sm">Create an account</a>
               </label>
             </div>
             <div class="form-control mt-6">

@@ -386,7 +386,7 @@
     </dialog>
 
     <section class="mt-10 w-full 812breakpoint:m-0 812breakpoint:w-1/2 h-full flex items-center flex-col">
-        <div class="dropdown dropdown-right w-min-[500px] w-max-[500px] flex justify-center items-center">
+        <div class="dropdown dropdown-bottom 812breakpoint:dropdown-right w-min-[500px] w-max-[500px] flex justify-center items-center">
           <div class="flex justify-center items-center">
             <h2 id="reviewsHeading" class="font-karla text-3xl w-full m-auto">All Reviews</h2>
           <label tabindex="0" class="btn m-1">Filters</label>
@@ -403,10 +403,10 @@
         <!-- Review componet -->  
         <% for (var i = 0; i < review.length; i++) { %>
             <% if (review[i].page === pageId) { %>  
-        <div class="card bg-base-100 shadow-xl border border-gray-100 m-5 overflow-hidden min-w-[500px] max-w-[500px]">
+        <div class="card bg-base-100 shadow-xl border border-gray-100 m-5 overflow-hidden w-full 812breakpoint:min-w-[500px] 812breakpoint:max-w-[500px]">
             <div class="card-body overflow-auto box-border">
               <div>
-                <section class="flex">
+                <section class="flex-none 812breakpoint:flex">
                   <div class="flex justify-center items-center w-1/3 h-1/2">
                     <div class="avatar">
                       <div class="w-10 rounded-full">
@@ -541,7 +541,7 @@
       <% if (comments[k].review._id.toString() === review[i]._id.toString()) { %>
       <div class="card bg-base-100 shadow-xl border border-gray-400 m-4">
         <div class="card-body">
-          <div class="flex justify-center items-center w-1/3 h-1/2">
+          <div class="flex justify-center items-center w-full 812breakpoint:w-1/3 h-1/2">
             <div class="avatar">
               <div class="w-10 rounded-full">
                   <img src="<%= comments[k].user.profilePic %>" alt="User Profile Picture" />

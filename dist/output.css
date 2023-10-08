@@ -3580,6 +3580,20 @@ html {
   transition-duration: 1000ms;
 }
 
+@media (min-width: 812px) {
+  .\38 12breakpoint\:dropdown-right .dropdown-content {
+    bottom: auto;
+    left: 100%;
+    top: 0px;
+    transform-origin: left;
+  }
+
+  .\38 12breakpoint\:dropdown-right.dropdown-end .dropdown-content {
+    bottom: 0px;
+    top: auto;
+  }
+}
+
 .hover\:scale-110:hover {
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
@@ -3653,6 +3667,14 @@ html {
 
   .\38 12breakpoint\:w-1\/2 {
     width: 50%;
+  }
+
+  .\38 12breakpoint\:min-w-\[500px\] {
+    min-width: 500px;
+  }
+
+  .\38 12breakpoint\:max-w-\[500px\] {
+    max-width: 500px;
   }
 
   .\38 12breakpoint\:flex-none {

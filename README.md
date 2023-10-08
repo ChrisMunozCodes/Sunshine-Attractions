@@ -10,7 +10,7 @@
   <a href="#-license">License</a>
 </p>
 
-## 👨🏻‍💻 Welcome to Sunshine Attractions (Currently only supported on Desktop).
+## 👨🏻‍💻 Welcome to Sunshine Attractions (Not all pages supported on Mobile at this moment).
 
 <p align="left" style="color: red;"> Sunshine Attractions is a full-stack review application for theme parks in Florida (The sunshine state). Allowing tourists and locals to find up-to-date information on various rides, shows, and food for Florida theme parks. Users are able to track live wait times of rides, engage in other reviewers posts, and manage their profile.</p>
 

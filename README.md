@@ -34,14 +34,14 @@
 <a href="https://ibb.co/092QsmM"><img src="https://i.ibb.co/PWjtDFh/Selection.jpg" alt="Selection" border="0"></a>
 </p>
 
-## 🔆 Review Component
+## 🔆 Review Page
 
 <p align="left">
 This is what a user review looks like. Reviews show the user profile picture, along with their username, and star rating. You can see their thoughts about the specific attractions, food, or show in the description box. The review componets support likes, comments from other users, and comment likes / dislikes.
 </p>
 
 <p align="left">
-<a href="https://ibb.co/YQy0cvN"><img src="https://i.ibb.co/r0cdxnQ/e06c384147f9f1070627700f43f1ddae.png" alt="e06c384147f9f1070627700f43f1ddae" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/math-keyboard'></a><br />
+<a href="https://ibb.co/zG2CDCP"><img src="https://i.ibb.co/xJgwdwz/Review.jpg" alt="Review" border="0"></a><br />
 </p>
 
 ## 🔆 Filter reviews

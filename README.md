@@ -31,7 +31,7 @@
 </p>
 
 <p align="left">
-<a href="https://ibb.co/9pyYSLF"><img src="https://i.ibb.co/wdp6jX9/9cd08b6b5ae4bc90311ccfad2f07f454.jpg" alt="9cd08b6b5ae4bc90311ccfad2f07f454" border="0"></a>
+<a href="https://ibb.co/092QsmM"><img src="https://i.ibb.co/PWjtDFh/Selection.jpg" alt="Selection" border="0"></a>
 </p>
 
 ## 🔆 Review Component

@@ -68,8 +68,9 @@ View ride locations on the park map. (This feature will be continued to be flesh
 </p>
 
 <p align="left">
-<a href="https://ibb.co/JzZZzTn"><img src="https://i.ibb.co/THyyHGc/maps.png" alt="maps" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>gif pictures site</a><br />
+<a href="https://ibb.co/JzZZzTn"><img src="https://i.ibb.co/THyyHGc/maps.png" alt="maps" border="0"></a><br>
 </p>
+
 ## 🚀 Technologies
 
 Technologies that I used to develop this app

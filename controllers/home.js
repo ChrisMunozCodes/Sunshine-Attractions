@@ -6,17 +6,14 @@ const Comment = require("../models/Comment"); // Import the Comment model
 module.exports = {
   getIndex: (req, res) => {
     const loggedIn = req.isAuthenticated();
-    const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
-    res.render('index', { user: req.user, isDesktop, loggedIn });
+    res.render('index', { user: req.user, loggedIn });
   },
   getDisneySelectionHomepage: (req, res) => {
     const loggedIn = req.isAuthenticated();
-    const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
-    res.render('disney-selection-homepage', { user: req.user, isDesktop, loggedIn });
+    res.render('disney-selection-homepage', { user: req.user, loggedIn });
   },
   getDisneySelectionMagicKingdom: async (req, res) => {
     const loggedIn = req.isAuthenticated();
-    const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
 
     // Define an object to store average ratings for different pages
     const averageRatingsRide = {};
@@ -437,12 +434,11 @@ module.exports = {
 
     console.log(rideSections)
 
-    res.render('disney-selection-magickingdom', { user: req.user, isDesktop, loggedIn, averageRatingsRide, averageRatingsFood, averageRatingsShow, pageNamesRide, pageNamesFood, pageNamesShow, rideSections, foodSections, showSections});
+    res.render('disney-selection-magickingdom', { user: req.user, loggedIn, averageRatingsRide, averageRatingsFood, averageRatingsShow, pageNamesRide, pageNamesFood, pageNamesShow, rideSections, foodSections, showSections});
   },
 
   getPage: async (req, res) => {
     const loggedIn = req.isAuthenticated();
-    const isDesktop = req.cookies.isDesktop === 'true';
     // pageId stores the :id to track the page id
     const pageId = req.params.id;
     
@@ -1024,23 +1020,21 @@ module.exports = {
       disableReviewButton = true;
     }
   
-    res.render('page', { user: req.user, isDesktop, loggedIn, review: filteredReview, averageRating, disableReviewButton, comments: comments, filter: filter, pageName: pageName, pageId, pageData });
+    res.render('page', { user: req.user, loggedIn, review: filteredReview, averageRating, disableReviewButton, comments: comments, filter: filter, pageName: pageName, pageId, pageData });
 
   },
   getMaps: (req, res) => {
     const loggedIn = req.isAuthenticated();
-    const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
-    res.render('maps', { user: req.user, isDesktop, loggedIn });
+    res.render('maps', { user: req.user, loggedIn });
   },
   getMagicKingdomMaps: (req, res) => {
     const loggedIn = req.isAuthenticated();
-    const isDesktop = req.cookies.isDesktop === 'true'; // Access the cookie value
 
     GOOGLE_MAP_API = process.env.GOOGLE_MAP_API
     GOOGLE_MAP_ID = process.env.GOOGLE_MAP_ID
 
     const mapAPIURL = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API}&map_ids=${GOOGLE_MAP_ID}&callback=initMap`
-    res.render('magickingdom-maps', { user: req.user, isDesktop, loggedIn, mapAPIURL});
+    res.render('magickingdom-maps', { user: req.user, loggedIn, mapAPIURL});
   },
 };
 

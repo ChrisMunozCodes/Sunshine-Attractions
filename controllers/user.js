@@ -5,9 +5,9 @@ const csrf = require("csurf");
 const csrfToken = csrf();
 
 module.exports = {
-  getProfile: (req, res, isDesktop) => {
+  getProfile: (req, res) => {
       const loggedIn = req.isAuthenticated();
-      res.render("profile.ejs", {user: req.user, isDesktop, loggedIn });
+      res.render("profile.ejs", {user: req.user, loggedIn });
   },
   updateProfilePicture: async (req, res) => {
     try {

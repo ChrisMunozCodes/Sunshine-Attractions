@@ -53,24 +53,23 @@ Filter reviews based on options such as: All reviews, Your reviews, Highest rate
 <a href="https://ibb.co/hL2tJ6Y"><img src="https://i.ibb.co/34SL93R/a4a238090f23ce0914d981f1814fcf68.png" alt="a4a238090f23ce0914d981f1814fcf68" border="0"></a>
 </p>
 
-## 🔆 Find information and wait times
+## 🔆 Profile Features
 <p align="left">
-Learn about the attraction you're viewing with various facts, tags, and real time wait times.
-</p>
-<p align="left">
-<a href="https://ibb.co/xSXpNxN"><img src="https://i.ibb.co/FbmSFRF/34d2a7c70eaaf4c581b7d8272f235308.png" alt="34d2a7c70eaaf4c581b7d8272f235308" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>download sharing site</a><br />
+Delete your reviews and comments, and change your profile picture in the profile menu. (More features to be added).
 </p>
 
-## 🔆 Change your profile picture!
 <p align="left">
-Is the default profile picture a little too boring? Worry not! Sunshine Attractions allows you to upload your own custom profile picture!
+<a href="https://ibb.co/S3cgZBr"><img src="https://i.ibb.co/87bwQ9c/Your-Reviews.png" alt="Your-Reviews" border="0"></a>
 </p>
 
-## 🔆 Remove your comments and reviews
+## 🔆 Park Maps
 <p align="left">
-In the user profile section, you can also view and delete any comment, or review you have posted with a click of a button!
+View ride locations on the park map. (This feature will be continued to be fleshed out, upcoming features include users being allowed to share their location on their park visit, then the users will be shown the closest rides to them with the lowest wait times).
 </p>
 
+<p align="left">
+<a href="https://ibb.co/JzZZzTn"><img src="https://i.ibb.co/THyyHGc/maps.png" alt="maps" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>gif pictures site</a><br />
+</p>
 ## 🚀 Technologies
 
 Technologies that I used to develop this app

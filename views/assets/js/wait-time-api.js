@@ -210,8 +210,6 @@ fetch(backendApiUrl)
     } else {
       console.log("The Magic Carpets of Aladdin not found in FantasyLand.");
     }
-    //
-
   })
   .catch((error) => console.error("Error fetching data:", error));
 

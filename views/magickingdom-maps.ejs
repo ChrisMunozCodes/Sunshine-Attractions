@@ -162,25 +162,61 @@ fetch(backendApiUrl)
         })
 
         document.getElementById(`custom-info-window${i}`).innerHTML = `
-            <h1>${currMarker[0]}</h1>
-            <p>Wait Time: ${currMarker[1]}</p>
+        <section class="flex flex-col justify-center align-center">
+            <h1 class="text-xl">${currMarker[0]}</h1>
+            <p class="text-sm">Wait Time: ${currMarker[1].toString()}</p>
+        </section>
         `;
     
         marker.addListener("click", () => {
             document.getElementById(`custom-info-window${i}`).classList.remove('hidden')
             infowindow.open(map, marker);
         })
-
     }
+    
+  const infoWindow = new google.maps.InfoWindow();
+  const locationButton = document.createElement("button");
+
+locationButton.textContent = "FIND YOUR NEXT RIDE";
+locationButton.classList.add("custom-map-control-button");
+locationButton.classList.add("text-white");
+locationButton.classList.add("background-black");
+locationButton.classList.add("w-50");
+locationButton.classList.add("h-50");
+map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+locationButton.addEventListener("click", () => {
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+
+        infoWindow.setPosition(pos);
+        infoWindow.setContent("Location found.");
+        infoWindow.open(map);
+        map.setCenter(pos);
+      },
+      () => {
+        handleLocationError(true, infoWindow, map.getCenter());
+      },
+    );
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+});
 }
   </script>
 
 <% for (let i = 0; i < 3; i++) { %>
-  <div id='custom-info-window<%= i %>' class="hidden">
+  <div id='custom-info-window<%= i %>' class="hidden w-auto h-40 flex-col justify-center align-center  text-center">
   </div>
 <% } %>
 
-  <div id="map" class="h-[60vh] w-full"></div>
+  <div id="map" class="h-[100vh] w-full"></div>
 
 </main>
 <script src="assets/js/map-api.js"></script>

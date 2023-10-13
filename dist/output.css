@@ -3023,6 +3023,18 @@ html {
   height: 100vh;
 }
 
+.h-40 {
+  height: 10rem;
+}
+
+.h-\[vh100\] {
+  height: vh100;
+}
+
+.h-\[100vh\] {
+  height: 100vh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }

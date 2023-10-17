@@ -64,7 +64,7 @@ Delete your reviews and comments, and change your profile picture in the profile
 
 ## 🔆 Park Maps
 <p align="left">
-View ride locations on the park map. (This feature will be continued to be fleshed out, upcoming features include users being allowed to share their location on their park visit, then the users will be shown the closest rides to them with the lowest wait times).
+View ride locations on the park map. (This feature will continue to be fleshed out, upcoming features include users being allowed to share their location on their park visit, then the users will be shown the closest rides to them with the lowest wait times).
 </p>
 
 <p align="left">

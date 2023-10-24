@@ -40,6 +40,9 @@ function rideSelection() {
     sText.classList.remove('hidden')
     sArea.classList.remove('hidden')
     mSelection.classList.add('hidden')
+    ride.forEach(element => element.classList.remove('812breakpoint:hidden'));
+    food.forEach(element => element.classList.add('812breakpoint:hidden'));
+    show.forEach(element => element.classList.add('812breakpoint:hidden'));
     ride.forEach(element => element.classList.remove('hidden'));
     food.forEach(element => element.classList.add('hidden'));
     show.forEach(element => element.classList.add('hidden'));
@@ -64,6 +67,9 @@ function foodSelection() {
     sText.classList.remove('hidden')
     sArea.classList.remove('hidden')
     mSelection.classList.add('hidden')
+    ride.forEach(element => element.classList.add('812breakpoint:hidden'));
+    food.forEach(element => element.classList.remove('812breakpoint:hidden'));
+    show.forEach(element => element.classList.add('812breakpoint:hidden'));
     ride.forEach(element => element.classList.add('hidden'));
     food.forEach(element => element.classList.remove('hidden'));
     show.forEach(element => element.classList.add('hidden'));
@@ -86,6 +92,9 @@ function showSelection() {
     sText.classList.remove('hidden')
     sArea.classList.remove('hidden')
     mSelection.classList.add('hidden')
+    ride.forEach(element => element.classList.add('812breakpoint:hidden'));
+    food.forEach(element => element.classList.add('812breakpoint:hidden'));
+    show.forEach(element => element.classList.remove('812breakpoint:hidden'));
     ride.forEach(element => element.classList.add('hidden'));
     food.forEach(element => element.classList.add('hidden'));
     show.forEach(element => element.classList.remove('hidden'));

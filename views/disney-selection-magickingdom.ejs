@@ -196,7 +196,7 @@
     <section id="selection-area" class="overflow-auto box-border w-screen h-auto flex flex-col hidden">
       <% for (let i = 0; i < rideSections.length; i++) { %>
         <!-- Ride Selection Start -->
-        <div class="border border-gray-100 w-full 812breakpoint:h-40 overflow-auto box-border 812breakpoint:flex p-3 ride">
+        <div class="ride border border-gray-100 w-full 812breakpoint:h-40 overflow-auto box-border 812breakpoint:flex p-3">
           <div class="812breakpoint:w-1/12 flex justify-center items-center">
             <h3 class="text-4xl"><%= i + 1 %></h3>
           </div>
@@ -232,7 +232,7 @@
 
       <% for (let i = 0; i < foodSections.length; i++) { %>
         <!-- Food Selection Start -->
-        <div class="border border-gray-100 w-full 812breakpoint:h-40 overflow-auto box-border flex p-3 food">
+        <div class="food border border-gray-100 w-full 812breakpoint:h-40 overflow-auto box-border 812breakpoint:flex p-3">
           <div class="812breakpoint:w-1/12 flex justify-center items-center">
             <h3 class="text-4xl"><%= i + 1 %></h3>
           </div>
@@ -269,8 +269,8 @@
       <% } %>
 
       <% for (let i = 0; i < showSections.length; i++) { %>
-        <!-- Food Selection Start -->
-        <div class="border border-gray-100 w-full 812breakpoint:h-40 overflow-auto box-border flex p-3 show">
+        <!-- Show Selection Start -->
+        <div class="show border border-gray-100 w-full 812breakpoint:h-40 overflow-auto box-border 812breakpoint:flex p-3">
           <div class="812breakpoint:w-1/12 flex justify-center items-center">
             <h3 class="text-4xl"><%= i + 1 %></h3>
           </div>

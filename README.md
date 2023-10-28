@@ -128,7 +128,7 @@ If you would like to contribute to this project please reach out to me via disco
 ```
 
 # Things to add (Wish list)
-- Maps of theme parks with wait time markers and user geolocation (High Priority).
+- ~~Maps of theme parks with wait time markers and user geolocation (High Priority).~~
 - Lowest wait time rides near the user based on the users location within the theme park map. (High Priority).
 - ~~Mobile Layout (Responsiveness for mobile layouts) (High Priority).~~
 - Following and followers feature (Med Priority).

@@ -30,196 +30,212 @@
 
   <div class="desktop-container w-screen h-screen">
     
-    <!-- Nav Bar -->   
-    <%- include('partials/header') -%>
+<!-- Nav Bar -->   
+<%- include('partials/header') -%>
 
 <main class="flex justify-center items-top w-full h-auto">
-  <script>
-    const backendApiUrl = 'https://sunshine-attractions-mkbs.onrender.com/wait-times';
-fetch(backendApiUrl)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data)
-    // API Lands data
-    let frontierland = data.lands[2];
-    let libertySquare = data.lands[3];
-    let tomorrowland = data.lands[5];
-    let fantasyland = data.lands[1];
-    let adventureland = data.lands[0];
-    // API Rides for specific lands
-    let ridesFantasyland = fantasyland.rides;
-    let ridesTomorrowland = tomorrowland.rides;
-    let ridesLibertySquare = libertySquare.rides;
-    let ridesFrontierland = frontierland.rides;
-    let ridesAdventureland = adventureland.rides;
-    // Thunder Mountain Wait Time Code
-    let thunderMountain = ridesFrontierland.find((ride) => ride.name === "Big Thunder Mountain Railroad");
-    let thunderMountainWait = thunderMountain.wait_time
-    //
 
-    // Haunted Mansion Wait Time Code
-    let hauntedMansion = ridesLibertySquare.find((ride) => ride.name === "Haunted Mansion");
-    let hauntedMansionWait = hauntedMansion.wait_time
-    //
+<div id="map" class="h-[80vh] w-[90vw]">
 
-    // Space Mountain Wait Time Code
-    let spaceMountain = ridesTomorrowland.find((ride) => ride.name === "Space Mountain");
-    let spaceMountainWait = spaceMountain.wait_time
-    //
-
-    // Seven Dwarfs Mine Train Wait Time Code 
-    let mineTrain = ridesFantasyland.find((ride) => ride.name === "Seven Dwarfs Mine Train");
-    //
-
-    // Pirates of the Caribbean Wait Time Code 
-    let pirates = ridesAdventureland.find((ride) => ride.name === "Pirates of the Caribbean");
-    //    
-
-    // Jungle Cruise Wait Time Code 
-    let jungle = ridesAdventureland.find((ride) => ride.name === "Jungle Cruise");
-    //
-    
-    // Dumbo the Flying Elephant Wait Time Code 
-    let dumbo = ridesFantasyland.find((ride) => ride.name === "Dumbo the Flying Elephant");
-    //
-    
-    // Tomorrowland Transit Authority PeopleMover Wait Time Code 
-    let peoplemover = ridesTomorrowland.find((ride) => ride.name === "Tomorrowland Transit Authority PeopleMover");
-    //
-
-    // It's a small world Wait Time Code 
-    let smallWorld = ridesFantasyland.find((ride) => ride.name === `"it's a small world"`);
-    //
-
-    // Prince Charming Regal Carrousel Wait Time Code 
-    let carrousel = ridesFantasyland.find((ride) => ride.name === "Prince Charming Regal Carrousel");
-    //
-
-    // Peter Pan's Flight Wait Time Code 
-    let peterPan = ridesFantasyland.find((ride) => ride.name === "Peter Pan's Flight");
-    //
-
-    // Under the Sea - Journey of the Little Mermaid Wait Time Code 
-    let mermaid = ridesFantasyland.find((ride) => ride.name === "Under the Sea - Journey of The Little Mermaid");
-    //
-
-    // The barnstormer Wait Time Code 
-    let barnstormer = ridesFantasyland.find((ride) => ride.name === "The Barnstormer");
-    //
-
-    // The Magic Carpets of Aladdin Wait Time Code 
-    let aladdin = ridesAdventureland.find((ride) => ride.name === "The Magic Carpets of Aladdin");
-    let aladdinTest = aladdin.wait_time
-    initMap(hauntedMansionWait, spaceMountainWait, thunderMountainWait)
-  })
-  .catch((error) => console.error("Error fetching data:", error));
-
-    function initMap(hauntedMansionWait, spaceMountainWait, thunderMountainWait){
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 28.418741718041893, lng: -81.58121440549618},
-        zoom: 16.5,
-        mapId: '67f6a68d9f0f5af7',
-        mapTypeControl: false,
-        fullscreenControl: false,
-        streetViewControl: false
-    })
-
-    // Name
-    // Latitude, Longitude
-    const rideMarkers= [
-        [
-            "Space Mountain",
-            spaceMountainWait,
-            28.4191,
-            -81.5772,
-        ],
-        [
-            "Haunted Mansion",
-            hauntedMansionWait,
-            28.4209, 
-            -81.5829,
-        ],
-        [
-            "Thunder Mountain",
-            thunderMountainWait,
-            28.4202, 
-            -81.5844,
-        ]
-    ];
-
-    for(let i = 0; i<rideMarkers.length; i++) {
-        const currMarker = rideMarkers[i];
-
-        const marker = new google.maps.Marker({
-            position:  {lat: currMarker[2], lng: currMarker[3]},
-            map,
-            title: currMarker[0],
-            animation: google.maps.Animation.DROP
-        })
-    
-        const infowindow = new google.maps.InfoWindow({
-          content: document.getElementById(`custom-info-window${i}`)
-        })
-
-        document.getElementById(`custom-info-window${i}`).innerHTML = `
-        <section class="flex flex-col justify-center align-center">
-            <h1 class="text-xl">${currMarker[0]}</h1>
-            <p class="text-sm">Wait Time: ${currMarker[1].toString()}</p>
-        </section>
-        `;
-    
-        marker.addListener("click", () => {
-            document.getElementById(`custom-info-window${i}`).classList.remove('hidden')
-            infowindow.open(map, marker);
-        })
-    }
-    
-  const infoWindow = new google.maps.InfoWindow();
-  const locationButton = document.createElement("button");
-
-locationButton.textContent = "FIND YOUR NEXT RIDE";
-locationButton.classList.add("custom-map-control-button");
-locationButton.classList.add("text-white");
-locationButton.classList.add("background-black");
-locationButton.classList.add("w-50");
-locationButton.classList.add("h-50");
-map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-locationButton.addEventListener("click", () => {
-  // Try HTML5 geolocation.
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        };
-
-        infoWindow.setPosition(pos);
-        infoWindow.setContent("Location found.");
-        infoWindow.open(map);
-        map.setCenter(pos);
-      },
-      () => {
-        handleLocationError(true, infoWindow, map.getCenter());
-      },
-    );
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-  }
-});
-}
-  </script>
-
-<% for (let i = 0; i < 3; i++) { %>
-  <div id='custom-info-window<%= i %>' class="hidden w-auto h-40 flex-col justify-center align-center  text-center">
-  </div>
-<% } %>
-
-  <div id="map" class="h-[100vh] w-full"></div>
+  <% for (let i = 0; i < 3; i++) { %>
+    <div id='custom-info-window<%= i %>' class="hidden w-auto h-40 flex-col justify-center align-center  text-center">
+    </div>
+  <% } %>
+</div>
+  <footer class="absolute inset-x-0 bottom-0 bg-white text-center p-4 z-10">
+    <!-- Footer content here -->
+    <div>
+      Footer Content Here
+    </div>
+  </footer>
 
 </main>
-<script src="assets/js/map-api.js"></script>
-<script src="<%= mapAPIURL %>">
+<script>
+  const backendApiUrl = 'https://sunshine-attractions-mkbs.onrender.com/wait-times';
+      fetch(backendApiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data)
+          // API Lands data
+          let frontierland = data.lands[2];
+          let libertySquare = data.lands[3];
+          let tomorrowland = data.lands[5];
+          let fantasyland = data.lands[1];
+          let adventureland = data.lands[0];
+          // API Rides for specific lands
+          let ridesFantasyland = fantasyland.rides;
+          let ridesTomorrowland = tomorrowland.rides;
+          let ridesLibertySquare = libertySquare.rides;
+          let ridesFrontierland = frontierland.rides;
+          let ridesAdventureland = adventureland.rides;
+          // Thunder Mountain Wait Time Code
+          let thunderMountain = ridesFrontierland.find((ride) => ride.name === "Big Thunder Mountain Railroad");
+          let thunderMountainWait = thunderMountain.wait_time
+          //
+
+          // Haunted Mansion Wait Time Code
+          let hauntedMansion = ridesLibertySquare.find((ride) => ride.name === "Haunted Mansion");
+          let hauntedMansionWait = hauntedMansion.wait_time
+          //
+
+          // Space Mountain Wait Time Code
+          let spaceMountain = ridesTomorrowland.find((ride) => ride.name === "Space Mountain");
+          let spaceMountainWait = spaceMountain.wait_time
+          //
+
+          // Seven Dwarfs Mine Train Wait Time Code 
+          let mineTrain = ridesFantasyland.find((ride) => ride.name === "Seven Dwarfs Mine Train");
+          //
+
+          // Pirates of the Caribbean Wait Time Code 
+          let pirates = ridesAdventureland.find((ride) => ride.name === "Pirates of the Caribbean");
+          //    
+
+          // Jungle Cruise Wait Time Code 
+          let jungle = ridesAdventureland.find((ride) => ride.name === "Jungle Cruise");
+          //
+          
+          // Dumbo the Flying Elephant Wait Time Code 
+          let dumbo = ridesFantasyland.find((ride) => ride.name === "Dumbo the Flying Elephant");
+          //
+          
+          // Tomorrowland Transit Authority PeopleMover Wait Time Code 
+          let peoplemover = ridesTomorrowland.find((ride) => ride.name === "Tomorrowland Transit Authority PeopleMover");
+          //
+
+          // It's a small world Wait Time Code 
+          let smallWorld = ridesFantasyland.find((ride) => ride.name === `"it's a small world"`);
+          //
+
+          // Prince Charming Regal Carrousel Wait Time Code 
+          let carrousel = ridesFantasyland.find((ride) => ride.name === "Prince Charming Regal Carrousel");
+          //
+
+          // Peter Pan's Flight Wait Time Code 
+          let peterPan = ridesFantasyland.find((ride) => ride.name === "Peter Pan's Flight");
+          //
+
+          // Under the Sea - Journey of the Little Mermaid Wait Time Code 
+          let mermaid = ridesFantasyland.find((ride) => ride.name === "Under the Sea - Journey of The Little Mermaid");
+          //
+
+          // The barnstormer Wait Time Code 
+          let barnstormer = ridesFantasyland.find((ride) => ride.name === "The Barnstormer");
+          //
+
+          // The Magic Carpets of Aladdin Wait Time Code 
+          let aladdin = ridesAdventureland.find((ride) => ride.name === "The Magic Carpets of Aladdin");
+          let aladdinTest = aladdin.wait_time
+          initMap(hauntedMansionWait, spaceMountainWait, thunderMountainWait)
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+
+        function initMap(hauntedMansionWait, spaceMountainWait, thunderMountainWait){
+          map = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: 28.418741718041893, lng: -81.58121440549618},
+              zoom: 16.5,
+              mapId: '67f6a68d9f0f5af7',
+              mapTypeControl: false,
+              fullscreenControl: false,
+              streetViewControl: false
+          })
+
+          // Name
+          // Latitude, Longitude
+          const rideMarkers= [
+              [
+                  "Space Mountain",
+                  spaceMountainWait || 'N/A',
+                  28.4191,
+                  -81.5772,
+              ],
+              [
+                  "Haunted Mansion",
+                  hauntedMansionWait || 'N/A',
+                  28.4209, 
+                  -81.5829,
+              ],
+              [
+                  "Thunder Mountain",
+                  thunderMountainWait || 'N/A',
+                  28.4202, 
+                  -81.5844,
+              ]
+          ];
+
+        for(let i = 0; i<rideMarkers.length; i++) {
+          let currMarker = rideMarkers[i];
+
+              const marker = new google.maps.Marker({
+                  position:  {lat: currMarker[2], lng: currMarker[3]},
+                  map,
+                  title: currMarker[0],
+                  animation: google.maps.Animation.DROP
+              })
+          
+              const infowindow = new google.maps.InfoWindow({
+                content: document.getElementById(`custom-info-window${i}`)
+              })
+
+              if (currMarker[1] !== undefined && currMarker[1] !== 'N/A') {
+                document.getElementById(`custom-info-window${i}`).innerHTML = `
+                  <section class="flex flex-col justify-center align-center">
+                    <h1 class="text-xl">${currMarker[0]}</h1>
+                    <p class="text-sm">Wait Time: ${currMarker[1].toString()}</p>
+                  </section>
+                `;
+              } else {
+                document.getElementById(`custom-info-window${i}`).innerHTML = `
+                  <section class="flex flex-col justify-center align-center">
+                    <h1 class="text-xl">${currMarker[0]}</h1>
+                    <p class="text-sm">Wait Time: N/A</p>
+                  </section>
+                `;
+              }
+          
+              marker.addListener("click", () => {
+                  document.getElementById(`custom-info-window${i}`).classList.remove('hidden')
+                  infowindow.open(map, marker);
+              })
+        }
+          
+        const infoWindow = new google.maps.InfoWindow();
+        const locationButton = document.createElement("button");
+
+        locationButton.textContent = "FIND YOUR NEXT RIDE";
+        locationButton.classList.add("custom-map-control-button");
+        locationButton.classList.add("text-white");
+        locationButton.classList.add("background-black");
+        locationButton.classList.add("w-50");
+        locationButton.classList.add("h-50");
+
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+        locationButton.addEventListener("click", () => {
+          // Try HTML5 geolocation.
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+              (position) => {
+                const pos = {
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude,
+                };
+
+                infoWindow.setPosition(pos);
+                infoWindow.setContent("Location found.");
+                infoWindow.open(map);
+                map.setCenter(pos);
+              },
+              () => {
+                handleLocationError(true, infoWindow, map.getCenter());
+              },
+            );
+          } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+          }
+        });
+      }
 </script>
+<script src="assets/js/map-api.js"></script>
+<script src="<%= mapAPIURL %>"></script>
 </html>

@@ -1237,6 +1237,34 @@ html {
   animation: button-pop var(--animation-btn, 0.25s) ease-out;
 }
 
+.footer {
+  display: grid;
+  width: 100%;
+  grid-auto-flow: row;
+  place-items: start;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  row-gap: 2.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.footer > * {
+  display: grid;
+  place-items: start;
+  gap: 0.5rem;
+}
+
+@media (min-width: 48rem) {
+  .footer {
+    grid-auto-flow: column;
+  }
+
+  .footer-center {
+    grid-auto-flow: row dense;
+  }
+}
+
 .form-control {
   display: flex;
   flex-direction: column;
@@ -2807,6 +2835,11 @@ html {
   inset: 0px;
 }
 
+.inset-x-0 {
+  left: 0px;
+  right: 0px;
+}
+
 .bottom-4 {
   bottom: 1rem;
 }
@@ -2855,6 +2888,10 @@ html {
   top: 1rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -2865,6 +2902,10 @@ html {
 
 .z-\[1\] {
   z-index: 1;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .m-1 {
@@ -3027,6 +3068,10 @@ html {
   height: 100vh;
 }
 
+.h-\[80vh\] {
+  height: 80vh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -3093,6 +3138,14 @@ html {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[80vw\] {
+  width: 80vw;
+}
+
+.w-\[90vw\] {
+  width: 90vw;
 }
 
 .max-w-md {
@@ -3307,6 +3360,11 @@ html {
 
 .bg-transparent {
   background-color: transparent;
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-75 {

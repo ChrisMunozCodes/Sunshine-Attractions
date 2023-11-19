@@ -5,6 +5,7 @@ function redirectToSelectedLocation(event) {
     const locationSelect = document.getElementById("locationSelect");
     const selectedOption = locationSelect.options[locationSelect.selectedIndex];
 
+    
     // Redirect to the selected URL
     if (selectedOption && selectedOption.value) {
         window.location.href = selectedOption.value;

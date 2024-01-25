@@ -20,10 +20,6 @@
  Welcome to Sunshine Attractions, below you will find the home page that consists of various theme parks in Florida. Users have plenty of options to start exploring new attractions, food, and entertainment.
 </p>
 
-<p align="left">
-<a href="https://ibb.co/Hn4q5gg"><img src="https://ibb.co/pd8gtVV" alt="pdf" border="0"></a><br />
-</p>
-
 ## 🔆 Selection Page
 
 <p align="left">

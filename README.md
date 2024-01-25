@@ -21,7 +21,7 @@
 </p>
 
 <p align="left">
-<a href="https://ibb.co/Hn4q5gg"><img src="https://i.ibb.co/XSLtcJJ/homepage.jpg" alt="homepage" border="0"></a><br />
+<a href="https://ibb.co/Hn4q5gg"><img src="https://ibb.co/pd8gtVV" alt="pdf" border="0"></a><br />
 </p>
 
 ## 🔆 Selection Page

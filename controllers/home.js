@@ -1,7 +1,6 @@
 const Review = require("../models/Review"); // Import the Review model
 const Comment = require("../models/Comment"); // Import the Comment model
-
-
+const Marker = require("../models/Marker"); // Import the Comment model
 
 module.exports = {
   getIndex: (req, res) => {

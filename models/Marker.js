@@ -17,6 +17,9 @@ const MarkerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },    
+  wait: {
+    type: String,
+  }, 
   createdAt: {
     type: Date,
     default: Date.now,

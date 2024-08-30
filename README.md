@@ -12,7 +12,9 @@
 
 ## 👨🏻‍💻 Welcome to Sunshine Attractions!
 
-<p align="left" style="color: red;"> Sunshine Attractions is a full-stack review application for theme parks in Florida (The sunshine state). Allowing tourists and locals to find up-to-date information on various rides, shows, and food for Florida theme parks. Users are able to track live wait times of rides, engage in other reviewers posts, and manage their profile.</p>
+<p align="left" style="color: red;"> Sunshine Attractions is a full-stack review application designed for theme parks in Florida, the Sunshine State. It provides tourists and locals with up-to-date information on rides, shows, and food options across various Florida theme parks. Users can track live wait times for rides and leave reviews about different attractions within the park.
+
+A map feature is also in development, which will allow users to share their location within the park. Based on their proximity to rides and current wait times, users will receive personalized recommendations on which attractions to visit next.</p>
 
 ## 🔆 Home Page
 

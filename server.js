@@ -14,6 +14,7 @@ const path = require("path");
 const mainRoutes = require("./routes/main");
 const reviewRoutes = require("./routes/review");
 const commentRoutes = require("./routes/comments");
+const mapRoutes = require("./routes/map");
 const multer = require("multer"); // for parsing multipart/form-data
 const cors = require('cors');
 const axios = require('axios');
@@ -104,6 +105,7 @@ app.use(flash());
 app.use("/", mainRoutes);
 app.use("/review", reviewRoutes);
 app.use("/comment", commentRoutes);
+app.use("/map", mapRoutes);
 
 //Server Running
 app.listen(process.env.PORT, () => {

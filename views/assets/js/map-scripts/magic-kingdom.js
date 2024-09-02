@@ -1,77 +1,50 @@
-const rideMarkers= [
-    [
-        "Space Mountain",
-        'N/A',
-        28.4191,
-        -81.5772,
-    ],
-    [
-        "Haunted Mansion",
-        'N/A',
-        28.4209, 
-        -81.5829,
-    ],
-    [
-        "Thunder Mountain",
-        'N/A',
-        28.4202, 
-        -81.5844,
-    ]
-];
+    // //function that inits the map
+    // function initMap(){
+    //     map = new google.maps.Map/ {
+    //         center: {lat: 28.418741718041893, lng: -81.58121440549618},
+    //         zoom: 16.5,
+    //         mapId: '67f6a68d9f0f5af7',
+    //         mapTypeControl: false,
+    //         fullscreenControl: false,
+    //         streetViewControl: false
+    //     }
+    // }
 
-//function to handle all of map generation
-async function generateMap(rideMarkers){
-    //function that inits the map
-    function initMap(){
-        map = new google.maps.Map/ {
-            center: {lat: 28.418741718041893, lng: -81.58121440549618},
-            zoom: 16.5,
-            mapId: '67f6a68d9f0f5af7',
-            mapTypeControl: false,
-            fullscreenControl: false,
-            streetViewControl: false
-        }
-    }
-    initMap()
+    // for(let i = 0; i < rideMarkers.length; i++) {
+    //     let currMarker = rideMarkers[i];
 
-    for(let i = 0; i < rideMarkers.length; i++) {
-        let currMarker = rideMarkers[i];
-
-            const marker = new google.maps.Marker({
-                position:  {lat: currMarker[2], lng: currMarker[3]},
-                map,
-                title: currMarker[0],
-                animation: google.maps.Animation.DROP
-            })
+    //         const marker = new google.maps.Marker({
+    //             position:  {lat: currMarker[2], lng: currMarker[3]},
+    //             map,
+    //             title: currMarker[0],
+    //             animation: google.maps.Animation.DROP
+    //         })
         
-            // const infowindow = new google.maps.InfoWindow({
-            //   content: document.getElementById(`custom-info-window${i}`)
-            // })
+    //         const infowindow = new google.maps.InfoWindow({
+    //           content: document.getElementById(`custom-info-window${i}`)
+    //         })
 
-            // if (currMarker[1] !== undefined && currMarker[1] !== 'N/A') {
-            //   document.getElementById(`custom-info-window${i}`).innerHTML = `
-            //     <section class="flex flex-col justify-center align-center">
-            //       <h1 class="text-xl">${currMarker[0]}</h1>
-            //       <p class="text-sm">Wait Time: ${currMarker[1].toString()}</p>
-            //     </section>
-            //   `;
-            // } else {
-            //   document.getElementById(`custom-info-window${i}`).innerHTML = `
-            //     <section class="flex flex-col justify-center align-center">
-            //       <h1 class="text-xl">${currMarker[0]}</h1>
-            //       <p class="text-sm">Wait Time: N/A</p>
-            //     </section>
-            //   `;
-            // }
+    //         if (currMarker[1] !== undefined && currMarker[1] !== 'N/A') {
+    //           document.getElementById(`custom-info-window${i}`).innerHTML = `
+    //             <section class="flex flex-col justify-center align-center">
+    //               <h1 class="text-xl">${currMarker[0]}</h1>
+    //               <p class="text-sm">Wait Time: ${currMarker[1].toString()}</p>
+    //             </section>
+    //           `;
+    //         } else {
+    //           document.getElementById(`custom-info-window${i}`).innerHTML = `
+    //             <section class="flex flex-col justify-center align-center">
+    //               <h1 class="text-xl">${currMarker[0]}</h1>
+    //               <p class="text-sm">Wait Time: N/A</p>
+    //             </section>
+    //           `;
+    //         }
         
-            // marker.addListener("click", () => {
-            //     document.getElementById(`custom-info-window${i}`).classList.remove('hidden')
-            //     infowindow.open(map, marker);
-            // })
-    }
-}
-
-generateMap(rideMarkers)
+    //         marker.addListener("click", () => {
+    //             document.getElementById(`custom-info-window${i}`).classList.remove('hidden')
+    //             infowindow.open(map, marker);
+    //         })
+    // }
 
 
 // function initMap(hauntedMansionWait, spaceMountainWait, thunderMountainWait){
